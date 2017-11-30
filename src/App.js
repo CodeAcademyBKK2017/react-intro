@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Hello from './hello';
-// import Cell from './CellCom';
-import Box from './Box.component';
+import Box from './components/Box/Box.component';
 class App extends Component {
   render() {
     return (

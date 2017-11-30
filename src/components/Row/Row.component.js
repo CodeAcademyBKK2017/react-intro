@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import Cell from './Cell.component'
+import Cell from '../Cell/Cell.component'
 class Row extends Component{
     render(){
         return (
