@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './Cell.css';
-import Box from './Box';
+import Box from './components/Box/Box';
 
 class App extends Component {
   render() {
