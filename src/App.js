@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Name from './Name';
-import Box from './Box';
+import Box from './components/Box/Box.component';
 import './App.css';
 
 class App extends Component {
