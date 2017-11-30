@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Row from './Row';
+import Row from '../Row/Row.component';
 
 class Box extends Component {
     render() {
