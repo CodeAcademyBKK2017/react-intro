@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import Row from './Row';
+import Row from '../Row/Row.componant';
 
-class Cell extends Component {
+class Box extends Component {
   render() {
     return (
       <div>
@@ -14,4 +13,4 @@ class Cell extends Component {
   }
 }
 
-export default Cell
+export default Box
