@@ -6,7 +6,7 @@ import './App.css';
 class Box extends Component {
     render() {
         return (
-            <div style={{background: 'black'}}>
+            <div>
                 <Row />
                 <Row />
                 <Row />

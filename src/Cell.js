@@ -8,7 +8,7 @@ class Cell extends Component {
         const btnType = title === 'O'? 'btn-o' : 'btn-x';
 
         return (
-            <button className={`btn ${btnType}`}>{title}</button>
+            <div className={`btn ${btnType}`}>{title}</div>
         )
     }
 }

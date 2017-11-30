@@ -35,6 +35,7 @@
   border-width: 0px;
   border-radius: 4px;
   box-shadow: 1px 1px 5px #999;
+  display: inline-block;
 }
 .btn.btn-x {
   background-color: #d34baa;
