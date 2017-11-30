@@ -4,8 +4,8 @@ import Cell from './Cell'
 
 class Row extends React.Component {
     render() {
-        const emptyCellLists = new Array(Number(this.props.cellNumber)).fill(1);
-        const cellLists = emptyCellLists.map((emptyCellList) => <Cell text="o" color="blue" />);
+        const emptyCellLists = new Array(Number(this.props.numberOfCell)).fill();
+        const cellLists = emptyCellLists.map((emptyCellList, index) => <Cell key={index} text="o" color="blue" />);
         return (
             <div>
                 {cellLists}
