@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './Cell.css';
-import Row from './Row';
+import Box from './Box';
 
 class App extends Component {
   render() {
@@ -21,9 +21,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <Row /> 
-        <Row /> 
-        <Row />
+        <Box />
         
       </div>
     );
