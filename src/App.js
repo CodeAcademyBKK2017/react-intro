@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Hello from './Hello';
-import Cell from './Cell';
-import Row from './Row';
-import Box from './Box';
+import Hello from './components/Hello/Hello.component';
+import Cell from './components/Cell/Cell.component';
+import Row from './components/Row/Row.component';
+import Box from './components/Box/Box.component';
 
 class App extends Component {
   render() {
