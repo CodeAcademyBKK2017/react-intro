@@ -1,0 +1,19 @@
+.Cell-button {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    /*border-radius: 3px;*/
+    box-shadow: 0px 3px 3px 1px #CCCCCC;
+}
+
+.Cell-button__blue {
+    color: white;
+    background-color: #2C98F0;
+}
+
+.Cell-button__red {
+    color: white;
+    background-color: red;
+}
