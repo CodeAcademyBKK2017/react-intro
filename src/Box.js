@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import Row from './Row';
-import './App.css';
 
 class Box extends Component {
     render() {
