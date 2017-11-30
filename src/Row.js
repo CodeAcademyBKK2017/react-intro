@@ -5,7 +5,7 @@ class Row extends Component {
   render() {
     return (
         <div>
-        <Cell text="x" color="#428ff4"/><Cell text="x" color="#428ff4"/><Cell text="x" color="#428ff4"/>
+        <Cell text=" " color="white"/><Cell text=" " color="white"/><Cell text=" " color="white"/>
         </div>
     );
   }
