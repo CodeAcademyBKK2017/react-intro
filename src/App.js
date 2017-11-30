@@ -33,3 +33,5 @@ export default App;
 //const a = React.createElement('div', {}, 'Hello');
 //console.log(a);
 //const b = <div>test</div>
+// https://github.com/CodeAcademyBKK2017/react-intro
+// https://facebook.github.io/jest/docs/en/tutorial-react.html#content
