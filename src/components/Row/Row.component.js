@@ -7,9 +7,9 @@ class Row extends Component {
     render() {
         return (
             <div>
-                <Cell title="o" />
-                <Cell title="o" />
-                <Cell title="o" />
+                <Cell title={this.props.data[0]} />
+                <Cell title={this.props.data[1]} />
+                <Cell title={this.props.data[2]} />
             </div>
         )
     }
