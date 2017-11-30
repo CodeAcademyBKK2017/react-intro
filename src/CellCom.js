@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 class Cell extends Component{
     render(){
-        return <button className="Cell" type="button">{this.props.text}</button>
+        return <div className="Cell">{this.props.text}</div>
     }
 }
 export default  Cell;

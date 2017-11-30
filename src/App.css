@@ -36,4 +36,6 @@
   color: white;
   font-size: 60px;
   border-radius: 8px;
+  display: inline-block;
+  margin-right: 5px; 
 }
