@@ -4,6 +4,6 @@ import Row from '../Row.component';
 
 test('Row: row snapshot', () => {
     const data = ['o','x','o'];
-    const snapshot = renderer.create(<Row data={data}/>);
+    const snapshot = renderer.create(<Row data={data}/>).toJSON();
     expect(snapshot).toMatchSnapshot();
 });
