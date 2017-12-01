@@ -3,6 +3,7 @@
 exports[`Cell: Snapshot test 1`] = `
 <div
   className="Cell-button Cell-button__undefined"
+  onClick={undefined}
 >
   o
 </div>

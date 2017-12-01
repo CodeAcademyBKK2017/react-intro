@@ -3,7 +3,7 @@ import React from 'react';
 import Row from '../Row/Row.component'
 
 class Box extends React.Component {
-    cellClickHandler = () => {
+    cellClickHandler() {
         console.log('cell clicked', this);
     }
     render() {
