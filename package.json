@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "test:update": "jest --updateSnapshot",
+    "test:watch": "jest --watchAll",
     "eject": "react-scripts eject"
   },
   "jest": {
