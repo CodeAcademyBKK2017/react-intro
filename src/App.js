@@ -5,8 +5,14 @@ import Box from './components/Box/Box.component'
 
 class App extends Component {
   render() {
+    const boxData = [
+      ['o','x','o'],
+      ['x','x','x'],
+      ['o','x','o']
+    ]
+
     return (
-      <Box style={{textAlign:'center'}} />
+      <Box data={boxData} style={{textAlign:'center'}} />
     );
   }
 }

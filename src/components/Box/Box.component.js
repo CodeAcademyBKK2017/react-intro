@@ -4,9 +4,9 @@ class Box extends React.Component{
     render(){
         return(
             <div style={{textAlign:'center'}}>
-                <Row />
-                <Row />
-                <Row />
+                <Row willData={this.props.data[0]}/>
+                <Row willData={this.props.data[1]} />
+                <Row willData={this.props.data[2]} />
             </div>
         );
     }
