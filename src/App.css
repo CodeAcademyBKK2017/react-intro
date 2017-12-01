@@ -26,16 +26,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.Cell {
-  background-color: rgb(3, 117, 223);
-  height: 100px;
-  width: 200px;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  border-radius: 8px;
-  display: inline-block;
-  margin-right: 5px; 
-}

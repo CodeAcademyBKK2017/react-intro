@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box: snapshot test 1`] = `
+<div>
+  <div>
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+  </div>
+  <div>
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+  </div>
+  <div>
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+    <div
+      className="Cell"
+    />
+  </div>
+</div>
+`;
