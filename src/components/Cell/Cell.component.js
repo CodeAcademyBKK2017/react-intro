@@ -1,8 +1,9 @@
 import React from 'react';
 class Hello extends React.Component{
+    cellclickHandler(){
+        console.log('Clicked');
+    }
     render(){
-        const a = this.props.name;
-        console.log(a);
         const cel = {
             margin:'1px',
             backgroundColor: '#2c98f0',
@@ -16,51 +17,7 @@ class Hello extends React.Component{
             
         }
         return(
-            // <div style={row}>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            // </div>
-            // <div style={row}>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            // </div>
-            // <div style={row}>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            // </div>
-            // <div style={row}>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            //     <div style={cel}>
-            //         {this.props.name}
-            //     </div>
-            // </div>
-            <div style={cel}>{this.props.name}</div>
+            <div style={cel} onClick={this.props.clickHandler}>{this.props.name}</div>
         ); 
     }
 }
