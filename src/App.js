@@ -4,15 +4,9 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const data = [
-      ['o','x','o'],
-      ['x','o','x'],
-      ['o','x','o']
-    ];
-
     return (
       <div className="App">
-        <Box data={data} />
+        <Box/>
       </div>
     )
   }
