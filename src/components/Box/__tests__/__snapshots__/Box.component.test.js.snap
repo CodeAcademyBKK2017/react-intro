@@ -4,23 +4,6 @@ exports[`Box: Box snapshot 1`] = `
 <div>
   <div>
     <div
-      className="btn btn-o"
-    >
-      O
-    </div>
-    <div
-      className="btn btn-x"
-    >
-      X
-    </div>
-    <div
-      className="btn btn-o"
-    >
-      O
-    </div>
-  </div>
-  <div>
-    <div
       className="btn btn-x"
     >
       X
@@ -46,6 +29,23 @@ exports[`Box: Box snapshot 1`] = `
       className="btn btn-o"
     >
       O
+    </div>
+    <div
+      className="btn btn-o"
+    >
+      O
+    </div>
+  </div>
+  <div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+    <div
+      className="btn btn-x"
+    >
+      X
     </div>
     <div
       className="btn btn-o"
