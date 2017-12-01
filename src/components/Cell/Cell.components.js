@@ -4,7 +4,7 @@ import './Cell.css';
 class Cell extends Component {
   render() {
     return (
-        <div className="cell-box">
+        <div className="cell-box" onClick={this.props.cellClickHandler}>
             { this.props.name }
         </div>
     );

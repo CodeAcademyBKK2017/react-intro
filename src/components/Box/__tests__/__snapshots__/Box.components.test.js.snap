@@ -11,43 +11,21 @@ exports[`Box: snapshot test 1`] = `
   >
     <div
       className="cell-box"
+      onClick={[Function]}
     >
       O
     </div>
      
     <div
       className="cell-box"
+      onClick={[Function]}
     >
       X
     </div>
      
     <div
       className="cell-box"
-    >
-      O
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "marginTop": "44px",
-      }
-    }
-  >
-    <div
-      className="cell-box"
-    >
-      X
-    </div>
-     
-    <div
-      className="cell-box"
-    >
-      O
-    </div>
-     
-    <div
-      className="cell-box"
+      onClick={[Function]}
     >
       O
     </div>
@@ -61,18 +39,49 @@ exports[`Box: snapshot test 1`] = `
   >
     <div
       className="cell-box"
+      onClick={[Function]}
     >
       X
     </div>
      
     <div
       className="cell-box"
+      onClick={[Function]}
+    >
+      O
+    </div>
+     
+    <div
+      className="cell-box"
+      onClick={[Function]}
+    >
+      O
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "marginTop": "44px",
+      }
+    }
+  >
+    <div
+      className="cell-box"
+      onClick={[Function]}
     >
       X
     </div>
      
     <div
       className="cell-box"
+      onClick={[Function]}
+    >
+      X
+    </div>
+     
+    <div
+      className="cell-box"
+      onClick={[Function]}
     >
       O
     </div>

@@ -8,7 +8,7 @@ class Row extends Component {
       };
     return (
         <div style={style}>
-            <Cell name={ this.props.cellData[0] }/> <Cell name={ this.props.cellData[1] }/> <Cell name={ this.props.cellData[2] }/>
+            <Cell name={ this.props.cellData[0] } cellClickHandler={this.props.cellClickHandler}/> <Cell name={ this.props.cellData[1] } cellClickHandler={this.props.cellClickHandler}/> <Cell name={ this.props.cellData[2] } cellClickHandler={this.props.cellClickHandler}/>
         </div>
     );
   }
