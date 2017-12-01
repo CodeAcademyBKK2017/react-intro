@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import Hello from './components/Hello/Hello.component';
-import Cell from './components/Cell/Cell.component';
-import Row from './components/Row/Row.component';
 import Box from './components/Box/Box.component';
 
 class App extends Component {
@@ -16,10 +14,10 @@ class App extends Component {
         
         {/* <Cell text="O"/> */}
         {/* <Row /> */}
-        <Box value={[
-          ["X", "O", "O"],
+        <Box rowData={[
           ["O", "X", "O"],
-          ["O", "O", "X"]
+          ["X", "O", "O"],
+          ["X", "X", "O"]
         ]} />
       </div>
     );

@@ -5,9 +5,9 @@ class Box extends Component {
 	render() {
 		return (
 			<div>
-				<Row value={this.props.value[0]}/>
-				<Row value={this.props.value[1]}/>
-				<Row value={this.props.value[2]}/>
+				<Row cellData={this.props.rowData[0]}/>
+				<Row cellData={this.props.rowData[1]}/>
+				<Row cellData={this.props.rowData[2]}/>
 			</div>
 		);
 	}

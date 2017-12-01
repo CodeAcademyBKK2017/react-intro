@@ -8,6 +8,6 @@ test('Box', () => {
 		['O', 'X', 'O'],
 		['X', 'O', 'X']
 	];
-	const snapshot = renderer.create(<Box value={data} />).toJSON();
+	const snapshot = renderer.create(<Box rowData={data} />).toJSON();
 	expect(snapshot).toMatchSnapshot();
 });
