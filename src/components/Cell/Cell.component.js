@@ -1,14 +1,15 @@
 import React from 'react';
 class Hello extends React.Component{
-    cellclickHandler(){
-        console.log('Clicked');
+    clickHandler=(text)=>{
+        console.log('Clicked is',this.props.name);
     }
     render(){
         const cel = {
-            margin:'1px',
+            margin:'4px',
+            borderRadius:'3px',
             backgroundColor: '#2c98f0',
             display: 'inline-block',
-            padding: '10px 15px',
+            padding: '20px 30px',
             borderradius: '3px',
             color:'#fff',
             cursor: 'pointer',
@@ -17,7 +18,7 @@ class Hello extends React.Component{
             
         }
         return(
-            <div style={cel} onClick={this.props.clickHandler}>{this.props.name}</div>
+            <div style={cel} onClick={this.props.clickHandler(this.props.name)}>{this.props.name}</div>
         ); 
     }
 }

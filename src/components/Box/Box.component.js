@@ -1,8 +1,8 @@
 import React from 'react';
 import Row from '../Row/Row.component';
 class Box extends React.Component{
-    clickHandler(){
-        console.log('Clicked');
+    clickHandler=(text)=>()=>{
+            console.log('Clicked is',text);
     }
     render(){
         //const click = this.props;
