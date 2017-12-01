@@ -4,11 +4,7 @@ import renderer from 'react-test-renderer';
 
 test('Cell',()=>{
     const tree = renderer
-    .create(<div style={{textAlign:'center'}}>
-                <Cell />
-                <Cell />
-                <Cell />
-            </div>)
+    .create(<Cell willData="o"/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

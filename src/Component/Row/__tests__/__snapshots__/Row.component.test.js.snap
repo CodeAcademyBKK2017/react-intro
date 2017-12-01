@@ -8,155 +8,53 @@ exports[`Row 1`] = `
     }
   }
 >
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
+  <div
+    style={
+      Object {
+        "background": "rgb(6, 194, 243)",
+        "border": "1px solid #fff",
+        "color": "#fff",
+        "display": "inline-block",
+        "fontSize": "20px",
+        "height": "20px",
+        "marginLeft": "2px",
+        "padding": "25px",
       }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
+    }
+  >
+    d
   </div>
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
+  <div
+    style={
+      Object {
+        "background": "rgb(6, 194, 243)",
+        "border": "1px solid #fff",
+        "color": "#fff",
+        "display": "inline-block",
+        "fontSize": "20px",
+        "height": "20px",
+        "marginLeft": "2px",
+        "padding": "25px",
       }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
+    }
+  >
+    a
   </div>
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
+  <div
+    style={
+      Object {
+        "background": "rgb(6, 194, 243)",
+        "border": "1px solid #fff",
+        "color": "#fff",
+        "display": "inline-block",
+        "fontSize": "20px",
+        "height": "20px",
+        "marginLeft": "2px",
+        "padding": "25px",
       }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
+    }
+  >
+    t
   </div>
 </div>
 `;

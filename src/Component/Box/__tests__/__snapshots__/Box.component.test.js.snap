@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Box:snapshot 1`] = `
-<div
-  style={
-    Object {
-      "textAlign": "center",
+<div>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
     }
-  }
->
-  <div>
+  >
     <div
       style={
         Object {
@@ -23,7 +23,7 @@ exports[`Box:snapshot 1`] = `
         }
       }
     >
-      x
+      o
     </div>
     <div
       style={
@@ -55,10 +55,16 @@ exports[`Box:snapshot 1`] = `
         }
       }
     >
-      x
+      o
     </div>
   </div>
-  <div>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
     <div
       style={
         Object {
@@ -105,10 +111,16 @@ exports[`Box:snapshot 1`] = `
         }
       }
     >
-      x
+      o
     </div>
   </div>
-  <div>
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
     <div
       style={
         Object {
@@ -123,7 +135,7 @@ exports[`Box:snapshot 1`] = `
         }
       }
     >
-      x
+      o
     </div>
     <div
       style={

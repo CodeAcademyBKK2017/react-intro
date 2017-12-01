@@ -4,159 +4,17 @@ exports[`Cell 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "background": "rgb(6, 194, 243)",
+      "border": "1px solid #fff",
+      "color": "#fff",
+      "display": "inline-block",
+      "fontSize": "20px",
+      "height": "20px",
+      "marginLeft": "2px",
+      "padding": "25px",
     }
   }
 >
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-  </div>
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-  </div>
-  <div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-    <div
-      style={
-        Object {
-          "background": "rgb(6, 194, 243)",
-          "border": "1px solid #fff",
-          "color": "#fff",
-          "display": "inline-block",
-          "fontSize": "20px",
-          "height": "20px",
-          "marginLeft": "2px",
-          "padding": "25px",
-        }
-      }
-    >
-      x
-    </div>
-  </div>
+  o
 </div>
 `;

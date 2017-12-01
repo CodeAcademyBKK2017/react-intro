@@ -13,17 +13,11 @@ class Cell extends React.Component{
         }
         return(
 
-    <div>
+  
             <div style={cel}>
-                x
+                {this.props.willData}
             </div>
-            <div style={cel}>
-                x
-            </div>
-            <div style={cel}>
-                x
-            </div>
-    </div>
+
         )
     }
 }
