@@ -2,6 +2,7 @@
 
 exports[`Cell 1`] = `
 <div
+  onClick={undefined}
   style={
     Object {
       "background": "rgb(6, 194, 243)",
@@ -16,5 +17,6 @@ exports[`Cell 1`] = `
   }
 >
   o
+   
 </div>
 `;

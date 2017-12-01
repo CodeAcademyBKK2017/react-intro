@@ -9,6 +9,7 @@ exports[`Row 1`] = `
   }
 >
   <div
+    onClick={undefined}
     style={
       Object {
         "background": "rgb(6, 194, 243)",
@@ -23,8 +24,10 @@ exports[`Row 1`] = `
     }
   >
     d
+     
   </div>
   <div
+    onClick={undefined}
     style={
       Object {
         "background": "rgb(6, 194, 243)",
@@ -39,8 +42,10 @@ exports[`Row 1`] = `
     }
   >
     a
+     
   </div>
   <div
+    onClick={undefined}
     style={
       Object {
         "background": "rgb(6, 194, 243)",
@@ -55,6 +60,7 @@ exports[`Row 1`] = `
     }
   >
     t
+     
   </div>
 </div>
 `;

@@ -1,5 +1,8 @@
 import React from 'react';
 class Cell extends React.Component{
+    cellclickHandler(){
+
+    }
     render(){
         const cel = {
             background: 'rgb(6, 194, 243)',
@@ -13,10 +16,8 @@ class Cell extends React.Component{
         }
         return(
 
-  
-            <div style={cel}>
-                {this.props.willData}
-            </div>
+
+            <div style={cel}  onClick = {this.props.cellclickHandler}>{this.props.willData} </div>
 
         )
     }
