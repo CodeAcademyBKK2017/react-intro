@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+    <div
+      style={
+        Object {
+          "background": "rgb(6, 194, 243)",
+          "border": "1px solid #fff",
+          "color": "#fff",
+          "display": "inline-block",
+          "fontSize": "20px",
+          "height": "20px",
+          "marginLeft": "2px",
+          "padding": "25px",
+        }
+      }
+    >
+      x
+    </div>
+  </div>
+</div>
+`;
