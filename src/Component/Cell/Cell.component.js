@@ -1,6 +1,6 @@
 import React from 'react';
 class Cell extends React.Component{
-    cellclickHandler=()=>{
+    cellclickHandler(){
         this.props.cellclickHandler(this.props.willData)
     }
     render(){
