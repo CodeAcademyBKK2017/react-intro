@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell Snapshot Test 1`] = `
+<div
+  className="Cell"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+/>
+`;
