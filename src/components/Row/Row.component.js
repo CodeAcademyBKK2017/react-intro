@@ -5,7 +5,7 @@ class Row extends Component {
   render() {
     return (
         <div>
-        <Cell text=" " color="white"/><Cell text=" " color="white"/><Cell text=" " color="white"/>
+        <Cell value={this.props.cellData[0]} color="black"/><Cell value={this.props.cellData[1]} color="black"/><Cell value={this.props.cellData[2]} color="black"/>
         </div>
     );
   }

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box Snapshot Test 1`] = `
+<div>
+  <div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      O
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      X
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      O
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      X
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      O
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      O
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      X
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      X
+    </div>
+    <div
+      className="Cell"
+      style={
+        Object {
+          "backgroundColor": "black",
+        }
+      }
+    >
+      O
+    </div>
+  </div>
+</div>
+`;

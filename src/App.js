@@ -5,11 +5,16 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const TwoD = [
+                  ['O','X','O'],
+                  ['X','O','O'],
+                  ['X','X','O']
+                ]
     return (
       <div className="App">
         <div className="App-intro">
          <Name name="TicTacToe"/>
-         <Box/>
+         <Box Data = {TwoD}/>
         </div>
       </div>
     );

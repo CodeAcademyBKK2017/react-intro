@@ -5,8 +5,10 @@ exports[`Cell Snapshot Test 1`] = `
   className="Cell"
   style={
     Object {
-      "backgroundColor": undefined,
+      "backgroundColor": "black",
     }
   }
-/>
+>
+  X
+</div>
 `;

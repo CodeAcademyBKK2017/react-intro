@@ -3,6 +3,7 @@ import Cell from '../Cell.component';
 import renderer from 'react-test-renderer';
 
 test('Cell Snapshot Test',()=>{
-    const tree = renderer.create(<Cell/>);
+    const mock = 'X'
+    const tree = renderer.create(<Cell  value={mock} color="black"/>);
     expect(tree).toMatchSnapshot();
 })
