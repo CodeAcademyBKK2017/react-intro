@@ -12,7 +12,8 @@
     "babel-preset-react": "^6.24.1",
     "jest": "^21.2.1",
     "react-scripts": "1.0.17",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "husky": "^0.13.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,7 +21,9 @@
     "test": "jest",
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watchAll",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepush": "npm run test",
+    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
   },
   "jest": {
     "transform": {
