@@ -13,7 +13,9 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepush": "yarn test",
+    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",
