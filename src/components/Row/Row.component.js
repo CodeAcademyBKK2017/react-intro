@@ -5,11 +5,13 @@ import Cell from '../Cell/Cell.component';
 class Row extends Component {
 
     render() {
+        const {data, cellClickHandler} = this.props;
+
         return (
             <div>
-                <Cell title={this.props.data[0]} />
-                <Cell title={this.props.data[1]} />
-                <Cell title={this.props.data[2]} />
+                <Cell title={data[0]} cellClickHandler={cellClickHandler} />
+                <Cell title={data[1]} cellClickHandler={cellClickHandler} />
+                <Cell title={data[2]} cellClickHandler={cellClickHandler} />
             </div>
         )
     }

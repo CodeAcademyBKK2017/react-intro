@@ -7,7 +7,7 @@ class App extends Component {
     const data = [
       ['o','x','o'],
       ['x','o','x'],
-      ['o','x','o']
+      ['o',' ','o']
     ];
 
     return (

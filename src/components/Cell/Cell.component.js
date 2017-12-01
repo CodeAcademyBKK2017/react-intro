@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 class Cell extends Component {
 
     render() {
-        const title = this.props.title.toUpperCase();
-        const btnType = title === 'O'? 'btn-o' : 'btn-x';
+        const {title, cellClickHandler} = this.props;
+
+        let btnType = '';
+        if(title.toUpperCase() === 'O') btnType = 'btn-o';
+        if(title.toUpperCase() === 'X') btnType = 'btn-x';
 
         return (
-            <div className={`btn ${btnType}`}>{title}</div>
+            <div onClick={cellClickHandler} className={`btn ${btnType}`}>{title.toUpperCase()}</div>
         )
     }
 }

@@ -4,16 +4,19 @@ exports[`Row: row snapshot 1`] = `
 <div>
   <div
     className="btn btn-o"
+    onClick={undefined}
   >
     O
   </div>
   <div
     className="btn btn-x"
+    onClick={undefined}
   >
     X
   </div>
   <div
     className="btn btn-o"
+    onClick={undefined}
   >
     O
   </div>
