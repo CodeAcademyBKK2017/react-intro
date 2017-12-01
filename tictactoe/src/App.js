@@ -8,12 +8,16 @@ import Box from './components/Box/Box.component'
 
 class App extends Component {
   render() {
+    const boxData = [
+      ['o', 'x', 'o'],
+      ['o', 'x', 'x'],
+      ['x', 'x', 'o']
+    ];
     return (
       <div>
-        {/* <Cell text="O" color="red" />
-        <Row numberOfCell="3" />
-        <Row numberOfCell="5" /> */}
-        <Box numberOfRow="3" numberOfCell="3" />
+        {/* <Cell cellData="O" />
+        <Row rowData={['x', 'x']} /> */}
+        <Box boxData={boxData} />
       </div>
     );
   }

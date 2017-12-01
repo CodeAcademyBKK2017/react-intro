@@ -11,7 +11,7 @@ exports[`Box: Snapshot test 1`] = `
     <div
       className="Cell-button Cell-button__blue"
     >
-      o
+      x
     </div>
     <div
       className="Cell-button Cell-button__blue"
@@ -28,24 +28,24 @@ exports[`Box: Snapshot test 1`] = `
     <div
       className="Cell-button Cell-button__blue"
     >
-      o
+      x
     </div>
     <div
       className="Cell-button Cell-button__blue"
     >
-      o
+      x
     </div>
   </div>
   <div>
     <div
       className="Cell-button Cell-button__blue"
     >
-      o
+      x
     </div>
     <div
       className="Cell-button Cell-button__blue"
     >
-      o
+      x
     </div>
     <div
       className="Cell-button Cell-button__blue"

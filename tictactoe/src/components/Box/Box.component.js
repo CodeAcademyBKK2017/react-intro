@@ -4,8 +4,7 @@ import Row from '../Row/Row.component'
 
 class Box extends React.Component {
     render() {
-        const emptyRowLists = new Array(Number(this.props.numberOfRow)).fill();
-        const rowLists = emptyRowLists.map((emptyRowList, index) => <Row key={index} numberOfCell={this.props.numberOfCell} />);
+        const rowLists = this.props.boxData.map((rowData, index) => <Row key={index} rowData={rowData} />);
         return (
             <div>
                 {rowLists}
