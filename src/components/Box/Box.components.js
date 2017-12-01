@@ -3,12 +3,14 @@ import Row from '../Row/Row.components';
 
 class Box extends Component {
 
-    // cellClickHandler = () => { // class preproties for es7 feature
-    //     console.log('cell clicked');
-    // }
-    cellClickHandler(){ //class method
-        console.log('cell clicked');
+    cellClickHandler = (cellValue) => { // class preproties for es7 feature
+        return () => {
+            console.log('cell clicked :: ', cellValue);
+        }
     }
+    // cellClickHandler (cellValue){ //class method
+    //     console.log('cell clicked :: ', cellValue);
+    // }
     render() {
         // this.props.rowData
         return (
