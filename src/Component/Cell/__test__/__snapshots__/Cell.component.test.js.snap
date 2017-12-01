@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box Snapshot Test 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "border": "0",
+      "borderRadius": "2px",
+      "boxShadow": " 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+      "color": "white",
+      "display": "inline-block",
+      "height": "80px",
+      "justifyContent": "center",
+      "margin": "3px",
+      "textAlign": "center",
+      "width": "80px",
+    }
+  }
+>
+  <h1 />
+</div>
+`;
