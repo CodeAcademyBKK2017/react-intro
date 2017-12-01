@@ -1,8 +1,11 @@
 import React from 'react';
 import Row from '../Row/Row.component'
 class Hello extends React.Component{
-    cellclickHandler(){
-        console.log('cellclickHandler');
+    cellclickHandler=(celData)=>{
+        return()=>{
+            console.log('cellclickHandler',celData);
+        }
+        
     }
     render(){
     

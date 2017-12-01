@@ -1,7 +1,7 @@
 import React from 'react';
 class Cell extends React.Component{
-    cellclickHandler(){
-
+    cellclickHandler=()=>{
+        this.props.cellclickHandler(this.props.willData)
     }
     render(){
         const cel = {
@@ -14,10 +14,11 @@ class Cell extends React.Component{
             display: 'inline-block',
             border:'1px solid #fff',
         }
+       
         return(
 
 
-            <div style={cel}  onClick = {this.props.cellclickHandler}>{this.props.willData} </div>
+            <div style={cel}  onClick = {this.props.cellclickHandler(this.props.willData)}>{this.props.willData} </div>
 
         )
     }
