@@ -3,7 +3,7 @@ import './Cell.style.css';
 class Cell extends Component{
     render(){
         return (
-        <div className="Cell">
+        <div className="Cell" onClick={this.props.cellclickHandler}>
             {this.props.value}
         </div>
         )

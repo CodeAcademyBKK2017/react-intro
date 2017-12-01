@@ -5,33 +5,19 @@ exports[`Box: snapshot test 1`] = `
   <div>
     <div
       className="Cell"
+      onClick={[Function]}
     >
       O
     </div>
     <div
       className="Cell"
+      onClick={[Function]}
     >
       X
     </div>
     <div
       className="Cell"
-    >
-      O
-    </div>
-  </div>
-  <div>
-    <div
-      className="Cell"
-    >
-      X
-    </div>
-    <div
-      className="Cell"
-    >
-      O
-    </div>
-    <div
-      className="Cell"
+      onClick={[Function]}
     >
       O
     </div>
@@ -39,16 +25,39 @@ exports[`Box: snapshot test 1`] = `
   <div>
     <div
       className="Cell"
+      onClick={[Function]}
     >
       X
     </div>
     <div
       className="Cell"
+      onClick={[Function]}
+    >
+      O
+    </div>
+    <div
+      className="Cell"
+      onClick={[Function]}
+    >
+      O
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      onClick={[Function]}
     >
       X
     </div>
     <div
       className="Cell"
+      onClick={[Function]}
+    >
+      X
+    </div>
+    <div
+      className="Cell"
+      onClick={[Function]}
     >
       O
     </div>
