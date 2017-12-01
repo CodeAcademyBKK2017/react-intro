@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row:Snapshot 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <div>
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#2c98f0",
+            "borderradius": "3px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "margin": "1px",
+            "padding": "15px 10px",
+          }
+        }
+      >
+        Hello
+      </div>
+    </div>
+  </div>
+</div>
+`;
