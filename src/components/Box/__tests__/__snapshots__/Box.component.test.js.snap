@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box: Box snapshot 1`] = `
+<div>
+  <div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+    <div
+      className="btn btn-o"
+    >
+      O
+    </div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+  </div>
+  <div>
+    <div
+      className="btn btn-o"
+    >
+      O
+    </div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+    <div
+      className="btn btn-o"
+    >
+      O
+    </div>
+  </div>
+  <div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+    <div
+      className="btn btn-o"
+    >
+      O
+    </div>
+    <div
+      className="btn btn-x"
+    >
+      X
+    </div>
+  </div>
+</div>
+`;
