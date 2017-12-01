@@ -11,7 +11,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:watch" : "jest --watchAll",
+    "test:update" : "jest --updateSnapshot"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",
