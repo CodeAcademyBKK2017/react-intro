@@ -13,7 +13,7 @@ class App extends Component {
         {/* <Cell text="O" color="red" />
         <Row numberOfCell="3" />
         <Row numberOfCell="5" /> */}
-        <Box numberOfRow="3" numberOfCell="4" />
+        <Box numberOfRow="3" numberOfCell="3" />
       </div>
     );
   }

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell: Snapshot test 1`] = `
+<div
+  className="Cell-button Cell-button__blue"
+>
+  O
+</div>
+`;
