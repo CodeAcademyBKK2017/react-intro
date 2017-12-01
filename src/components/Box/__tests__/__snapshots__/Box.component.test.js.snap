@@ -4,14 +4,14 @@ exports[`Box: Box snapshot 1`] = `
 <div>
   <div>
     <div
-      className="btn btn-x"
-    >
-      X
-    </div>
-    <div
       className="btn btn-o"
     >
       O
+    </div>
+    <div
+      className="btn btn-x"
+    >
+      X
     </div>
     <div
       className="btn btn-o"
@@ -31,16 +31,16 @@ exports[`Box: Box snapshot 1`] = `
       O
     </div>
     <div
-      className="btn btn-o"
+      className="btn btn-x"
     >
-      O
+      X
     </div>
   </div>
   <div>
     <div
-      className="btn btn-x"
+      className="btn btn-o"
     >
-      X
+      O
     </div>
     <div
       className="btn btn-x"
