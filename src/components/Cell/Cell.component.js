@@ -4,7 +4,7 @@ class Cell extends Component{
     render(){
         return (
         <div className="Cell">
-            {this.props.text}
+            {this.props.value}
         </div>
         )
     }
