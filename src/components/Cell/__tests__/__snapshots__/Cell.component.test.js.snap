@@ -3,5 +3,7 @@
 exports[`Cell: snapshot test 1`] = `
 <div
   className="Cell"
-/>
+>
+  X
+</div>
 `;

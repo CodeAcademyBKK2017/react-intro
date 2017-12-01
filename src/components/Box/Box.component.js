@@ -4,9 +4,9 @@ class Box extends Component{
     render(){
         return ( 
             <div>
-                <Row cellData={['O','X','O']}/>
-                <Row cellData={['X','O','O']}/>
-                <Row cellData={['X','X','O']}/>
+                <Row cellData={this.props.boxData[0]}/>
+                <Row cellData={this.props.boxData[1]}/>
+                <Row cellData={this.props.boxData[2]}/>
             </div>
         )
     }
