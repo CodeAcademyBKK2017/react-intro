@@ -11,6 +11,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:update": "jest --updateSnapshot",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
