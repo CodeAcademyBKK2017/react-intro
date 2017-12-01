@@ -3,9 +3,12 @@ import Cell from '../Cell/Cell.component'
 
 class Row extends Component {
   render() {
+      const {cellData,clickHandle} = this.props;
     return (
         <div>
-        <Cell value={this.props.cellData[0]} color="black"/><Cell value={this.props.cellData[1]} color="black"/><Cell value={this.props.cellData[2]} color="black"/>
+        <Cell value={cellData[0]} color="black" clickHandle={clickHandle}/>
+        <Cell value={cellData[1]} color="black" clickHandle={clickHandle}/>
+        <Cell value={cellData[2]} color="black" clickHandle={clickHandle}/>
         </div>
     );
   }

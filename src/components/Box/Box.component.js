@@ -2,12 +2,14 @@ import React,{ Component } from 'react';
 import Row from '../Row/Row.component'
 
 class Box extends Component {
+
   render() {
+    const {Data,callHandle} = this.props
     return (
         <div>
-        <Row cellData={this.props.Data[0]}/>
-        <Row cellData={this.props.Data[1]}/>
-        <Row cellData={this.props.Data[2]}/>
+        <Row cellData={Data[0]} clickHandle = {callHandle}/>
+        <Row cellData={Data[1]} clickHandle = {callHandle}/>
+        <Row cellData={Data[2]} clickHandle = {callHandle}/>
         </div>
     );
   }

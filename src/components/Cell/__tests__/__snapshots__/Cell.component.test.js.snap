@@ -3,6 +3,7 @@
 exports[`Cell Snapshot Test 1`] = `
 <div
   className="Cell"
+  onClick={undefined}
   style={
     Object {
       "backgroundColor": "black",
