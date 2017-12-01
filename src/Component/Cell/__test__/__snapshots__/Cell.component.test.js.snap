@@ -2,6 +2,7 @@
 
 exports[`Box Snapshot Test 1`] = `
 <div
+  onClick={undefined}
   style={
     Object {
       "backgroundColor": "#2196F3",

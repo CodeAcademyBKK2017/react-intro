@@ -8,6 +8,6 @@ test('Box Snapshot Test',()=>{
     ['x','o','o'],
     ['x','x','o']
   ];
-  const tree = renderer.create(<Box data = {valueData}/>);
+  const tree = renderer.create(<Box data = {valueData} clickHandler = {jest.fn()}/>);
   expect(tree).toMatchSnapshot();
 })

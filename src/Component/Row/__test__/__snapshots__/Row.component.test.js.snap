@@ -3,6 +3,7 @@
 exports[`Box Snapshot Test 1`] = `
 <div>
   <div
+    onClick={[Function]}
     style={
       Object {
         "backgroundColor": "#2196F3",
@@ -24,6 +25,7 @@ exports[`Box Snapshot Test 1`] = `
     </h1>
   </div>
   <div
+    onClick={[Function]}
     style={
       Object {
         "backgroundColor": "#2196F3",
@@ -45,6 +47,7 @@ exports[`Box Snapshot Test 1`] = `
     </h1>
   </div>
   <div
+    onClick={[Function]}
     style={
       Object {
         "backgroundColor": "#2196F3",

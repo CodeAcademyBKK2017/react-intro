@@ -4,6 +4,6 @@ import renderer from 'react-test-renderer';
 
 test('Box Snapshot Test',()=>{
   let valueData = ['o','x','o'];
-  const tree = renderer.create(<Row cellData={valueData}/>);
+  const tree = renderer.create(<Row cellData={valueData} clickHandler = {jest.fn()}/>);
   expect(tree).toMatchSnapshot();
 })

@@ -3,11 +3,12 @@ import Row from '../Row/Row.component';
 
 class Box extends Component {
   render() {
+    const my = this.props;
     return (
       <div>
-        <Row cellData={this.props.data[0]}/>
-        <Row cellData={this.props.data[1]}/>
-        <Row cellData={this.props.data[2]}/>
+        <Row cellData = {my.valueData[0]} clickHandler = {my.clickHandler}/>
+        <Row cellData = {my.valueData[1]} clickHandler = {my.clickHandler}/>
+        <Row cellData = {my.valueData[2]} clickHandler = {my.clickHandler}/>
       </div>
     );
   }
