@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Row from '../Row/Row.component';
 
 class Box extends Component {
-    cellClickHandler() {
-        console.log('cell click');
+    cellClickHandler = (title) => () => {
+        console.log('Cell click: ', title);
     }
 
     render() {
