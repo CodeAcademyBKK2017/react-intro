@@ -3,6 +3,7 @@ import Row from '../Row.component';
 import renderer from 'react-test-renderer';
 
 test('Box Snapshot Test',()=>{
-  const tree = renderer.create(<Row/>);
+  let valueData = ['o','x','o'];
+  const tree = renderer.create(<Row cellData={valueData}/>);
   expect(tree).toMatchSnapshot();
 })

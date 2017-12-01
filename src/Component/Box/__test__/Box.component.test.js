@@ -3,6 +3,11 @@ import Box from '../Box.component';
 import renderer from 'react-test-renderer';
 
 test('Box Snapshot Test',()=>{
-  const tree = renderer.create(<Box/>);
+  let valueData = [
+    ['o','x','o'],
+    ['x','o','o'],
+    ['x','x','o']
+  ];
+  const tree = renderer.create(<Box data = {valueData}/>);
   expect(tree).toMatchSnapshot();
 })
