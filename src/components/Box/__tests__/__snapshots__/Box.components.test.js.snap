@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box: snapshot test 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "marginTop": "44px",
+      }
+    }
+  >
+    <div
+      className="cell-box"
+    >
+      C1
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C2
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C3
+    </div>
+  </div>
+   
+  <div
+    style={
+      Object {
+        "marginTop": "44px",
+      }
+    }
+  >
+    <div
+      className="cell-box"
+    >
+      C1
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C2
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C3
+    </div>
+  </div>
+   
+  <div
+    style={
+      Object {
+        "marginTop": "44px",
+      }
+    }
+  >
+    <div
+      className="cell-box"
+    >
+      C1
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C2
+    </div>
+     
+    <div
+      className="cell-box"
+    >
+      C3
+    </div>
+  </div>
+</div>
+`;
