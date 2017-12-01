@@ -3,6 +3,7 @@
 exports[`Cell O 1`] = `
 <div
   className="Cell"
+  onClick={undefined}
 >
   O
 </div>
@@ -11,6 +12,7 @@ exports[`Cell O 1`] = `
 exports[`Cell X 1`] = `
 <div
   className="Cell"
+  onClick={undefined}
 >
   X
 </div>
