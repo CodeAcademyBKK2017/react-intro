@@ -4,6 +4,6 @@ import renderer from 'react-test-renderer';
 
 test('Row OXO', () => {
 	const data = ['O', 'X', 'O'];
-	const snapshot = renderer.create(<Row value={data} />);
+	const snapshot = renderer.create(<Row value={data} />).toJSON();
 	expect(snapshot).toMatchSnapshot();
 });

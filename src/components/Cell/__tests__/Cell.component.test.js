@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 test('Cell O', () => {
 	const data = 'O';
-	const snapshot = renderer.create(<Cell text={data} />);
+	const snapshot = renderer.create(<Cell text={data} />).toJSON();
 	// const snapshot = renderer
 	// 	.create(<Link page="http://www.facebook.com">Facebook</Link>)
 	// 	.toJSON();
@@ -13,6 +13,6 @@ test('Cell O', () => {
 
 test('Cell X', () => {
 	const data = 'X';
-	const snapshot = renderer.create(<Cell text={data} />);
+	const snapshot = renderer.create(<Cell text={data} />).toJSON();
 	expect(snapshot).toMatchSnapshot();
 });
