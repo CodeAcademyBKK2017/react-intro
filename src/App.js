@@ -10,6 +10,12 @@ class App extends Component {
     // return (
     //   [a,b]
     // );
+    const titacto = 
+    [
+      ['O', 'X', 'O'],
+      ['X', 'O', 'O'],
+      ['X', 'X', 'O']
+    ];
     return (
       <div className="App">
         <header className="App-header">
@@ -20,7 +26,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <Box />
+        <Box rowData={titacto}/>
         
       </div>
     );

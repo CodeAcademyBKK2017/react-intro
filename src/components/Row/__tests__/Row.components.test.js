@@ -3,6 +3,7 @@ import React from 'react';
 import Row from '../Row.components';
 
 test('Box: snapshot test', () => {
-    const snapshot = renderer.create(<Row />);
+    const titacto =  ['O', 'X', 'O'];
+    const snapshot = renderer.create(<Row cellData={ titacto }/>);
     expect(snapshot).toMatchSnapshot();
 });

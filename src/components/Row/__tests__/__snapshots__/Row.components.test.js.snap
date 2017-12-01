@@ -11,19 +11,19 @@ exports[`Box: snapshot test 1`] = `
   <div
     className="cell-box"
   >
-    C1
+    O
   </div>
    
   <div
     className="cell-box"
   >
-    C2
+    X
   </div>
    
   <div
     className="cell-box"
   >
-    C3
+    O
   </div>
 </div>
 `;
