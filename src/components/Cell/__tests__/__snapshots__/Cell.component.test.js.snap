@@ -3,7 +3,7 @@
 exports[`Cell: snapshot test 1`] = `
 <div
   className="Cell"
-  onClick={[Function]}
+  onClick={undefined}
 >
   X
 </div>

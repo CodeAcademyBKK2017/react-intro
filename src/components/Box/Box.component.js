@@ -5,9 +5,12 @@ class Box extends Component{
     //     //class properties ES7
     //     console.log('Cell clicked')
     // }
-    cellclickHandler(){
+    cellclickHandler(cellValue){
         //class properties
-        console.log('Cell clicked')
+        // console.log('Cell clicked')
+        return ()=>{
+            console.log('This Cell was click and value is',cellValue)
+        }
     }
     render(){
         return ( 
