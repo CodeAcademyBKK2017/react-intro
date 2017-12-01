@@ -1,8 +1,6 @@
 import React from 'react';
 class Cell extends React.Component{
-    cellclickHandler(){
-        this.props.cellclickHandler(this.props.willData)
-    }
+    
     render(){
         const cel = {
             background: 'rgb(6, 194, 243)',
