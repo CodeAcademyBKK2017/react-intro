@@ -7,7 +7,7 @@ test('Box: Snapshot test', () => {
         ['o', 'x', 'o'],
         ['o', 'x', 'x'],
         ['x', 'x', 'o']
-      ];
+    ];
     const snapshot = renderer.create(<Box boxData={boxData} />).toJSON();
     expect(snapshot).toMatchSnapshot();
 });
