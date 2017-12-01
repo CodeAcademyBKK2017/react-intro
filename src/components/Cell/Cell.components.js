@@ -5,7 +5,7 @@ class Cell extends Component {
   render() {
     return (
         <div className="cell-box">
-            {this.props.name}
+            { this.props.name }
         </div>
     );
   }
