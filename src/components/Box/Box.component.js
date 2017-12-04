@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Row from '../Row/Row.component';
+import PropTypes from 'prop-types';
 
 class Box extends Component {
 	// Class Property
@@ -8,10 +9,25 @@ class Box extends Component {
 	// 	console.log('cell clicked');
 	// }
 
+
 	// Class Method
-	cellClickHandler() {
-		console.log('cell clicked');
-	}
+	// cellClickHandler(text) {
+	// 	// console.log('cell clicked', text);
+
+	// 	return () => {
+	// 		console.log('new cell clicked', text);
+	// 	};
+	// }
+
+	cellClickHandler = (text) => () => {
+		console.log('new cell clicked', text);
+	};
+
+	// newCellCickHandler = (text) => {
+	// 	return () => {
+
+	// 	};
+	// }
 
 	render() {
 		const {rowData} = this.props;
@@ -25,5 +41,17 @@ class Box extends Component {
 		);
 	}
 }
+
+Box.propTypes = {
+	rowData: PropTypes.array.isRequired
+};
+
+Box.defaultProps = {
+	rowData: [
+		['O', 'O', 'O'],
+		['O', 'O', 'O'],
+		['O', 'O', 'O']
+	]
+};
 
 export default Box;
