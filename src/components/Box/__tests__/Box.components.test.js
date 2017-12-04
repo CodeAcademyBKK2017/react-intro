@@ -9,6 +9,6 @@ test('Box: snapshot test', () => {
       ['X', 'O', 'O'],
       ['X', 'X', 'O']
     ];
-    const snapshot = renderer.create(<Box rowData={ titacto }/>);
+    const snapshot = renderer.create(<Box rowData={ titacto } cellClickHandler={() => {}}/>);
     expect(snapshot).toMatchSnapshot();
 });

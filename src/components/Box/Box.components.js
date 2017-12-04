@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Row from '../Row/Row.components';
-
+import noop from 'lodash/noop';
 class Box extends Component {
 
     cellClickHandler = (cellValue) => { // class preproties for es7 feature
@@ -22,5 +23,15 @@ class Box extends Component {
         );
   }
 }
+
+
+Box.propTypes = {
+    cellClickHandler: PropTypes.func.isRequired,
+    cellData: PropTypes.array.isRequired
+};
+Box.defaultProps = {
+    cellData: [],
+    cellClickHandler: noop
+};
 
 export default Box;

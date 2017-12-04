@@ -4,6 +4,6 @@ import Row from '../Row.components';
 
 test('Box: snapshot test', () => {
     const titacto =  ['O', 'X', 'O'];
-    const snapshot = renderer.create(<Row cellData={ titacto }/>);
+    const snapshot = renderer.create(<Row cellData={ titacto} cellClickHandler={()=>{}}/>);
     expect(snapshot).toMatchSnapshot();
 });

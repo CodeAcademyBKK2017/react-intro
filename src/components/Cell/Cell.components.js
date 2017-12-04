@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Cell.css';
 
+import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
+
 class Cell extends Component {
   render() {
     return (
@@ -10,5 +13,12 @@ class Cell extends Component {
     );
   }
 }
+
+Cell.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+Cell.defaultProps = {
+  onClick: noop
+};
 
 export default Cell;
