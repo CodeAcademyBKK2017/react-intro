@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
 // import Cell from './components/Cell/Cell.component'
 // import Row from './components/Row/Row.component'
-import Box from './components/Box/Box.component'
+import Box from './components/Box/Box.component';
 
 class App extends Component {
-  render() {
+  render () {
     const boxData = [
       ['o', 'x', 'o'],
       ['o', 'x', 'x'],
       ['x', 'x', 'o'],
       ['x', 'x', 'x'],
-      ['x', 'o', 'x', 'o', 'zzz']
+      ['x', 'o', 'x', 'o', 'o'],
+      []
     ];
     return (
       <div>
