@@ -6,8 +6,6 @@ class Box extends Component{
     //     console.log('Cell clicked')
     // }
     cellclickHandler(cellValue){
-        //class properties
-        // console.log('Cell clicked')
         return ()=>{
             console.log('This Cell was click and value is',cellValue)
         }
@@ -22,4 +20,10 @@ class Box extends Component{
         )
     }
 }
+Row.propTypes = {
+    boxData: PropTypes.array.isRequired
+  };
+Row.defaultProps = {
+    boxData: []
+  };
 export default Box
