@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
-import Row from '../Row/Row.component'
+import Row from '../Row/Row.component';
+import ProptTypes from 'prop-types';
+import noop from 'lodash/noop';
 
 class Box extends Component {
 
@@ -14,5 +16,15 @@ class Box extends Component {
     );
   }
 }
+
+Box.proptTypes = {
+  Data: ProptTypes.array.isRequired,
+  callHandle: ProptTypes.func.isRequired
+};
+
+Box.defaultProps = {
+  Data: [],
+  callHandle: noop
+};
 
 export default Box

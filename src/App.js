@@ -4,14 +4,14 @@ import Box from './components/Box/Box.component';
 import './App.css';
 
 class App extends Component {
-  // constructor = (player)=>{
-  //   this.player = player;
-  // }
-  // App.prototype.getHost = function(){return this.host}
-
+  state = {
+    player:1
+  }
+  
   cellClickHandleCallBack = (arg)=>()=>{
-    console.log(arg);
-    console.log(this.TwoD);
+    const {player} = this.state;
+    player === 1?this.setState({player:2}):this.setState({player:1});
+    console.log(player);
   }
   render() {
     let TwoD = [

@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
-import Cell from '../Cell/Cell.component'
+import Cell from '../Cell/Cell.component';
+import ProptTypes from 'prop-types';
+import noop from 'lodash/noop';
 
 class Row extends Component {
   render() {
@@ -13,5 +15,15 @@ class Row extends Component {
     );
   }
 }
+
+Row.proptTypes = {
+  cellData: ProptTypes.array.isRequired,
+  clickHandle: ProptTypes.func.isRequired
+};
+
+Row.defaultProps = {
+  cellData: [],
+  clickHandle: noop
+};
 
 export default Row
