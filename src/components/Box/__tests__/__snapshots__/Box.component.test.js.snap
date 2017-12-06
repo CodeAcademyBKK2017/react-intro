@@ -8,103 +8,103 @@ exports[`Box Snapshot Test 1`] = `
       onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      O
+      
     </div>
     <div
       className="Cell"
       onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      X
+      
     </div>
     <div
       className="Cell"
       onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      O
+      
     </div>
   </div>
   <div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      X
+      
     </div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      O
+      
     </div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      O
+      
     </div>
   </div>
   <div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      X
+      
     </div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      X
+      
     </div>
     <div
       className="Cell"
-      onClick={[Function]}
+      onClick={undefined}
       style={
         Object {
-          "backgroundColor": "black",
+          "backgroundColor": "red",
         }
       }
     >
-      O
+      
     </div>
   </div>
 </div>

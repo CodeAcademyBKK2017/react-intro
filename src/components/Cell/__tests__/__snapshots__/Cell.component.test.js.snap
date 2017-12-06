@@ -6,7 +6,7 @@ exports[`Cell Snapshot Test 1`] = `
   onClick={undefined}
   style={
     Object {
-      "backgroundColor": "black",
+      "backgroundColor": "red",
     }
   }
 >
