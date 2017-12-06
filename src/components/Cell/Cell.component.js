@@ -1,8 +1,8 @@
 import React from 'react';
 class Hello extends React.Component{
-    clickHandler=(text)=>{
-        console.log('Clicked is',this.props.name);
-    }
+    // clickHandler=(text)=>{
+    //     console.log('Clicked is',this.props.name);
+    // }
     render(){
         const cel = {
             margin:'4px',
@@ -18,7 +18,7 @@ class Hello extends React.Component{
             
         }
         return(
-            <div style={cel} onClick={this.props.clickHandler(this.props.name)}>{this.props.name}</div>
+            <div style={cel} onClick={this.props.clickHandler(this.props.name)}><div>{this.props.name}</div></div>
         ); 
     }
 }
