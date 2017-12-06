@@ -19,15 +19,26 @@ class Box extends Component {
 	// 	};
 	// }
 
-	cellClickHandler = (text) => () => {
-		console.log('new cell clicked', text);
-	};
+				// cellClickHandler = (text) => () => {
+				// 	console.log('new cell clicked', text);
+				// };
 
 	// newCellCickHandler = (text) => {
 	// 	return () => {
 
 	// 	};
 	// }
+
+	constructor() {
+		super();
+		this.cellClickHandler = this.cellClickHandler.bind(this);
+	}
+
+	cellClickHandler(text) {
+		return () => {
+			console.log('new cell clicked', text);
+		};
+	};
 
 	render() {
 		const {rowData} = this.props;
