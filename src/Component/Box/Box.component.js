@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Row from '../Row/Row.component';
+import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
 
-class Box extends Component {
-  render() {
-    const my = this.props;
-    return (
-      <div>
-        <Row cellData = {my.valueData[0]} clickHandler = {my.clickHandler}/>
-        <Row cellData = {my.valueData[1]} clickHandler = {my.clickHandler}/>
-        <Row cellData = {my.valueData[2]} clickHandler = {my.clickHandler}/>
-      </div>
-    );
-  }
+const Box = (props) => (
+    <div>
+      <Row cellData = {props.valueData[0]} clickHandler = {props.clickHandler}/>
+      <Row cellData = {props.valueData[1]} clickHandler = {props.clickHandler}/>
+      <Row cellData = {props.valueData[2]} clickHandler = {props.clickHandler}/>
+    </div>
+);
+
+Box.propTypes = {
+  cellData : PropTypes.string.isRequired,
+  clickHandler : PropTypes.func.isRequired
+};
+
+Box.defaultProps = {
+  cellData: '',
+  clickHandler: noop
 }
 
 export default Box
