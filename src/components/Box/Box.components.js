@@ -9,16 +9,15 @@ class Box extends Component {
         console.log('cell clicked :: ', cellValue);
       }
     
-    // cellClickHandler (cellValue){ //class method
+    // cellClickHandler (cellValue){ //class method for es6
     //     console.log('cell clicked :: ', cellValue);
     // }
     render () {
-      // this.props.rowData
+      const {rowData} = this.props;
+      const rows = rowData.map((obj, index) => <Row cellData={  obj.arr } key={obj.key} cellClickHandler={this.cellClickHandler}/>);
       return (
         <div>
-          <Row cellData={  this.props.rowData[0] } cellClickHandler={this.cellClickHandler}/> 
-          <Row cellData={  this.props.rowData[1] } cellClickHandler={this.cellClickHandler}/> 
-          <Row cellData={  this.props.rowData[2] } cellClickHandler={this.cellClickHandler}/>
+          {rows}
         </div>
       );
     }
@@ -35,3 +34,9 @@ Box.defaultProps = {
 };
 
 export default Box;
+
+/*
+<Row cellData={  this.props.rowData[0] } cellClickHandler={this.cellClickHandler}/> 
+          <Row cellData={  this.props.rowData[1] } cellClickHandler={this.cellClickHandler}/> 
+          <Row cellData={  this.props.rowData[2] } cellClickHandler={this.cellClickHandler}/>
+*/

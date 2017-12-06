@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Box from './components/Box/Box.components';
+import uuid from 'uuid';
 
 class App extends Component {
   render () {
@@ -12,9 +13,18 @@ class App extends Component {
     // );
     const titacto = 
     [
-      ['O', 'X', 'O'],
-      ['X', 'O', 'O'],
-      ['X', 'X', 'O']
+      {
+        arr: ['O', 'X', 'O'],
+        key: uuid()
+      },
+      {
+        arr: ['X', 'O', 'O'],
+        key: uuid()
+      },
+      {
+        arr: ['X', 'X', 'O'],
+        key: uuid()
+      }
     ];
     return (
       <div className="App">
