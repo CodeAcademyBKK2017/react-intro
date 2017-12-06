@@ -25,10 +25,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-
-			<Hello name="Chong" test={{test:123}}/>
-
-			<Box rowData={this.rowDataArray} />
+				<Hello name="Chong" test={{test:123}}/>
+				<Box rowData={this.rowDataArray} />
 			</div>
 		);
 	}
