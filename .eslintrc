@@ -56,7 +56,8 @@
     "test": true,
     "expect": true,
     "describe": true,
-    "it": true
+    "it": true,
+    "window": true
   },
   "plugins": [
     "react"
