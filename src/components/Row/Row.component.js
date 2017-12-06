@@ -2,11 +2,14 @@ import React from 'react';
 import Cell from '../Cell/Cell.component';
 class Row extends React.Component{
     render(){
+        const data = this.props.willData;
+        console.log(data);
+        const rows = data.map((rowsData,i)=>{
+            return <Cell name={rowsData} key={i} clickHandler={this.props.clickHandler}/>
+        });
         return(
             <div>
-                <Cell name={this.props.willData[0]} clickHandler={this.props.clickHandler}/>
-                <Cell name={this.props.willData[1]} clickHandler={this.props.clickHandler}/>
-                <Cell name={this.props.willData[2]} clickHandler={this.props.clickHandler}/>
+                {rows}
             </div>
         );
     }

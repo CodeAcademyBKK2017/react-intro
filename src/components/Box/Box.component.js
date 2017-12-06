@@ -5,12 +5,13 @@ class Box extends React.Component{
             console.log('Clicked is',text);
     }
     render(){
-        //const click = this.props;
+        const data = this.props.data;
+        const rows = data.map((rowsData,i)=>{
+            return <Row willData={rowsData.value} key={rowsData.key} clickHandler={this.clickHandler}/>
+        });
         return(
             <div style={{textAlign:'center'}}>
-                <Row willData={this.props.data[0]} clickHandler={this.clickHandler}/>
-                <Row willData={this.props.data[1]} clickHandler={this.clickHandler}/>
-                <Row willData={this.props.data[2]} clickHandler={this.clickHandler}/>
+                {rows}
             </div>
         );
     }
