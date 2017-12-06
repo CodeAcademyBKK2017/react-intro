@@ -1,6 +1,8 @@
 import React from 'react';
 import Row from '../Row/Row.component'
-class Hello extends React.Component{
+
+class Hello extends Component{
+
     cellclickHandler=(celData)=>{
         return()=>{
             console.log('cellclickHandler',celData);
@@ -8,12 +10,16 @@ class Hello extends React.Component{
         
     }
     render(){
-    
+
+        const data = this.props.data;
+        console.log(data);
+        const rows = data.map((row,i)=>{
+            return <Row class='row' data ={row.value} key = {row.key} cellclickHandler={this.cellclickHandler}/> 
+        })
         return(
             <div>
-                <Row class='row' data ={this.props.data[0]} cellclickHandler={this.cellclickHandler}/> 
-                <Row class='row' data ={this.props.data[1]} cellclickHandler={this.cellclickHandler}/> 
-                <Row class='row' data ={this.props.data[2]} cellclickHandler={this.cellclickHandler}/> 
+                {rows}
+
             </div> 
         )
     }
