@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class Box extends Component {
 	cellClickHandler = (text) => () => {
 		console.log('new cell clicked', text);
+		return text;
 	};
 
 	render() {
