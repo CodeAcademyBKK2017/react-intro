@@ -15,7 +15,7 @@ import noop from 'lodash/noop';
 //   }
 // }
 
-const Cell = ({name, cellClickHandler}) => (<div className="cell-box" onClick={cellClickHandler(name)}>
+const Cell = ({name, cellClickHandler, key}) => (<div className="cell-box" onClick={cellClickHandler(name)}>
   { name }
 </div>);
 

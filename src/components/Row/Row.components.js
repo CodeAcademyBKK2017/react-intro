@@ -24,7 +24,9 @@ const Row = ({cellData, cellClickHandler}) => {
   };
   return (
     <div style={style}>
-      <Cell name={ cellData[0] } cellClickHandler={cellClickHandler}/> <Cell name={ cellData[1] } cellClickHandler={cellClickHandler}/> <Cell name={ cellData[2] } cellClickHandler={cellClickHandler}/>
+      <Cell name={ cellData[0] } cellClickHandler={cellClickHandler}/> 
+      <Cell name={ cellData[1] } cellClickHandler={cellClickHandler}/> 
+      <Cell name={ cellData[2] } cellClickHandler={cellClickHandler}/>
     </div>
   );
 };

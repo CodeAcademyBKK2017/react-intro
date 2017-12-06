@@ -35,6 +35,7 @@
         "expect": true,
         "jest": true,
         "describe": true,
-        "it": true
+        "it": true,
+        "document": true
     }
 }

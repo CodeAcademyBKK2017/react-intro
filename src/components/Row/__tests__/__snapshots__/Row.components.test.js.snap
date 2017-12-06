@@ -14,14 +14,12 @@ exports[`Box: snapshot test 1`] = `
   >
     O
   </div>
-   
   <div
     className="cell-box"
     onClick={undefined}
   >
     X
   </div>
-   
   <div
     className="cell-box"
     onClick={undefined}

@@ -9,11 +9,8 @@ class Box extends Component {
         console.log('cell clicked :: ', cellValue);
       }
     
-    // cellClickHandler (cellValue){ //class method for es6
-    //     console.log('cell clicked :: ', cellValue);
-    // }
     render () {
-      const {rowData} = this.props;
+      const {rowData} = this.props; // key: reserved prop for react
       const rows = rowData.map((obj, index) => <Row cellData={  obj.arr } key={obj.key} cellClickHandler={this.cellClickHandler}/>);
       return (
         <div>
