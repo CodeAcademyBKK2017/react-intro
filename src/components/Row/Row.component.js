@@ -6,7 +6,7 @@ import Cell from '../Cell/Cell.component';
 // class Row extends React.Component {
 //   render () {
 //     const {rowData, cellClickHandler} = this.props;
-//     const cellLists = rowData.map((cellData, index) => <Cell key={index} cellData={cellData} color="blue" cellClickHandler={cellClickHandler} />);
+//     const cellLists = rowData.map((cellData, index) => <Cell key={cellData[0]} cellData={cellData[1]} color="blue" cellClickHandler={cellClickHandler} />);
 //     return (
 //       <div>
 //         {cellLists}
@@ -16,7 +16,7 @@ import Cell from '../Cell/Cell.component';
 // }
 
 const Row = ({rowData, cellClickHandler}) => {
-  const cellLists = rowData.map((cellData, index) => <Cell key={index} cellData={cellData} color="blue" cellClickHandler={cellClickHandler} />);
+  const cellLists = rowData.map((cellData, index) => <Cell key={cellData[0]} cellData={cellData[1]} color="blue" cellClickHandler={cellClickHandler} />);
   return (
     <div>
       {cellLists}

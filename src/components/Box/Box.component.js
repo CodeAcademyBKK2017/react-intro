@@ -8,7 +8,7 @@ class Box extends React.Component {
   }
   render () {
     const {boxData} = this.props;
-    const rowLists = boxData.map((rowData, index) => <Row key={index} rowData={rowData} cellClickHandler={this.cellClickHandler} />);
+    const rowLists = boxData.map((rowData, index) => <Row key={rowData[0]} rowData={rowData[1]} cellClickHandler={this.cellClickHandler} />);
     return (
       <div>
         {rowLists}
