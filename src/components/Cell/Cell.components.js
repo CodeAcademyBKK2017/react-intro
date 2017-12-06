@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+// import React, {Component} from 'react';
+import React from 'react';
 import './Cell.css';
 
 import PropTypes from 'prop-types';
