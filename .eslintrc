@@ -42,7 +42,13 @@
     "arrow-spacing": 2,
     "object-curly-spacing": 2,
     "quotes": ["error", "single"],
-    "no-console": 2
+    "no-console": 2,
+    "react/prop-types": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-no-bind": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/self-closing-comp": 2,
+    "react/no-direct-mutation-state": 2
   },
   "globals": {
     "jest": true,
