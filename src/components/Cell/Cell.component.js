@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Cell.style.css';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 
-class Cell extends Component {
-	render() {
-		const {cellClickHandler, text} = this.props;
+// class Cell extends Component {
+// 	render() {
+// 		const {cellClickHandler, text} = this.props;
 		
-		return (
-			<div className="Cell" onClick={cellClickHandler(text)}>
-				{this.props.text}
-			</div>
-		);
-	}
+// 		return (
+// 			<div className="Cell" onClick={cellClickHandler(text)}>
+// 				{this.props.text}
+// 			</div>
+// 		);
+// 	}
+// }
+
+const Cell = ({cellClickHandler, text}) => {
+	return (
+		<div className="Cell" onClick={cellClickHandler(text)}>
+			{text}
+		</div>
+	);
 }
 
 Cell.propTypes = {
