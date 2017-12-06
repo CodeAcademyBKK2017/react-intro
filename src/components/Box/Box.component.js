@@ -3,40 +3,19 @@ import Row from '../Row/Row.component';
 import PropTypes from 'prop-types';
 
 class Box extends Component {
-	// Class Property
-	// prefer this arrow function but it valid in ES7 so we will use Class Method for now
-	// cellClickHandler = () => {
-	// 	console.log('cell clicked');
-	// }
-
-
-	// Class Method
-	// cellClickHandler(text) {
-	// 	// console.log('cell clicked', text);
-
-	// 	return () => {
-	// 		console.log('new cell clicked', text);
-	// 	};
-	// }
-
 	cellClickHandler = (text) => () => {
 		console.log('new cell clicked', text);
 	};
 
-	// newCellCickHandler = (text) => {
-	// 	return () => {
-
-	// 	};
-	// }
-
 	render() {
 		const {rowData} = this.props;
+		const rowCompArray = rowData.map((element) => {
+			return <Row key={element.rowId} cellData={element.data} cellClickHandler={this.cellClickHandler}/>
+		});
 
 		return (
 			<div>
-				<Row cellData={rowData[0]} cellClickHandler={this.cellClickHandler}/>
-				<Row cellData={rowData[1]} cellClickHandler={this.cellClickHandler}/>
-				<Row cellData={rowData[2]} cellClickHandler={this.cellClickHandler}/>
+				{rowCompArray}
 			</div>
 		);
 	}
