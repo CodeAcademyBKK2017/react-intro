@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Row from '../Row/Row.component';
 
-class Box extends Component {
-  render() {
-    const my = this.props;
-    return (
-      <div>
-        <Row cellData = {my.valueData[0]} clickHandler = {my.clickHandler}/>
-        <Row cellData = {my.valueData[1]} clickHandler = {my.clickHandler}/>
-        <Row cellData = {my.valueData[2]} clickHandler = {my.clickHandler}/>
-      </div>
-    );
-  }
+const Box = (props) => {
+  const rows = props.valueData.map((currentValue, index, array) => {
+    console.log('Box : ',currentValue);
+    return <Row cellData = {currentValue.value} key = {currentValue.key} clickHandler = {props.clickHandler}/>
+  });
+  
+  return (<div>{rows}</div>);
 }
 
 export default Box

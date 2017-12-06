@@ -1,40 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Box from './Component/Box/Box.component';
+import uuid from 'uuid';
 
-class App extends Component {
-  state = {
-    team : true, // A true,B false
-    a : 'X',
-    b : 'O'
+const valueData = [
+  {
+    value : ['x','o','o'],
+    key : uuid()
+  },{
+    value : ['x','x','o'],
+    key : uuid()
+  },{
+    value : ['o','x','o'],
+    key : uuid()
   }
-  turn = true;
-  clickHandler = (value) => () => {
-    if (this.state.team) {
-      console.log('On ClickHandler & value true :',value);
-      this.setState({
-        team : false
-      });
-    } else {
-      console.log('On ClickHandler & value false :',value);
-      this.setState({
-        team : true
-      });
-    }
-  }
-  render() {
-  const valueData = [
-      ['x','o','o'],
-      ['o','x','o'],
-      ['x','x','o']
-    ];
-    return (
-      <div className="App">
-        <p>My Design</p>
-        <Box valueData = {valueData} clickHandler = {this.clickHandler}/>
-      </div>
-    );
-  }
-}
+];
+
+const clickHandler = (value) => () => console.log('On ClickHandler & value true :',value);
+
+const App = () => (
+  <div className="App">
+    <p>My Design</p>
+    <Box valueData = {valueData} clickHandler = {clickHandler}/>
+  </div>
+);
 
 export default App;
