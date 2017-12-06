@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row/Row.components';
 import noop from 'lodash/noop';
+
 class Box extends Component {
 
   constructor () {
