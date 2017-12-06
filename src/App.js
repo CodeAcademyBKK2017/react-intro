@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Box from './components/Box/Box.components';
 
 class App extends Component {
-  render() {
+  render () {
     // const a = <Hello name="Bank"/>
     // const b = <Hello name="Chao"/>
     // return (
@@ -36,8 +36,8 @@ class App extends Component {
 
 export default App;
 
-//const a = React.createElement('div', {}, 'Hello');
-//console.log(a);
-//const b = <div>test</div>
+// const a = React.createElement('div', {}, 'Hello');
+// console.log(a);
+// const b = <div>test</div>
 // https://github.com/CodeAcademyBKK2017/react-intro
 // https://facebook.github.io/jest/docs/en/tutorial-react.html#content
