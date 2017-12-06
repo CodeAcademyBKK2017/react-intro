@@ -6,27 +6,22 @@ import noop from 'lodash/noop';
 
 class Box extends Component {
     cellClickHandler = (title) => () => {
-      console.log('Cell click: ', title);
+    //   console.log('Cell click: ', title);
     }
 
     render () {
       const {data} = this.props;
-
-      return (
-        <div>
-          <Row data={data[0]} cellClickHandler={this.cellClickHandler} />
-          <Row data={data[1]} cellClickHandler={this.cellClickHandler} />
-          <Row data={data[2]} cellClickHandler={this.cellClickHandler} />
-        </div>
-      );
+      const rows = data.map((rowData) => <Row data={rowData.items} key={rowData.id} cellClickHandler={this.cellClickHandler} />);
+      return (<div>{rows}</div>);
     }
 }
 
 Box.propTypes = {
   cellClickHandler: PropTypes.func.isRequired,
-  data: PropTypes.array.isRequired
+  data: PropTypes.arrayOf(PropTypes.object)
 };
-Box.defaultProps = {
+Box.defaultProps = { 
+  data: [{id: 'key-1', items: [{id: 'key-2', title: 'o'}]}],
   cellClickHandler: noop
 };
 

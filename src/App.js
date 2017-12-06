@@ -1,18 +1,33 @@
 import React, {Component} from 'react';
 import Box from './components/Box/Box.component';
 import './App.css';
+import uuid from 'uuid';
 
 class App extends Component {
-  render () {
-    const data = [
-      ['o','x','o'],
-      ['x','o','x'],
-      ['o',' ','o']
-    ];
+  state = {
+    data: [
+      {id: uuid(), items: [
+        {id: uuid(), title: 'o'},
+        {id: uuid(), title: 'x'},
+        {id: uuid(), title: 'o'},
+      ]},
+      {id: uuid(), items: [
+        {id: uuid(), title: 'x'},
+        {id: uuid(), title: 'o'},
+        {id: uuid(), title: 'x'},
+      ]},
+      {id: uuid(), items: [
+        {id: uuid(), title: 'o'},
+        {id: uuid(), title: 'x'},
+        {id: uuid(), title: 'o'},
+      ]},
+    ]
+  };
 
+  render () {
     return (
       <div className="App">
-        <Box data={data} />
+        <Box data={this.state.data} />
       </div>
     );
   }
