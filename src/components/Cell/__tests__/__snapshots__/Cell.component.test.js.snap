@@ -4,7 +4,5 @@ exports[`Cell: snapshot test 1`] = `
 <div
   className="Cell"
   onClick={undefined}
->
-  X
-</div>
+/>
 `;

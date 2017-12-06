@@ -7,61 +7,43 @@ exports[`App component App: renders correctly 1`] = `
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        O
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        X
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        O
-      </div>
+      />
     </div>
     <div>
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        X
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        O
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        O
-      </div>
+      />
     </div>
     <div>
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        X
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        X
-      </div>
+      />
       <div
         className="Cell"
         onClick={[Function]}
-      >
-        O
-      </div>
+      />
     </div>
   </div>
 </div>

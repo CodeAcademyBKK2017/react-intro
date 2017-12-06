@@ -14,7 +14,7 @@ import noop from 'lodash/noop';
 //   }
 // }
 const Cell = ({value,cellclickHandler}) => (
-  <div className="Cell" onClick={cellclickHandler(value)}>{value}</div>
+  <div className="Cell" onClick={cellclickHandler(value.cell)}>{value.cell}</div>
 );
 
 Cell.propTypes = {

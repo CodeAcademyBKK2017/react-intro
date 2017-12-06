@@ -9,7 +9,8 @@ class App extends Component {
     {items: ['X','O','O'],
       id: uuid()},
     {items: ['X','X','O'],
-      id: uuid()}];
+      id: uuid()}
+  ];
   render () {
     return (
       <div>
