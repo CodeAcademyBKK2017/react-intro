@@ -1,28 +1,31 @@
-import React,{Component} from 'react';
-import Row from '../Row/Row.component';
-import PropTypes from 'prop-types';
-import noop from 'lodash/noop';
+import PropTypes from "prop-types";
+import React, {Component} from "react";
+import Row from "../Row/Row.component";
 class Box extends Component {
-  cellclickHandler (cellValue) {
-    return () => {
-      // console.log('This Cell was click and value is',cellValue);
-    };
-  }
-  render () {
-    const {boxData} = this.props;
-    console.log(boxData);
-    const rows = boxData.map((rowData) => <Row cellData={rowData.items} key={rowData.id} cellclickHandler={this.cellclickHandler}/>);
-    return ( 
-      <div>
-        {rows}
-      </div>
-    );
-  }
+
+    cellclickHandler (cellValue) {
+
+        return () => {
+            // Console.log("This Cell was click and value is", this.cellValue);
+
+        };
+
+    }
+
+    render () {
+
+        const {boxData} = this.props;
+        // Console.log(boxData);
+        const rows = boxData.map((rowData) => <Row cellData={rowData.items} key={rowData.id} cellclickHandler={this.cellclickHandler}/>);
+        return (
+            <div>
+                {rows}
+            </div>
+        );
+
+    }
+
 }
-Row.propTypes = {
-  boxData: PropTypes.array.isRequired
-};
-Row.defaultProps = {
-  boxData: []
-};
+Box.propTypes = {"boxData": PropTypes.array.isRequired};
+Box.defaultProps = {"boxData": []};
 export default Box;
