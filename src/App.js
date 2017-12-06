@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
 import Box from './components/Box/Box.component';
+import uuid from 'uuid';
 class App extends Component {
+  bData = [
+    {items: ['O','X','O']
+      ,id: uuid()},
+    {items: ['X','O','O'],
+      id: uuid()},
+    {items: ['X','X','O'],
+      id: uuid()}];
   render () {
-    const bData = [['O','X','O'],['X','O','O'],['X','X','O']];
     return (
       <div>
-        <Box boxData={bData} />
+        <Box boxData={this.bData} />
       </div>
     );
   }

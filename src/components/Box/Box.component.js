@@ -9,11 +9,12 @@ class Box extends Component {
     };
   }
   render () {
+    const {boxData} = this.props;
+    console.log(boxData);
+    const rows = boxData.map((rowData) => <Row cellData={rowData.items} key={rowData.id} cellclickHandler={this.cellclickHandler}/>);
     return ( 
       <div>
-        <Row cellData={this.props.boxData[0]} cellclickHandler={this.cellclickHandler}/>
-        <Row cellData={this.props.boxData[1]} cellclickHandler={this.cellclickHandler}/>
-        <Row cellData={this.props.boxData[2]} cellclickHandler={this.cellclickHandler}/>
+        {rows}
       </div>
     );
   }
