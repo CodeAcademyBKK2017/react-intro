@@ -1,9 +1,10 @@
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Cell from '../Cell/Cell.component';
+import noop from 'lodash/noop';
 
 class Row extends Component {
-
     render() {
         const {data, cellClickHandler} = this.props;
 
@@ -15,6 +16,14 @@ class Row extends Component {
             </div>
         )
     }
+}
+
+Row.propTypes = {
+  cellClickHandler: PropTypes.func.isRequired
+}
+
+Row.defaultProps = {
+  cellClickHandler: noop
 }
 
 export default Row;
