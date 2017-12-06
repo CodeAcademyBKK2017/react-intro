@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 
 class Cell extends Component {
+  constructor (props) {
+    super(props);
+    
+  }
+
   render () {
     const {cellClickHandler,title} = this.props;
 
