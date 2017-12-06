@@ -3,17 +3,24 @@ import React, { Component } from 'react';
 import Box from './Component/Box/Box.component';
 // import './App.css';
 
-class App extends Component {
-  render() {
-    const boxData = [
-      ['o','x','o'],
-      ['x','x','o'],
-      ['o','x','x'],
-    ]
-    return (
-      <Box class='box' data = {boxData} name ='Nanny'/>
-    );
-  }
-}
+// class App extends Component {
+//   render() {
+//     const boxData = [
+//       ['o','x','o'],
+//       ['x','x','o'],
+//       ['o','x','x'],
+//     ]
+//     return (
+//       <Box class='box' data = {boxData} name ='Nanny'/>
+//     );
+//   }
+// }
+const boxData = [
+        ['o','x','o'],
+        ['x','x','o'],
+        ['o','x','x'],
+      ]
+const App =()=><Box class='box' data = {boxData} name ='Nanny'/>
+
 
 export default App;
