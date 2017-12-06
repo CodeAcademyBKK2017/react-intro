@@ -6,6 +6,7 @@ import noop from 'lodash/noop';
 class Row extends Component {
   render() {
       const {cellData,clickHandle} = this.props;
+      
     return (
         <div>
         <Cell value={cellData[0]} color="black" clickHandle={clickHandle}/>
