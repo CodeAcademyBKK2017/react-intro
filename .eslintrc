@@ -48,7 +48,8 @@
     "react/jsx-no-bind": 2,
     "react/jsx-no-duplicate-props": 2,
     "react/self-closing-comp": 2,
-    "react/no-direct-mutation-state": 2
+    "react/no-direct-mutation-state": 2,
+    "react/jsx-indent": [2, 2]
   },
   "globals": {
     "jest": true,
