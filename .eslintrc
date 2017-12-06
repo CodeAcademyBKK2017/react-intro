@@ -1,0 +1,37 @@
+# "off" or 0 - turn the rule off
+# "warn" or 1 - turn the rule on as a warning(doesn’ t affect exit code)
+# "error" or 2 - turn the rule on as an error(exit code is 1 when triggered)
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": ["error", "tab"],
+	"no-console": 2,
+	"react/prop-types": 2,
+	"react/jsx-uses-vars": 2,
+	"react/jsx-no-bind": 2,
+	"react/jsx-no-duplicate-props": 2,
+	"react/self-closing-comp": 2,
+	"react/no-direct-mutation-state": 2,
+	"react/jsx-indent": [2, 2],
+  },
+  "globals": {
+	"test": true,
+	"it": true,
+	"describe": true,
+    "expect": true,
+	"jest": true,
+	"document": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
