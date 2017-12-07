@@ -1,27 +1,30 @@
-import React from 'react';
-import Row from '../Row/Row.component'
+import React from "react";
+import Row from "../Row/Row.component";
+import PropTyle from "prop-types";
 
-class Hello extends Component{
+class Hello extends React.Component {
 
-    cellclickHandler=(celData)=>{
-        return()=>{
-            console.log('cellclickHandler',celData);
-        }
-        
+    cellclickHandler=(celData) => () => {
+
+        console.log("cellclickHandler", celData);
+        return celData;
+
     }
-    render(){
 
-        const data = this.props.data;
-        console.log(data);
-        const rows = data.map((row,i)=>{
-            return <Row class='row' data ={row.value} key = {row.key} cellclickHandler={this.cellclickHandler}/> 
-        })
-        return(
+    render () {
+
+        const {data} = this.props;
+        const rows = data.map((row) => <Row class="row" data ={row.value}
+            key = {row.key} cellclickHandler={this.cellclickHandler}/>);
+        return (
             <div>
                 {rows}
 
-            </div> 
-        )
+            </div>
+        );
+
     }
+
 }
+Hello.propTypes = {"data": PropTyle.array.isRequired};
 export default Hello;

@@ -23,8 +23,7 @@ exports[`Row 1`] = `
       }
     }
   >
-    d
-     
+    o
   </div>
   <div
     onClick={undefined}
@@ -41,8 +40,7 @@ exports[`Row 1`] = `
       }
     }
   >
-    a
-     
+    x
   </div>
   <div
     onClick={undefined}
@@ -59,8 +57,7 @@ exports[`Row 1`] = `
       }
     }
   >
-    t
-     
+    o
   </div>
 </div>
 `;
