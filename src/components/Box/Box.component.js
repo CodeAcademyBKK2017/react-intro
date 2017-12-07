@@ -61,25 +61,35 @@ class Box extends Component {
 		]
 	}
 	
+	findCellData = (state, cellId) => {
+		let cellData;
+		
+		for(let i = 0 ; i < state.rowDataArray.length ; i++) {
+			const rowData = state.rowDataArray[i];
+			const targetCell = rowData.cellDataArray.find((element) => {
+				return element.cellId === cellId && element.data === "";
+			});
+
+			if(targetCell) {
+				cellData = targetCell;
+				break;
+			}
+		}
+
+		return cellData;
+	}
+
 	cellClickHandler = (cellId) => () => {
 		if(this.state.turn > 9) {
 			console.log('GAME END : can not play anymore');
 		}
 		else {
 			const newState = this.state;
-	
-			for(let i = 0 ; i < newState.rowDataArray.length ; i++) {
-				const rowData = newState.rowDataArray[i];
-				const targetCell = rowData.cellDataArray.find((element) => {
-					return element.cellId === cellId && element.data === "";
-				});
-	
-				if(targetCell) {
-					targetCell.data = (this.state.turn % 2 === 0) ? "O" : "X";
-					newState.turn++;
-					this.setState(newState);
-					break;
-				}
+			const cellData = this.findCellData(newState, cellId);
+			if(cellData) {
+				cellData.data = (newState.turn % 2 === 0) ? "O" : "X";
+				newState.turn++;
+				this.setState(newState);
 			}
 		}
 	};
