@@ -29,21 +29,26 @@ const bData = [
     'id': '333'
   }
 ];
-test('Box: snapshot test', () => {
+describe('Box group Test', () => {
 
-  const snapshot = renderer.create(<Box boxData={bData}/>).toJSON();
-  expect(snapshot).toMatchSnapshot();
+  test('Box: snapshot test', () => {
 
-});
-test('Box: createRow test', () => {
+    const snapshot = renderer.create(<Box boxData={bData}/>).toJSON();
+    expect(snapshot).toMatchSnapshot();
 
-  const box = shallow(<Box boxData={bData} />).instance();
-  const rowData = {
-    'items': ['yo'],
-    'id': 'yoyo'
-  };
-  const expected = <Row cellData={['yo']} key='yoyo' cellclickHandler={box.cellclickHandler} />;
-  expect(box.createRow(rowData)).toEqual(expected);
+  });
+
+  test('Box: createRow test', () => {
+
+    const box = shallow(<Box boxData={bData} />).instance();
+    const rowData = {
+      'items': ['yo'],
+      'id': 'yoyo'
+    };
+    const expected = <Row cellData={['yo']} key='yoyo' cellclickHandler={box.cellclickHandler} />;
+    expect(box.createRow(rowData)).toEqual(expected);
+
+  });
 
 });
 
