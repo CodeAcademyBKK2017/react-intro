@@ -14,6 +14,8 @@
     "build": "react-scripts build",
     "test": "jest --coverage",
     "eject": "react-scripts eject",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint --fix ./src/**/*.js",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
     "prepush": "npm run test",

@@ -5,7 +5,8 @@ import renderer from 'react-test-renderer';
 test('Cell: snapshot test', () => {
 
   const cell = 'X';
-  const snapshot = renderer.create(<Cell value={cell} cellclickHandler={noop}/>).toJSON();
+  const snapshot = renderer.create(<Cell value={cell}
+    cellclickHandler={noop}/>).toJSON();
   expect(snapshot).toMatchSnapshot();
 
 });

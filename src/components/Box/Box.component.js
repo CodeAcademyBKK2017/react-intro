@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Row from '../Row/Row.component';
+
 class Box extends Component {
 
   cellclickHandler (cellValue) {
@@ -9,10 +10,13 @@ class Box extends Component {
 
   }
 
+  createRow = (rowData) => <Row cellData={rowData.items}
+    key={rowData.id} cellclickHandler={this.cellclickHandler} />
+
   render () {
 
     const {boxData} = this.props;
-    const rows = boxData.map((rowData) => <Row cellData={rowData.items} key={rowData.id} cellclickHandler={this.cellclickHandler}/>);
+    const rows = boxData.map(this.createRow);
     return (
       <div>
         {rows}
