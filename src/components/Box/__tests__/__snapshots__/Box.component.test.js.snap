@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box 1`] = `
+exports[`Box Component render correctly 1`] = `
 <div>
   <div>
     <div

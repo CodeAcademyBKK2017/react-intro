@@ -27,7 +27,8 @@
 	"describe": true,
     "expect": true,
 	"jest": true,
-	"document": true
+	"document": true,
+	"beforeEach": true
   },
   "plugins": [
     "react"
