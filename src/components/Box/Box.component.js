@@ -8,11 +8,13 @@ class Box extends Component {
 		return text;
 	};
 
+	mapRowWithKey = (element) => {
+		return <Row key={element.rowId} cellData={element.data} cellClickHandler={this.cellClickHandler}/>
+	}
+
 	render() {
 		const {rowData} = this.props;
-		const rowCompArray = rowData.map((element) => {
-			return <Row key={element.rowId} cellData={element.data} cellClickHandler={this.cellClickHandler}/>
-		});
+		const rowCompArray = rowData.map(this.mapRowWithKey);
 
 		return (
 			<div>
