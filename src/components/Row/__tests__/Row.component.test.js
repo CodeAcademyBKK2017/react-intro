@@ -3,7 +3,6 @@ import Row from '../Row.component';
 import noop from 'lodash/noop';
 import renderer from 'react-test-renderer';
 test('Row: snapshot test', () => {
-
   const cData = [
     'X',
     'O',
@@ -12,5 +11,4 @@ test('Row: snapshot test', () => {
   const snapshot = renderer.create(<Row cellData={cData}
     cellclickHandler={noop}/>).toJSON();
   expect(snapshot).toMatchSnapshot();
-
 });
