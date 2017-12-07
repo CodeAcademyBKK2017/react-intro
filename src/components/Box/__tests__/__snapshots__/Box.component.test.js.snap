@@ -1,9 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box Snapshot Test 1`] = `
+exports[`Button component Box Snapshot Test 1`] = `
 <div>
-  <div />
-  <div />
-  <div />
+  <div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+    <div
+      className="Cell"
+      onClick={undefined}
+      style={
+        Object {
+          "backgroundColor": "red",
+        }
+      }
+    >
+       
+    </div>
+  </div>
 </div>
 `;

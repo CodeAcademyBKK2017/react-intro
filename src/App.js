@@ -8,11 +8,9 @@ class App extends Component {
     player: 1
   }
   
-  cellClickHandleCallBack = (arg,key) => () => {
+  cellClickHandleCallBack = (arg) => () => {
     const {player} = this.state;
     player === 1 ? this.setState({player: 2}) : this.setState({player: 1});
-    console.log(player);
-    console.log(key);
   }
   render () {
     let TwoD = [
@@ -32,7 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-intro">
-          <Box Data={TwoD} key={uuid()} callHandle={this.cellClickHandleCallBack}/>
+          <Box Data={TwoD} callHandle={this.cellClickHandleCallBack}/>
         </div>
       </div>
     );

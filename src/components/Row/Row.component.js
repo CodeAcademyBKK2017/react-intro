@@ -7,7 +7,7 @@ class Row extends Component {
   render () {
     const {cellData,clickHandle} = this.props;
 
-    const cell = cellData.map((rawData,i) => <Cell value={cellData[0]} color="black" clickHandle={clickHandle}/>);
+    const cell = cellData.map((rawData,i) => <Cell value={cellData[0]} key={i} color="black" clickHandle={clickHandle}/>);
       
     return (
       <div>
