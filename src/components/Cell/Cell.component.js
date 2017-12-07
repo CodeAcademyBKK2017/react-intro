@@ -1,18 +1,19 @@
-import "./Cell.style.css";
-import PropTypes from "prop-types";
-import React from "react";
-import noop from "lodash/noop";
+import './Cell.style.css';
+import PropTypes from 'prop-types';
+import React from 'react';
+import noop from 'lodash/noop';
 const Cell = ({value, cellclickHandler}) =>
-    <div className="Cell" onClick={cellclickHandler(value.cell)}>{value.cell}</div>;
+  <div className='Cell' onClick={cellclickHandler(value)}>{value}</div>;
 Cell.propTypes = {
-    "cellclickHandler": PropTypes.func.isRequired,
-    "value": PropTypes.oneOf([
-        "X",
-        "O"
-    ]).isRequired
+  'cellclickHandler': PropTypes.func.isRequired,
+  'value': PropTypes.oneOf([
+    'X',
+    'O'
+  ]).isRequired
 };
 Cell.defaultProps = {
-    "cellclickHandler": noop,
-    "value": ""
+  'cellclickHandler': noop,
+  'value': ''
 };
+
 export default Cell;

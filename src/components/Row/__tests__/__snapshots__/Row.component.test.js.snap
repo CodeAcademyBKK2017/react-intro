@@ -5,14 +5,20 @@ exports[`Row: snapshot test 1`] = `
   <div
     className="Cell"
     onClick={undefined}
-  />
+  >
+    X
+  </div>
   <div
     className="Cell"
     onClick={undefined}
-  />
+  >
+    O
+  </div>
   <div
     className="Cell"
     onClick={undefined}
-  />
+  >
+    X
+  </div>
 </div>
 `;
