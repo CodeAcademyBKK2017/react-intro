@@ -13,7 +13,10 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/"
   },
   "devDependencies": {
     "babel": "^6.23.0",

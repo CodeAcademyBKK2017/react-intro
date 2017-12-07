@@ -10,6 +10,7 @@ class Box extends Component {
 
   cellClickHandler = (title) => () => {
     this.setState({lastClick: title});
+    console.log('asdf');
   }
 
   render () {
