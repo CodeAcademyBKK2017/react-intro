@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 class Box extends Component {
-  cellclickHandler (cellValue) {
-    return () => {};
-  }
+  cellclickHandler = (cellValue) => () => cellValue 
 
   createRow = (rowData) => <Row cellData={rowData.items}
     key={rowData.id} cellclickHandler={this.cellclickHandler} />

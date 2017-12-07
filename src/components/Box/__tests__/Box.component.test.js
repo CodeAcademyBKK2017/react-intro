@@ -30,16 +30,16 @@ const bData = [
   }
 ];
 describe('Box group Test', () => {
-
   test('Box: snapshot test', () => {
-
     const snapshot = renderer.create(<Box boxData={bData}/>).toJSON();
     expect(snapshot).toMatchSnapshot();
-
   });
-
+  test('Box: cellClickHandler test', () => {
+    const box = shallow(<Box boxData={bData} />).instance();
+    const cellHandler = box.cellclickHandler('x');
+    expect(cellHandler()).toEqual('x');
+  });
   test('Box: createRow test', () => {
-
     const box = shallow(<Box boxData={bData} />).instance();
     const rowData = {
       'items': ['yo'],
@@ -47,8 +47,6 @@ describe('Box group Test', () => {
     };
     const expected = <Row cellData={['yo']} key='yoyo' cellclickHandler={box.cellclickHandler} />;
     expect(box.createRow(rowData)).toEqual(expected);
-
   });
-
 });
 
