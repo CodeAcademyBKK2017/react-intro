@@ -5,7 +5,7 @@ import Cell from '../Cell/Cell.component';
 import noop from 'lodash/noop';
 
 const Row = ({data, cellClickHandler}) => {
-  const cells = data.map((cellData) => <Cell title={cellData.title} key={cellData.id} cellClickHandler={this.cellClickHandler} />);
+  const cells = data.map((cellData) => <Cell title={cellData.title} key={cellData.id} cellClickHandler={cellClickHandler} />);
   return (<div>{cells}</div>);
 };
 

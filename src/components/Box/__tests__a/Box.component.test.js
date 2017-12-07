@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import Box from './components/Box/Box.component';
-import './App.css';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Box from '../Box.component';
 import uuid from 'uuid';
 
-class App extends Component {
-  data = [
+test('Box: Box snapshot', () => {
+  const data = [
     {id: uuid(), items: [
       {id: uuid(), title: 'o'},
       {id: uuid(), title: 'x'},
@@ -22,13 +22,6 @@ class App extends Component {
     ]},
   ];
 
-  render () {
-    return (
-      <div className="App">
-        <Box data={this.data} />
-      </div>
-    );
-  }
-}
-
-export default App;
+  const snapshot = renderer.create(<Box data={data} />).toJSON();
+  expect(snapshot).toMatchSnapshot();
+});
