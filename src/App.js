@@ -3,22 +3,44 @@ import './App.css';
 import Box from './Component/Box/Box.component';
 import uuid from 'uuid';
 
-function cellOnClick (arg) {
-  console.log('Cell onClick :',arg);
-}
-
 class App extends Component {
-  valueData = [
-    {value: ['x','o','o'],key: uuid()},
-    {value: ['x','x','o'],key: uuid()},
-    {value: ['o','x','o'],key: uuid()}
-  ];
-  
+  state = {
+    turn: true,
+    boxData: [
+      {value: ['','',''],key: uuid()},
+      {value: ['','',''],key: uuid()},
+      {value: ['','',''],key: uuid()}
+    ]
+  };
+  cellOnClick = (row,cell) => () => {
+    if (this.state.boxData[row].value[cell] === '') {
+      let newBoxData = [...this.state.boxData];
+      if (this.state.turn) {
+        newBoxData[row].value[cell] = 'O';
+        this.setState({turn: false});
+      } else {
+        newBoxData[row].value[cell] = 'x';
+        this.setState({turn: true});
+      }
+      this.setState({boxData: newBoxData});
+    }
+  }
+  resetBoxData = () => {
+    this.setState({
+      turn: true,
+      boxData: [
+        {value: ['','',''],key: uuid()},
+        {value: ['','',''],key: uuid()},
+        {value: ['','',''],key: uuid()}
+      ]
+    });
+  }
   render () {
     return (
       <div className="App">
         <p>My Tictagtoe</p>
-        <Box valueData = {this.valueData} cellOnClick = {cellOnClick}/>
+        <Box valueData = {this.state.boxData} cellOnClick = {this.cellOnClick}/>
+        <button onClick = {this.resetBoxData}><p>Reset</p></button>
       </div>
     );
   }
