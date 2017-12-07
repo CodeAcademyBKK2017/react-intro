@@ -45,7 +45,8 @@
       "react/jsx-no-bind": 2,
       "react/jsx-no-duplicate-props": 2,
       "react/self-closing-comp": 2,
-      "react/no-direct-mutation-state": 2
+      "react/no-direct-mutation-state": 2,
+      "react/no-did-mount-set-state": 2
     },
     "globals": {
         "test": true,

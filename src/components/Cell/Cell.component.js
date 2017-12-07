@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 
-const Cell = ({cellClickHandler, title}) => {
+const Cell = ({cellClickHandler, data}) => {
   let btnType = '';
-  if (title.toUpperCase() === 'O') btnType = 'btn-o';
-  if (title.toUpperCase() === 'X') btnType = 'btn-x';
+  if (data.title.toUpperCase() === 'O') btnType = 'btn-o';
+  if (data.title.toUpperCase() === 'X') btnType = 'btn-x';
 
-  return <div onClick={cellClickHandler(title)} className={`btn ${btnType}`}>{title.toUpperCase()}</div>;
+  return <div onClick={cellClickHandler(data)} className={`btn ${btnType}`}>{data.title.toUpperCase()}</div>;
 };
 
 Cell.propTypes = {
-  title: PropTypes.string,
+  data: PropTypes.object,
   cellClickHandler: PropTypes.func.isRequired
 };
 Cell.defaultProps = {
-  title: '',
+  data: {title: '',id: ''},
   cellClickHandler: noop
 };
 
