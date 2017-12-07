@@ -7,9 +7,12 @@ import renderer from 'react-test-renderer';
 describe('Button component', () => {
   it('cellClickHandleCallBack it will work collectly', () => {
     const app = shallow(<App />).instance();
-    app.cellClickHandleCallBack('o');
+    app.cellClickHandleCallBack('o')();
+    expect(app.state.player).toEqual(2); 
+    app.cellClickHandleCallBack('X')();
     expect(app.state.player).toEqual(1); 
   });
+  
 
   it('App Snapshot Test', () => {
     // const box = shallow(<Box data={mock} />).instance();
