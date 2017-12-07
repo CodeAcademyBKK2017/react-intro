@@ -3,22 +3,20 @@ import Cell from '../Cell/Cell.component';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 
-const Row = (props) => {
-  return <div>
-    <Cell text={props.cellData[0]} clickHandler={props.clickHandler}/>
-    <Cell text={props.cellData[1]} clickHandler={props.clickHandler}/>
-    <Cell text={props.cellData[2]} clickHandler={props.clickHandler}/>
-  </div>
-};
+const Row = (props) => <div>
+  <Cell text={props.cellData[0]} cellClickHandle = {props.cellClickHandle}/>
+  <Cell text={props.cellData[1]} cellClickHandle = {props.cellClickHandle}/>
+  <Cell text={props.cellData[2]} cellClickHandle = {props.cellClickHandle}/>
+</div>;
 
 Row.propTypes = {
-  text : PropTypes.string.isRequired,
-  clickHandler : PropTypes.func.isRequired
+  cellData: PropTypes.array.isRequired,
+  cellClickHandle: PropTypes.func.isRequired
 };
 
 Row.defaultProps = {
-  text: '',
-  clickHandler: noop
-}
+  cellData: [],
+  cellClickHandle: noop
+};
 
-export default Row
+export default Row;

@@ -2,7 +2,7 @@ import React from 'react';
 import Cell from '../Cell.component';
 import renderer from 'react-test-renderer';
 
-test('Box Snapshot Test',()=>{
-  const tree = renderer.create(<Cell onClick = {jest.fn()} text={'x'} color='#2196F3'/>);
+test('Cell Snapshot Test',() => {
+  const tree = renderer.create(<Cell text={'x'}/>);
   expect(tree).toMatchSnapshot();
-})
+});
