@@ -1,41 +1,27 @@
 {
     "parser": "babel-eslint",
     "rules": {
-        "no-undef": 2,
-        "semi": 2,
-        "space-before-blocks": 2,
-        "space-before-function-paren": 2,
-        "space-in-parens": 2,
-        "space-infix-ops": 2,
-        "space-unary-ops": 2,
-        "spaced-comment": 2,
-        "rest-spread-spacing": 2,
-        "semi-spacing": 2,
-        "no-unneeded-ternary": 2,
-        "eqeqeq": 2,
-        "dot-location": 2,
-        "no-extra-bind": 2,
-        "keyword-spacing": 2,
-        "key-spacing": 2,
-        "indent": ["error", 2],
-        "func-call-spacing": 2,
-        "array-bracket-spacing": 2,
-        "block-spacing": 2,
-        "brace-style": 2,
-        "arrow-body-style": 2,
-        "arrow-parens": 2,
-        "arrow-spacing": 2,
-        "object-curly-spacing": 2,
-        "quotes": ["error", "single"],
-        "no-console": 2
-    
+        "semi": "error",
+        "linebreak-style":0,
+        "no-console":"off",
+        "one-var": [2, "never"],
+        "no-empty-function":"off",
+        "sort-imports": ["off", {
+            "ignoreCase": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }],
+          "sort-keys": ["off"],
+          "no-undef":"off",
+          "no-unused-vars":"off",
+          "no-magic-numbers":"off",
+          "class-methods-use-this":"off"
     },
     "globals": {
-        "test": true,
-        "expect": true,
-        "jest": true,
-        "describe": true,
-        "it": true,
-        "document": true
-    }
-}
+        "it" : true,
+        "describe" : true,
+        "expect" :true,
+        "test":true
+    },
+    "plugins": ["react"],"extends": ["eslint:all", "plugin:react/recommended"]
+ }

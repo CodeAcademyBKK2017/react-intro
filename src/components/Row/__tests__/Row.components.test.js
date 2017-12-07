@@ -1,9 +1,16 @@
-import renderer from 'react-test-renderer';
-import React from 'react';
-import Row from '../Row.components';
+import renderer from "react-test-renderer";
+import React from "react";
+import Row from "../Row.components";
 
-test('Box: snapshot test', () => {
-  const titacto =  ['O', 'X', 'O'];
-  const snapshot = renderer.create(<Row cellData={ titacto} cellClickHandler={() => {}}/>);
-  expect(snapshot).toMatchSnapshot();
+test("Box: snapshot test", () => {
+
+    const titacto = [
+        "O",
+        "X",
+        "O"
+    ];
+    const snapshot = renderer.create(<Row cellData={ titacto}
+        cellClickHandler={() => {}}/>);
+    expect(snapshot).toMatchSnapshot();
+
 });
