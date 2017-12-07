@@ -5,23 +5,25 @@ import noop from 'lodash/noop';
 
 class Cell extends Component {
 	render() {
-		const {cellClickHandler, text} = this.props;
+		const {cellClickHandler, data, cellId} = this.props;
 		
 		return (
-			<div className="Cell" onClick={cellClickHandler(text)}>
-				{this.props.text}
+			<div className="Cell" onClick={cellClickHandler(cellId)}>
+				{data}
 			</div>
 		);
 	}
 }
 
 Cell.propTypes = {
-	text: PropTypes.oneOf(['O', 'X']).isRequired,
+	cellId: PropTypes.string.isRequired,
+	data: PropTypes.oneOf(['O', 'X', '']).isRequired,
 	cellClickHandler: PropTypes.func.isRequired
 };
 
 Cell.defaultProps = {
-	text: 'O',
+	cellId: "0",
+	data: '',
 	cellClickHandler: noop
 };
 
