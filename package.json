@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint": "^4.12.1",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react-app": "^1.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
@@ -16,6 +19,8 @@
     "test:update": "jest --updateSnapshot",
     "eject": "react-scripts eject",
     "prepush": "npm run test",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint ./src/**/*.js -- --fix",
     "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
   },
   "devDependencies": {

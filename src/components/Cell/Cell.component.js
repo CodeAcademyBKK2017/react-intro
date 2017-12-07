@@ -5,14 +5,14 @@ import noop from 'lodash/noop';
 
   
 const Cell = (props) => {
-  const color = props.value === 'O'?'blue':'red';    
+  const color = props.value === 'O' ? 'blue' : 'red';    
   return (
-    <div className="Cell" style={{backgroundColor:color}} onClick={props.clickHandle(props.value)}>{props.value}</div>
+    <div className="Cell" style={{backgroundColor: color}} onClick={props.clickHandle(props.value)}>{props.value}</div>
   );
-}
+};
 
     
-Cell.proptTypes = {
+Cell.propTypes = {
   value: ProptTypes.string.isRequired,
   clickHandle: ProptTypes.func.isRequired
 };
@@ -22,4 +22,4 @@ Cell.defaultProps = {
   clickHandle: noop
 };
 
-export default Cell
+export default Cell;

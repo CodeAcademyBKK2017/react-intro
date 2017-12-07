@@ -5,16 +5,16 @@ import noop from 'lodash/noop';
 
 const Box = ({Data,callHandle}) => {
 
-  const row = Data.map((rawData,i)=>{
-    console.log(rawData)
-    return <Row cellData={rawData.items} key={rawData.rowkeys} clickHandle={callHandle}/>
-  })
+  const row = Data.map((rawData,i) => {
+    console.log(rawData);
+    return <Row cellData={rawData.items} key={rawData.rowkeys} clickHandle={callHandle}/>;
+  });
   return (<div>
-          {row}
-    </div>);
-}
+    {row}
+  </div>);
+};
 
-Box.proptTypes = {
+Box.propTypes = {
   Data: ProptTypes.array.isRequired,
   callHandle: ProptTypes.func.isRequired
 };
@@ -24,4 +24,4 @@ Box.defaultProps = {
   callHandle: noop
 };
 
-export default Box
+export default Box;
