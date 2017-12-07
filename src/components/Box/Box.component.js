@@ -4,15 +4,19 @@ import Row from '../Row/Row.component';
 import PropTypes from 'prop-types';
 
 class Box extends Component {
-    cellClickHandler = (title) => () => {
-    //   console.log('Cell click: ', title);
-    }
+  state = {
+    lastClick: null
+  }
 
-    render () {
-      const {data} = this.props;
-      const rows = data.map((rowData) => <Row data={rowData.items} key={rowData.id} cellClickHandler={this.cellClickHandler} />);
-      return (<div>{rows}</div>);
-    }
+  cellClickHandler = (title) => () => {
+    this.setState({lastClick: title});
+  }
+
+  render () {
+    const {data} = this.props;
+    const rows = data.map((rowData) => <Row data={rowData.items} key={rowData.id} cellClickHandler={this.cellClickHandler} />);
+    return (<div>{rows}</div>);
+  }
 }
 
 Box.propTypes = {
