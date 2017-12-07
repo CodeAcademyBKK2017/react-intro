@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import noop from "lodash/noop";
 
 const Row = ({cellData, cellClickHandler}) => {
-
     const style = {"marginTop": "44px"};
     return (
         <div style={style}>
@@ -15,7 +14,6 @@ const Row = ({cellData, cellClickHandler}) => {
             <Cell name={ cellData[2] } cellClickHandler={cellClickHandler}/>
         </div>
     );
-
 };
 
 Row.propTypes = {

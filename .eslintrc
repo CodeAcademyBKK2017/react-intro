@@ -15,7 +15,8 @@
           "no-undef":"off",
           "no-unused-vars":"off",
           "no-magic-numbers":"off",
-          "class-methods-use-this":"off"
+          "class-methods-use-this":"off",
+          "padded-blocks": ["error", "never"]
     },
     "globals": {
         "it" : true,

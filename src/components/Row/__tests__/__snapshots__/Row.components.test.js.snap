@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box: snapshot test 1`] = `
+exports[`Row: snapshot test 1`] = `
 <div
   style={
     Object {

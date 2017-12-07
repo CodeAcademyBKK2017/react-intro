@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App: snapshot test 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="/Users/chaowalit.kon/Documents/learning/react/reactapp/bankapp/src/logo.svg"
+    />
+    <h1
+      className="App-title"
+    >
+      Welcome to React
+    </h1>
+  </header>
+  <p
+    className="App-intro"
+  >
+    To get started, edit 
+    <code>
+      src/App.js
+    </code>
+     and save to reload.
+  </p>
+  <div>
+    <div
+      style={
+        Object {
+          "marginTop": "44px",
+        }
+      }
+    >
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        O
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        X
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        O
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "44px",
+        }
+      }
+    >
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        X
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        O
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        O
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "44px",
+        }
+      }
+    >
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        X
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        X
+      </div>
+      <div
+        className="cell-box"
+        onClick={[Function]}
+      >
+        O
+      </div>
+    </div>
+  </div>
+</div>
+`;

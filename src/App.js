@@ -5,43 +5,33 @@ import Box from "./components/Box/Box.components";
 import uuid from "uuid";
 
 class App extends Component {
-
     render () {
-
-    /*
-     * Const a = <Hello name="Bank"/>
-     * const b = <Hello name="Chao"/>
-     * return (
-     *   [a,b]
-     * );
-     */
-        const titacto =
-    [
-        {
-            "arr": [
-                "O",
-                "X",
-                "O"
-            ],
-            "key": uuid()
-        },
-        {
-            "arr": [
-                "X",
-                "O",
-                "O"
-            ],
-            "key": uuid()
-        },
-        {
-            "arr": [
-                "X",
-                "X",
-                "O"
-            ],
-            "key": uuid()
-        }
-    ];
+        const titacto = [
+            {
+                "arr": [
+                    "O",
+                    "X",
+                    "O"
+                ],
+                "key": uuid()
+            },
+            {
+                "arr": [
+                    "X",
+                    "O",
+                    "O"
+                ],
+                "key": uuid()
+            },
+            {
+                "arr": [
+                    "X",
+                    "X",
+                    "O"
+                ],
+                "key": uuid()
+            }
+        ];
         return (
             <div className="App">
                 <header className="App-header">
@@ -56,9 +46,7 @@ class App extends Component {
 
             </div>
         );
-
     }
-
 }
 
 
