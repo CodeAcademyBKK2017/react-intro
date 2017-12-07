@@ -18,11 +18,11 @@ exports[`Row Snapshot Test 1`] = `
     onClick={undefined}
     style={
       Object {
-        "backgroundColor": "red",
+        "backgroundColor": "blue",
       }
     }
   >
-    X
+    O
   </div>
   <div
     className="Cell"
