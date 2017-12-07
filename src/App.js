@@ -18,11 +18,11 @@ class App extends Component {
     //   []
     // ];
     const boxData = [
-      [uuid().toString(), [[uuid().toString(), 'o'], [uuid().toString(), 'x'], [uuid().toString(), 'o']]],
-      [uuid().toString(), [[uuid().toString(), 'o'], [uuid().toString(), 'x'], [uuid().toString(), 'x']]],
-      [uuid().toString(), [[uuid().toString(), 'x'], [uuid().toString(), 'x'], [uuid().toString(), 'o']]],
-      [uuid().toString(), [[uuid().toString(), 'x'], [uuid().toString(), 'x'], [uuid().toString(), 'x']]],
-      [uuid().toString(), [[uuid().toString(), 'x'], [uuid().toString(), 'o'], [uuid().toString(), 'x'], [uuid().toString(), 'o'], [uuid().toString(), 'o']]]
+      [uuid(), [[uuid(), 'o'], [uuid(), 'x'], [uuid(), 'o']]],
+      [uuid(), [[uuid(), 'o'], [uuid(), 'x'], [uuid(), 'x']]],
+      [uuid(), [[uuid(), 'x'], [uuid(), 'x'], [uuid(), 'o']]],
+      [uuid(), [[uuid(), 'x'], [uuid(), 'x'], [uuid(), 'x']]],
+      [uuid(), [[uuid(), 'x'], [uuid(), 'o'], [uuid(), 'x'], [uuid(), 'o'], [uuid(), 'o']]]
     ];
     return (
       <div>
