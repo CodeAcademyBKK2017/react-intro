@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
@@ -10,9 +11,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

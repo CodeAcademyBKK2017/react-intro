@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Row: row snapshot 1`] = `
+exports[`Row: snapshot test 1`] = `
 <div>
   <div
-    className="btn btn-o"
-    onClick={undefined}
-  >
-    O
-  </div>
-  <div
-    className="btn btn-x"
+    className="Cell"
     onClick={undefined}
   >
     X
   </div>
   <div
-    className="btn btn-o"
+    className="Cell"
     onClick={undefined}
   >
     O
+  </div>
+  <div
+    className="Cell"
+    onClick={undefined}
+  >
+    X
   </div>
 </div>
 `;

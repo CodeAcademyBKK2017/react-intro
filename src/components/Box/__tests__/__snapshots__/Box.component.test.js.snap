@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box: Box snapshot 1`] = `
+exports[`Box group Test Box: snapshot test 1`] = `
 <div>
   <div>
     <div
-      className="btn btn-o"
+      className="Cell"
       onClick={[Function]}
     >
       O
     </div>
     <div
-      className="btn btn-x"
+      className="Cell"
       onClick={[Function]}
     >
       X
     </div>
     <div
-      className="btn btn-o"
+      className="Cell"
       onClick={[Function]}
     >
       O
@@ -24,39 +24,39 @@ exports[`Box: Box snapshot 1`] = `
   </div>
   <div>
     <div
-      className="btn btn-x"
+      className="Cell"
       onClick={[Function]}
     >
       X
     </div>
     <div
-      className="btn btn-o"
+      className="Cell"
       onClick={[Function]}
     >
       O
     </div>
     <div
-      className="btn btn-x"
+      className="Cell"
       onClick={[Function]}
     >
-      X
+      O
     </div>
   </div>
   <div>
     <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
-    </div>
-    <div
-      className="btn btn-x"
+      className="Cell"
       onClick={[Function]}
     >
       X
     </div>
     <div
-      className="btn btn-o"
+      className="Cell"
+      onClick={[Function]}
+    >
+      X
+    </div>
+    <div
+      className="Cell"
       onClick={[Function]}
     >
       O

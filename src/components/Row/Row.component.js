@@ -1,35 +1,20 @@
-
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Cell from '../Cell/Cell.component';
+import PropTypes from 'prop-types';
+import React from 'react';
 import noop from 'lodash/noop';
 
-class Row extends Component {
-  constructor (props) {
-    super(props);
-    
-  }
-
-  render () {
-    const {data, cellClickHandler} = this.props;
-
-    return (
-      <div>
-        <Cell title={data[0]} cellClickHandler={cellClickHandler} />
-        <Cell title={data[1]} cellClickHandler={cellClickHandler} />
-        <Cell title={data[2]} cellClickHandler={cellClickHandler} />
-      </div>
-    );
-  }
-}
-
+const Row = ({cellData, cellclickHandler}) =>
+  <div>
+    <Cell value={cellData[0]} cellclickHandler={cellclickHandler}/>
+    <Cell value={cellData[1]} cellclickHandler={cellclickHandler}/>
+    <Cell value={cellData[2]} cellclickHandler={cellclickHandler}/>
+  </div>;
 Row.propTypes = {
-  cellClickHandler: PropTypes.func.isRequired,
-  data: PropTypes.array.isRequired
+  'cellclickHandler': PropTypes.func.isRequired,
+  'cellData': PropTypes.array.isRequired
 };
-
 Row.defaultProps = {
-  cellClickHandler: noop
+  'cellclickHandler': noop,
+  'cellData': ''
 };
-
 export default Row;

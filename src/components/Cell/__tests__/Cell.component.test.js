@@ -1,13 +1,12 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import Cell from '../Cell.component';
+import React from 'react';
+import noop from 'lodash/noop';
+import renderer from 'react-test-renderer';
+test('Cell: snapshot test', () => {
 
-test('Cell: title o', () => {
-    const snapshot = renderer.create(<Cell title='o'/>).toJSON();
-    expect(snapshot).toMatchSnapshot();
-});
+  const cell = 'X';
+  const snapshot = renderer.create(<Cell value={cell}
+    cellclickHandler={noop}/>).toJSON();
+  expect(snapshot).toMatchSnapshot();
 
-test('Cell: title x', () => {
-    const snapshot = renderer.create(<Cell title='x'/>).toJSON();
-    expect(snapshot).toMatchSnapshot();
 });

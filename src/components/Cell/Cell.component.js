@@ -1,33 +1,22 @@
-import React, {Component} from 'react';
+import './Cell.style.css';
 import PropTypes from 'prop-types';
+import React from 'react';
 import noop from 'lodash/noop';
 
-class Cell extends Component {
-  constructor (props) {
-    super(props);
-    
-  }
 
-  render () {
-    const {cellClickHandler,title} = this.props;
+const Cell = ({value, cellclickHandler}) => 
+  <div className='Cell' onClick={cellclickHandler(value)}>{value.cell_state}</div>;
 
-    let btnType = '';
-    if (title.toUpperCase() === 'O') btnType = 'btn-o';
-    if (title.toUpperCase() === 'X') btnType = 'btn-x';
 
-    return (
-      <div onClick={cellClickHandler(title)} className={`btn ${btnType}`}>{title.toUpperCase()}</div>
-    );
-  }
-}
 
 Cell.propTypes = {
-  title: PropTypes.string,
-  cellClickHandler: PropTypes.func.isRequired
+  'cellclickHandler': PropTypes.func.isRequired,
+  'value': PropTypes.object.isRequired
 };
+
 Cell.defaultProps = {
-  title: '',
-  cellClickHandler: noop
+  'cellclickHandler': noop,
+  'value': ''
 };
 
 export default Cell;

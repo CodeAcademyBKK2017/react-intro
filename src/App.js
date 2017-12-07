@@ -1,26 +1,46 @@
-import React, {Component} from 'react';
-import Box from './components/Box/Box.component';
 import './App.css';
+import Box from './components/Box/Box.component';
+import React, {Component} from 'react';
 
 class App extends Component {
-  constructor (props) {
-    super(props);
-    
-  }
+
+  // bData = [
+  //   {
+  //     'items': [
+  //       'O',
+  //       'X',
+  //       'O'
+  //     ],
+  //     'id': uuid()
+  //   },
+  //   {
+  //     'items': [
+  //       'X',
+  //       'O',
+  //       'O'
+  //     ],
+  //     'id': uuid()
+  //   },
+  //   {
+  //     'items': [
+  //       'X',
+  //       'X',
+  //       'O'
+  //     ],
+  //     'id': uuid()
+  //   }
+  // ];
 
   render () {
-    const data = [
-      ['o','x','o'],
-      ['x','o','x'],
-      ['o',' ','o']
-    ];
 
     return (
-      <div className="App">
-        <Box data={data} />
+      <div>
+        <Box />
       </div>
     );
+
   }
+
 }
 
 export default App;

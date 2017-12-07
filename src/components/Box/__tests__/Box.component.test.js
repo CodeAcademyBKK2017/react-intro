@@ -1,14 +1,52 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import Box from '../Box.component';
-
-test('Box: Box snapshot', () => {
-    const data = [
-        ['o', 'x', 'o'],
-        ['x', 'o', 'x'],
-        ['o', 'x', 'o']
-    ];
-
-    const snapshot = renderer.create(<Box data={data} />).toJSON();
+import React from 'react';
+import Row from '../../Row/Row.component';
+import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
+const bData = [
+  {
+    'items': [
+      'O',
+      'X',
+      'O'
+    ],
+    'id': '111'
+  },
+  {
+    'items': [
+      'X',
+      'O',
+      'O'
+    ],
+    'id': '222'
+  },
+  {
+    'items': [
+      'X',
+      'X',
+      'O'
+    ],
+    'id': '333'
+  }
+];
+describe('Box group Test', () => {
+  test('Box: snapshot test', () => {
+    const snapshot = renderer.create(<Box boxData={bData}/>).toJSON();
     expect(snapshot).toMatchSnapshot();
+  });
+  test('Box: cellClickHandler test', () => {
+    const box = shallow(<Box boxData={bData} />).instance();
+    const cellHandler = box.cellclickHandler('x');
+    expect(cellHandler()).toEqual('x');
+  });
+  test('Box: createRow test', () => {
+    const box = shallow(<Box boxData={bData} />).instance();
+    const rowData = {
+      'items': ['yo'],
+      'id': 'yoyo'
+    };
+    const expected = <Row cellData={['yo']} key='yoyo' cellclickHandler={box.cellclickHandler} />;
+    expect(box.createRow(rowData)).toEqual(expected);
+  });
 });
+
