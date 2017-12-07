@@ -5,10 +5,15 @@ import Row from '../Row/Row.component';
 class Box extends React.Component {
   cellClickHandler = (cellData) => () => {
     console.log('cell clicked', cellData);
+    return cellData;
   }
+
+  getRow = (rowData) => <Row key={rowData[0]} rowData={rowData[1]} cellClickHandler={this.cellClickHandler} />
+  
   render () {
     const {boxData} = this.props;
-    const rowLists = boxData.map((rowData, index) => <Row key={rowData[0]} rowData={rowData[1]} cellClickHandler={this.cellClickHandler} />);
+    // const rowLists = boxData.map((rowData, index) => <Row key={rowData[0]} rowData={rowData[1]} cellClickHandler={this.cellClickHandler} />);
+    const rowLists = boxData.map(this.getRow);
     return (
       <div>
         {rowLists}
