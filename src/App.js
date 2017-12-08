@@ -16,10 +16,10 @@ class App extends Component {
     if (this.state.boxData[row].value[cell] === '') {
       let newBoxData = [...this.state.boxData];
       if (this.state.turn) {
-        newBoxData[row].value[cell] = 'O';
+        newBoxData[row].value[cell] = 'X';
         this.setState({turn: false});
       } else {
-        newBoxData[row].value[cell] = 'x';
+        newBoxData[row].value[cell] = 'O';
         this.setState({turn: true});
       }
       this.setState({boxData: newBoxData});
@@ -34,6 +34,12 @@ class App extends Component {
         {value: ['','',''],key: uuid()}
       ]
     });
+  }
+  checkWinner = () => {
+    // 00 01 02
+    // 00 11 22
+    // 00 10 20
+    // if ()
   }
   render () {
     return (
