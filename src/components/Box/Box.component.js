@@ -4,6 +4,9 @@ import Row from '../Row/Row.component';
 import cloneDeep from 'lodash/cloneDeep';
 import uuid from 'uuid';
 
+
+const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
+ 
 class Box extends Component {
   state = {
     bData: [
@@ -22,18 +25,18 @@ class Box extends Component {
     ],
     counter : 0
   }
-  cellclickHandler = (rowID, cellID) => () => {
-    const newBoxData = cloneDeep(this.state.bData);
-    const foundRow = newBoxData.find((rowData) => rowData.id === rowID);
+  cellclickHandler = (rowID, cellIndex) => () => {
+    const foundRow =  this.state.bData.find((rowData) => rowData.id === rowID);
+    const selectedRowIndex = this.state.bData.indexOf(foundRow);
+    let items = [];
     if (this.state.counter % 2 === 0) {
-      foundRow.items[cellID] = 'X';
+      items = replaceIndex(foundRow.items, cellIndex, 'X');
     } else {
-      foundRow.items[cellID] = 'O';
+      items = replaceIndex(foundRow.items, cellIndex, 'O');
     }
-    this.setState({
-      'bData' :newBoxData,
-      'counter' :  this.state.counter + 1
-    });
+    const updatedRow = {id: rowID, items};
+    const newBoxData = replaceIndex(this.state.bData, selectedRowIndex, updatedRow);
+    this.setState({'bData' :newBoxData});
   } 
 
   createRow = (rowData) => <Row cellData={rowData.items}
