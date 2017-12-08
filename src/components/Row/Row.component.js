@@ -1,17 +1,25 @@
 import React from 'react';
 import Cell from '../Cell/Cell.component';
-class Row extends React.Component{
-    render(){
-        const data = this.props.willData;
-        console.log(data);
-        const rows = data.map((rowsData,i)=>{
-            return <Cell name={rowsData} key={i} clickHandler={this.props.clickHandler}/>
-        });
-        return(
-            <div>
-                {rows}
-            </div>
-        );
-    }
+import PropTypes from 'prop-types';
+class Row extends React.Component {
+
+  render () {
+    const data = this.props.willData;
+    const rows = data.map((rowsData, index) => <Cell name={rowsData} clickHandler={this.props.clickHandler(this.props.keyRow,index)}/>);
+    return (
+      <div>
+        {rows}
+      </div>
+    );
+
+  }
+
 }
+
+
+Row.propTypes = {
+  willData: PropTypes.array.isRequired,
+  clickHandler: PropTypes.func.isRequired,
+};
+
 export default Row;
