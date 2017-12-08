@@ -3,30 +3,49 @@ import React from 'react';
 import Row from '../../Row/Row.component';
 import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
-const bData = [
-  {
-    'items': ['O', 'X', 'O'],
-    'id': '111'
-  },
-  {
-    'items': ['X', 'O', 'O'],
-    'id': '222'
-  },
-  {
-    'items': ['X', 'X', 'O'],
-    'id': '333'
-  }
-];
+
 describe('Box group Test', () => {
   test('Box: snapshot test', () => {
     const snapshot = renderer.create(<Box />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });
-  // test('Box: cellClickHandler test', () => {
-  //   const box = shallow(<Box  />).instance();
-  //   const cellHandler = box.cellclickHandler('111', 0);
-  //   expect(cellHandler()).toEqual('x');
-  // });
+  test('Box: getUpdatedCells test', () => {
+    const oldState = [
+      {'items': ['', '', ''], 'id': '111'},
+      {'items': ['', '', ''], 'id': '222'},
+      {'items': ['', '', ''], 'id': '333'}
+    ];
+    Object.freeze(oldState);
+    const expected = [
+      {'items': ['', '', ''], 'id': '111'},
+      {'items': ['', '', 'X'], 'id': '222'},
+      {'items': ['', '', ''], 'id': '333'}
+    ];
+    const box = shallow(<Box />).instance();
+    const returnedData = box.getUpdatedCells(oldState, '222', 2);
+    expect(returnedData).toEqual(expected);
+    expect(oldState[1]).toEqual({'items': ['', '', ''], 'id': '222'});
+  });
+
+  test('Box: cellClickHandler test', () => {
+    const box = shallow(<Box />).instance();
+    const expected = [
+      {
+        'items': ['', '', ''],
+        'id': '111'
+      },
+      {
+        'items': ['', '', 'X'],
+        'id': '222'
+      },
+      {
+        'items': ['', '', ''],
+        'id': '333'
+      }
+    ];
+    box.cellclickHandler('222', 2)();
+    expect(box.state.bData).not.toEqual(expected);
+  });
   test('Box: createRow test', () => {
     const box = shallow(<Box  />).instance();
     const rowData = {
@@ -37,4 +56,3 @@ describe('Box group Test', () => {
     expect(box.createRow(rowData)).toEqual(expected);
   });
 });
-

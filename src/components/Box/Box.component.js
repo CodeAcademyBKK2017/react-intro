@@ -4,6 +4,7 @@ import Row from '../Row/Row.component';
 import replaceIndex from 'replace-array-index';
 import uuid from 'uuid';
 
+
 class Box extends Component {
   state = {
     bData: [
@@ -21,13 +22,24 @@ class Box extends Component {
       }
     ]
   }
-  cellclickHandler = (rowID, cellIndex) => () => {
-    const foundRow =  this.state.bData.find((rowData) => rowData.id === rowID);
-    const selectedRowIndex = this.state.bData.indexOf(foundRow);
+
+  getUpdatedCells = (oldState, rowID, cellIndex) => {
+    const foundRow = oldState.find((rowData) => rowData.id === rowID);
+    if (!foundRow) {
+      return;
+    }
+    const selectedRowIndex = oldState.indexOf(foundRow);
     const items = replaceIndex(foundRow.items, cellIndex, 'X');
     const updatedRow = {id: rowID, items};
-    const newBoxData = replaceIndex(this.state.bData, selectedRowIndex, updatedRow);
-    this.setState({'bData' :newBoxData});
+    const newBoxData = replaceIndex(oldState, selectedRowIndex, updatedRow);
+    return newBoxData;
+  }
+
+  cellclickHandler = (rowID, cellIndex) => () => {
+    const bData = this.getUpdatedCells(this.state.bData, rowID, cellIndex);
+    if (bData) {
+      this.setState({bData});
+    }
   }
 
   createRow = (rowData) => <Row cellData={rowData.items}
