@@ -36,7 +36,7 @@ class Box extends Component {
     });
   } 
 
-  createRow = (rowData, index, array) => <Row cellData={rowData.items}
+  createRow = (rowData) => <Row cellData={rowData.items}
     key={rowData.id} rowID={rowData.id} cellclickHandler={this.cellclickHandler} />
 
   render () {

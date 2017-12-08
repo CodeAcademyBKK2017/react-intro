@@ -8,7 +8,7 @@ test('Row: snapshot test', () => {
     'O',
     'X'
   ];
-  const snapshot = renderer.create(<Row cellData={cData}
+  const snapshot = renderer.create(<Row cellData={cData} rowID={'1'}
     cellclickHandler={noop}/>).toJSON();
   expect(snapshot).toMatchSnapshot();
 });

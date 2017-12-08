@@ -4,19 +4,19 @@ exports[`Row: snapshot test 1`] = `
 <div>
   <div
     className="Cell"
-    onClick={undefined}
+    onClick={[Function]}
   >
     X
   </div>
   <div
     className="Cell"
-    onClick={undefined}
+    onClick={[Function]}
   >
     O
   </div>
   <div
     className="Cell"
-    onClick={undefined}
+    onClick={[Function]}
   >
     X
   </div>
