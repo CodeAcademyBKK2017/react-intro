@@ -20,25 +20,34 @@ class Box extends Component {
         'items':  ['', '', ''],
         'id': uuid()
       }
-    ]
+    ],
+    isXNext: true
   }
 
-  getUpdatedCells = (oldState, rowID, cellIndex) => {
+  getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
     const foundRow = oldState.find((rowData) => rowData.id === rowID);
     if (!foundRow) {
       return;
     }
     const selectedRowIndex = oldState.indexOf(foundRow);
-    const items = replaceIndex(foundRow.items, cellIndex, 'X');
+    const newCellValue = isXNext ? 'X' : 'O';
+    const items = replaceIndex(foundRow.items, cellIndex, newCellValue);
     const updatedRow = {id: rowID, items};
     const newBoxData = replaceIndex(oldState, selectedRowIndex, updatedRow);
     return newBoxData;
   }
 
+  getWinner = (boxState) => 'X' // Write logic here
+
   cellclickHandler = (rowID, cellIndex) => () => {
-    const bData = this.getUpdatedCells(this.state.bData, rowID, cellIndex);
+    const {bData, isXNext} = this.state;
+    const newbData = this.getUpdatedCells(bData, rowID, cellIndex, isXNext);
     if (bData) {
-      this.setState({bData});
+      this.setState({bData: newbData, isXNext: !isXNext});
+      const winner = this.getWinner(newbData);
+      if (winner) {
+        alert('Winner is: ' +  winner);
+      }
     }
   }
 
