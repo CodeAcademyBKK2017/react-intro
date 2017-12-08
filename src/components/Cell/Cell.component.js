@@ -5,7 +5,7 @@ import noop from 'lodash/noop';
 
 
 const Cell = ({value, cellclickHandler}) =>
-  <div className='Cell' onClick={cellclickHandler}>{value}</div>;
+  <div className='cell' onClick={cellclickHandler} >{value}</div>;
 
 
 Cell.propTypes = {
