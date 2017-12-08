@@ -6,8 +6,8 @@ import noop from 'lodash/noop';
 class Row extends Component {
 
 	mapCellWithKey = (element) => {
-		const {cellClickHandler} = this.props;
-		return <Cell key={element.cellId} cellId={element.cellId} data={element.data} cellClickHandler={cellClickHandler}/>
+		const {rowId, cellClickHandler} = this.props;
+		return <Cell key={element.cellId} rowId={rowId} cellId={element.cellId} data={element.data} cellClickHandler={cellClickHandler}/>
 	}
 
 	render() {
@@ -23,23 +23,25 @@ class Row extends Component {
 }
 
 Row.propTypes = {
+	rowId: PropTypes.number.isRequired,
 	cellDataArray: PropTypes.array.isRequired,
 	cellClickHandler: PropTypes.func.isRequired
 };
 
 Row.defaultProps = {
+	rowId: 0,
 	cellDataArray: [
 		{
-			cellId: "0",
-			data: ""
+			cellId: 0,
+			data: ''
 		},
 		{
-			cellId: "1",
-			data: ""
+			cellId: 1,
+			data: ''
 		},
 		{
-			cellId: "2",
-			data: ""
+			cellId: 2,
+			data: ''
 		}
 	],
 	cellClickHandler: noop

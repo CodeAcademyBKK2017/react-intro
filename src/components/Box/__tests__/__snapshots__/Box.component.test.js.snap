@@ -7,39 +7,19 @@ exports[`Box Component render correctly 1`] = `
       className="Cell"
       onClick={[Function]}
     >
-      O
+      
     </div>
     <div
       className="Cell"
       onClick={[Function]}
     >
-      X
+      
     </div>
     <div
       className="Cell"
       onClick={[Function]}
     >
-      O
-    </div>
-  </div>
-  <div>
-    <div
-      className="Cell"
-      onClick={[Function]}
-    >
-      X
-    </div>
-    <div
-      className="Cell"
-      onClick={[Function]}
-    >
-      O
-    </div>
-    <div
-      className="Cell"
-      onClick={[Function]}
-    >
-      O
+      
     </div>
   </div>
   <div>
@@ -47,19 +27,39 @@ exports[`Box Component render correctly 1`] = `
       className="Cell"
       onClick={[Function]}
     >
-      X
+      
     </div>
     <div
       className="Cell"
       onClick={[Function]}
     >
-      X
+      
     </div>
     <div
       className="Cell"
       onClick={[Function]}
     >
-      O
+      
+    </div>
+  </div>
+  <div>
+    <div
+      className="Cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="Cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="Cell"
+      onClick={[Function]}
+    >
+      
     </div>
   </div>
 </div>

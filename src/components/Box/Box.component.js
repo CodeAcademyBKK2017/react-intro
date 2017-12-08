@@ -1,66 +1,96 @@
 import React, { Component } from 'react';
 import Row from '../Row/Row.component';
-import uuid from 'uuid';
+// import uuid from 'uuid';
+
+const tableSize = 3;
+const startTurn = 1;
+const maxTurn = tableSize * tableSize;
+
+const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
 class Box extends Component {
 
-	state = {
-		turn: 1,
-		rowDataArray: [
-			{
-				rowId: uuid(),
-				cellDataArray: [
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					}
-				]
-			},
-			{
-				rowId: uuid(),
-				cellDataArray: [
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					}
-				]
-			},
-			{
-				rowId: uuid(),
-				cellDataArray: [
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					},
-					{
-						cellId: uuid(),
-						data: ""
-					}
-				]
-			}
-		]
-	}
+	// state = {
+	// 	turn: 1,
+	// 	rowDataArray: [
+	// 		{
+	// 			rowId: uuid(),
+	// 			cellDataArray: [
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				}
+	// 			]
+	// 		},
+	// 		{
+	// 			rowId: uuid(),
+	// 			cellDataArray: [
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				}
+	// 			]
+	// 		},
+	// 		{
+	// 			rowId: uuid(),
+	// 			cellDataArray: [
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				},
+	// 				{
+	// 					cellId: uuid(),
+	// 					data: ""
+	// 				}
+	// 			]
+	// 		}
+	// 	]
+	// }
 	
+	constructor() {
+		super();
+
+		this.state = {
+			turn: startTurn,
+			rowDataArray: []
+		};
+
+		for(let i = 0 ; i < tableSize ; i++) {
+			const rowData = {
+				rowId: i,
+				cellDataArray: []
+			};
+
+			for(let j = 0 ; j < tableSize ; j++) {
+				const cellData = {
+					cellId: j,
+					data: ''
+				};
+				rowData.cellDataArray.push(cellData);
+			}
+		}
+	}
+
 	findCellData = (state, cellId) => {
 		let cellData;
 		
@@ -79,8 +109,8 @@ class Box extends Component {
 		return cellData;
 	}
 
-	cellClickHandler = (cellId) => () => {
-		if(this.state.turn > 9) {
+	cellClickHandler = (rowId, cellId) => () => {
+		if(this.state.turn > maxTurn) {
 			console.log('GAME END : can not play anymore');
 		}
 		else {
@@ -95,7 +125,7 @@ class Box extends Component {
 	};
 
 	mapRowWithKey = (element) => {
-		return <Row key={element.rowId} cellDataArray={element.cellDataArray} cellClickHandler={this.cellClickHandler}/>
+		return <Row key={element.rowId} rowId={element.rowId} cellDataArray={element.cellDataArray} cellClickHandler={this.cellClickHandler}/>
 	}
 
 	render() {
