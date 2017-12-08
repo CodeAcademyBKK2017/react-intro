@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 import cloneDeep from 'lodash/cloneDeep';
+import replaceIndex from 'replace-array-index';
 import uuid from 'uuid';
 
 
-const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
+// const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
  
 class Box extends Component {
   state = {
