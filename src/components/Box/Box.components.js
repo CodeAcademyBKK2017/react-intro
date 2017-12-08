@@ -1,17 +1,51 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
 import Row from "../Row/Row.components";
+import uuid from "uuid";
 
 class Box extends Component {
-    cellClickHandler = (cellValue) => () => {
-        console.log("cell clicked :: ", cellValue);
-        return cellValue;
+    state = { //data
+        data: [
+            {
+                "arr": ['','',''],
+                "keyRow": uuid()
+            },
+            {
+                "arr": ['','',''],
+                "keyRow": uuid()
+            },
+            {
+                "arr": ['','',''],
+                "keyRow": uuid()
+            }
+        ],
+        count: 1
+    }
+    cellClickHandler = (keyRow, cellIndex) => () => { //keep data in state and data and logic in one file
+        const foundRow = this.state.data.find((rowData)=> {
+            return rowData.keyRow === keyRow;
+        });
+        const rowIndex = this.state.data.indexOf(foundRow);
+        let count = 1;
+        if(foundRow.arr[cellIndex] === ''){
+            if(this.state.count === 1){
+                foundRow.arr[cellIndex] = 'X';
+                count = 2;
+            }else{
+                foundRow.arr[cellIndex] = 'O';
+                count = 1;
+            }
+            const newData = [...this.state.data];
+            newData[rowIndex] = foundRow;
+            this.setState({data: newData, count: count});
+        }
     }
 
     render () {
-        const {rowData} = this.props;
-        const rows = rowData.map((obj, index) => <Row cellData={ obj.arr }
-            key={obj.key} cellClickHandler={this.cellClickHandler}/>);
+        console.log("render");
+        const {data} = this.state;
+        console.log(data);
+        const rows = data.map((obj, index) => <Row cellData={ obj.arr } 
+            keyRow={obj.keyRow} key={obj.keyRow} cellClickHandler={this.cellClickHandler}/>);
         return (
             <div>
                 {rows}
@@ -21,7 +55,7 @@ class Box extends Component {
 }
 
 
-Box.propTypes = {"rowData": PropTypes.array.isRequired};
+Box.propTypes = {};
 Box.defaultProps = {};
 
 export default Box;

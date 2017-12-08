@@ -16,7 +16,8 @@
           "no-unused-vars":"off",
           "no-magic-numbers":"off",
           "class-methods-use-this":"off",
-          "padded-blocks": ["error", "never"]
+          "padded-blocks": ["error", "never"],
+          "react/no-did-mount-set-state": 2
     },
     "globals": {
         "it" : true,
@@ -24,5 +25,5 @@
         "expect" :true,
         "test":true
     },
-    "plugins": ["react"],"extends": ["eslint:all", "plugin:react/recommended"]
+    "plugins": ["react"],"extends": ["eslint:recommended", "plugin:react/recommended"]
  }
