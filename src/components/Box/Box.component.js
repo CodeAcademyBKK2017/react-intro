@@ -5,6 +5,7 @@ import shortid from 'shortid';
 class Box extends Component {
   state = {
     currentPlayer: 'o',
+    currentId: '',
     data: [
       {id: shortid(), items: [
         {id: shortid(), title: ''},
@@ -36,10 +37,12 @@ class Box extends Component {
 
     currentPlayer = currentPlayer === 'o' ? 'x' : 'o';
 
+    // this.makeMatrix(cellClicked.id);
 
     this.setState({
       data: data,
-      currentPlayer: currentPlayer
+      currentPlayer: currentPlayer,
+      currentId: cellClicked.id
     });
   }
 
@@ -47,7 +50,9 @@ class Box extends Component {
 
   render () {
     const rows = this.state.data.map(this.getRow);
-    const resetButton = (this.isGameEnd()) ? <button style={{'fontSize': '15px', 'padding': '7px 15px'}} onClick={this.resetGame}>Reset</button> : null;
+    // const resetButton = (this.isGameEnd()) ? <button style={{'fontSize': '15px', 'padding': '7px 15px'}} onClick={this.resetGame}>Reset</button> : null;
+    // this.isGameEnd();
+    const resetButton = null;
     
     return (
       <div>
@@ -77,22 +82,67 @@ class Box extends Component {
     });
   }
 
-  
+  // isGameEnd = () => {
+  //   let {data} = this.state;
+  //   let matrix = [['','',''],['','',''],['','','']];
+    
+  //   let currentI = 0;
+  //   let currentJ = 0;
+  //   let currentTick = '';
+    
+  //   data.forEach((row,ri) => {
+  //     row.items.forEach((cell,ci) => {
+  //       matrix[ri][ci] = cell.title;
+  //       if (this.state.currentId === cell.id) {
+  //         currentI = ri;
+  //         currentJ = ci;
+  //         currentTick = cell.title;
+  //       }
+  //     });
+  //   });
+    
+  //   // check horizontal
+  //   const h = `${matrix[currentI][0]}${matrix[currentI][1]}${matrix[currentI][2]}`;
+  //   const v = `${matrix[0][currentJ]}${matrix[1][currentJ]}${matrix[2][currentJ]}`;
+  //   const cl = `${matrix[0][0]}${matrix[1][1]}${matrix[2][2]}`;
+  //   const cr = `${matrix[0][2]}${matrix[1][1]}${matrix[2][0]}`;
+    
 
-  isGameEnd = () => {
-    let {data} = this.state;
-    let gameEnd = true;
+  //   switch (`${currentTick}${currentTick}${currentTick}`) {
+  //   case h:
+        
+  //     break;
 
-    data.forEach((row,ri) => {
-      row.items.forEach((cell,ci) => {
-        if (cell.title === '') {
-          gameEnd = false;
-        }
-      });
-    });
+  //   case v: 
 
-    return gameEnd;
-  }
+  //     break;
+    
+  //   default:
+  //     break;
+  //   }
+
+  //   if (h === `${currentTick}${currentTick}${currentTick}`) {
+      
+  //   } else if (v === `${currentTick}${currentTick}${currentTick}`) {
+      
+  //   } else if (cl === `${currentTick}${currentTick}${currentTick}`) {
+      
+  //   } else if (cr === `${currentTick}${currentTick}${currentTick}`) {
+      
+  //   } else {
+  //     let gameEnd = true;
+      
+  //     data.forEach((row,ri) => {
+  //       row.items.forEach((cell,ci) => {
+  //         if (cell.title === '') {
+  //           gameEnd = false;
+  //         }
+  //       });
+  //     });
+      
+      
+  //   }
+  // }
 }
 
 export default Box;
