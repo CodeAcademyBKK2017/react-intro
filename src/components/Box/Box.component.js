@@ -8,40 +8,38 @@ class Box extends Component {
   state = {
     bData: [
       {
-        'items': ['1', '2', '3'],
+        'items': ['', '', ''],
         'id': uuid()
       },
       {
-        'items':  ['4', '5', '6'],
+        'items':  ['', '', ''],
         'id': uuid()
       },
       {
-        'items':  ['7', '8', '9'],
+        'items':  ['', '', ''],
         'id': uuid()
       }
-    ]
+    ],
+    counter : 0
   }
   cellclickHandler = (rowID, cellID) => () => {
     const newBoxData = cloneDeep(this.state.bData);
     const foundRow = newBoxData.find((rowData) => rowData.id === rowID);
-    console.log(foundRow, newBoxData.indexOf(foundRow));
-    foundRow.items[cellID] = 'X';
-    console.log('Change', foundRow);
-    console.log('Original', this.state.bData);
-    this.setState({'bData' :newBoxData});
+    if (this.state.counter % 2 === 0) {
+      foundRow.items[cellID] = 'X';
+    } else {
+      foundRow.items[cellID] = 'O';
+    }
+    this.setState({
+      'bData' :newBoxData,
+      'counter' :  this.state.counter + 1
+    });
   } 
 
-  createRow = (rowData) => <Row cellData={rowData.items}
+  createRow = (rowData, index, array) => <Row cellData={rowData.items}
     key={rowData.id} rowID={rowData.id} cellclickHandler={this.cellclickHandler} />
 
-  componentWillMount () {
-    console.log('This is component will mount that call before render');
-  }
-  componentDidMount  () {
-    console.log('This is component Did mount that call after render');
-  }
   render () {
-    console.log('This is a render');
     const rowItems = this.state.bData;
     const rows = rowItems.map(this.createRow);
     return (

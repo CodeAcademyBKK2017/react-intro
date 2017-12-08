@@ -12,7 +12,8 @@ Cell.propTypes = {
   'cellclickHandler': PropTypes.func.isRequired,
   'value': PropTypes.oneOf([
     'X',
-    'O'
+    'O',
+    ''
   ]).isRequired
 };
 Cell.defaultProps = {
