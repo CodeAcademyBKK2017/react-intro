@@ -23,6 +23,9 @@ class Box extends Component {
   }
   cellclickHandler = (rowID, cellIndex) => () => {
     const foundRow =  this.state.bData.find((rowData) => rowData.id === rowID);
+    if (!foundRow) {
+      return;
+    }
     const selectedRowIndex = this.state.bData.indexOf(foundRow);
     const items = replaceIndex(foundRow.items, cellIndex, 'X');
     const updatedRow = {id: rowID, items};

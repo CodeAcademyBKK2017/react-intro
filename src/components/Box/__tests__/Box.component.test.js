@@ -22,11 +22,6 @@ describe('Box group Test', () => {
     const snapshot = renderer.create(<Box />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });
-  // test('Box: cellClickHandler test', () => {
-  //   const box = shallow(<Box  />).instance();
-  //   const cellHandler = box.cellclickHandler('111', 0);
-  //   expect(cellHandler()).toEqual('x');
-  // });
   test('Box: createRow test', () => {
     const box = shallow(<Box  />).instance();
     const rowData = {
@@ -35,6 +30,59 @@ describe('Box group Test', () => {
     };
     const expected = <Row cellData={['yo']} key='yoyo' rowID={'yoyo'} cellclickHandler={box.cellclickHandler} />;
     expect(box.createRow(rowData)).toEqual(expected);
+  });
+  test('Box: cellclickHandler test (success)', () => {
+    const initStateBData = [
+      {
+        'id': '111',
+        'items': ['', '', '']
+      },
+      {
+        'id': '222',
+        'items': ['', '', '']
+      },
+      {
+        'id': '333',
+        'items': ['', '', '']
+      }
+    ];
+    const expectedBData = [
+      {
+        'id': '111',
+        'items': ['', '', '']
+      },
+      {
+        'id': '222',
+        'items': ['', '', 'X']
+      },
+      {
+        'id': '333',
+        'items': ['', '', '']
+      }
+    ];
+    const box = shallow(<Box />).instance();
+    box.setState({bData: initStateBData});
+    box.cellclickHandler('222', 2)();
+    expect(box.state.bData).toEqual(expectedBData);
+  });
+  test('Box: cellclickHandler test (fail)', () => {
+    const expectedBData = [
+      {
+        'id': '111',
+        'items': ['', '', '']
+      },
+      {
+        'id': '222',
+        'items': ['', '', 'X']
+      },
+      {
+        'id': '333',
+        'items': ['', '', '']
+      }
+    ];
+    const box = shallow(<Box />).instance();
+    box.cellclickHandler('222', 2)();
+    expect(box.state.bData).not.toEqual(expectedBData);
   });
 });
 
