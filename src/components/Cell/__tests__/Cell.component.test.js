@@ -5,7 +5,7 @@ import Cell from '../Cell.component';
 import uuid from 'uuid';
 
 test('Cell: Snapshot test', () => {
-  const cellData = 'o';
+  const cellData = 'O';
   const snapshot = renderer.create(<Cell cellData={cellData} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });

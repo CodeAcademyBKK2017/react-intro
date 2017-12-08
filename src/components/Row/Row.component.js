@@ -5,7 +5,7 @@ import Cell from '../Cell/Cell.component';
 
 class Row extends React.Component {
 
-  getCell = (cellData, index) => <Cell key={cellData.cellID} rowID={this.props.rowID} cellID={index} cellData={cellData.cellData} color="blue" cellClickHandler={this.props.cellClickHandler} />;
+  getCell = (cellData, index) => <Cell key={cellData.cellID} rowID={this.props.rowID} cellID={cellData.cellID} cellIndex={index} cellData={cellData.cellData} color="blue" cellClickHandler={this.props.cellClickHandler} />;
 
   render () {
     const {rowID, rowData, cellClickHandler} = this.props;

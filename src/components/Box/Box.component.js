@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row/Row.component';
 import uuid from 'uuid';
+// import cloneDeep from 'lodash/cloneDeep';
+
+const replaceArrayIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
 class Box extends React.Component {
   state = {
@@ -60,15 +63,27 @@ class Box extends React.Component {
     ]
   }
 
-  cellClickHandler = (data) => () => this.changeCellData(data.rowID, data.cellID);
-  
+  cellClickHandler = (data) => () => {
+    console.log(data);
+    return this.changeCellData(data.rowID, data.cellIndex);
+  };
+
   changeCellData = (rowID, cellIndex) => {
-    const newState = [...this.state.boxData];
+    // const newState = [...this.state.boxData];
+    // const foundRow = this.state.boxData.find((row) => row.rowID === rowID);
+    // const rowIndex = this.state.boxData.indexOf(foundRow);
+    // newState[rowIndex].rowData[cellIndex].cellData = 'X';
+    // this.setState({boxData: newState});
+    // return 'X';
+
     const foundRow = this.state.boxData.find((row) => row.rowID === rowID);
     const rowIndex = this.state.boxData.indexOf(foundRow);
-    newState[rowIndex].rowData[cellIndex].cellData = 'X';
-
-    this.setState({boxData: newState});
+    foundRow.rowData[cellIndex].cellData = 'X';
+    const updatedRowData = replaceArrayIndex(foundRow.rowData, cellIndex, 'X');
+    const updatedRow = {rowID: rowID, rowDara: updatedRowData};
+    const newStateBoxData = replaceArrayIndex(this.state.boxData, rowIndex, updatedRow);
+    this.setState({boxData: newStateBoxData});
+    return 'X';
   }
 
   getRow = (rowData) => <Row key={rowData.rowID} rowID={rowData.rowID} rowData={rowData.rowData} cellClickHandler={this.cellClickHandler} />
@@ -76,7 +91,7 @@ class Box extends React.Component {
   componentWillMount () {
     console.log('componentWillMount');
   }
-    
+
   componentDidMount () {
     console.log('componentDidMount');
   }
@@ -96,7 +111,7 @@ class Box extends React.Component {
 Box.propTypes = {
   boxData: PropTypes.array.isRequired
 };
-  
+
 Box.defaultProps = {
   boxData: []
 };

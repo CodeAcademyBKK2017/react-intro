@@ -5,6 +5,6 @@ exports[`Cell: Snapshot test 1`] = `
   className="Cell-button Cell-button__blue"
   onClick={undefined}
 >
-  o
+  O
 </div>
 `;
