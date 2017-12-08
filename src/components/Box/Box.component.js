@@ -4,7 +4,15 @@ import ProptTypes from 'prop-types';
 import noop from 'lodash/noop';
 
 class Box extends Component {
-  mapFunction = (rawData) => <Row cellData={rawData.items} key={rawData.rowkeys} clickHandle={this.props.callHandle}/>;
+  mapFunction = (rawData) => <Row cellData={rawData.items} key={rawData.rowkeys} rowID={rawData.rowkeys} clickHandle={this.props.callHandle}/>;
+
+  // componentWillMount () { 
+  //   console.log('component will mount'); 
+  // }
+  
+  // componentDidMount () {
+  //   console.log('component Did mount'); 
+  // }
   
   render () {
     const {Data} = this.props;  

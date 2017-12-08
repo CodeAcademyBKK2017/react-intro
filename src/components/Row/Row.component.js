@@ -5,10 +5,10 @@ import noop from 'lodash/noop';
 
 class Row extends Component {
   render () {
-    const {cellData,clickHandle} = this.props;
-
-    const cell = cellData.map((rawData,i) => <Cell value={cellData[0]} key={i} color="black" clickHandle={clickHandle}/>);
-      
+    const {cellData,clickHandle,rowID} = this.props;
+  
+    const cell = cellData.map((rawData,i) => <Cell value={cellData[i]} key={i} cellID={i} rowKey={rowID} color="black" clickHandle={clickHandle}/>);
+ 
     return (
       <div>
         {cell}
@@ -19,12 +19,14 @@ class Row extends Component {
 
 Row.propTypes = {
   cellData: ProptTypes.array.isRequired,
-  clickHandle: ProptTypes.func.isRequired
+  clickHandle: ProptTypes.func.isRequired,
+  rowID: ProptTypes.string.isRequired
 };
 
 Row.defaultProps = {
   cellData: [],
-  clickHandle: noop
+  clickHandle: noop,
+  rowID: ''
 };
 
 export default Row;

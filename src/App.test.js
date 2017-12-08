@@ -7,9 +7,9 @@ import renderer from 'react-test-renderer';
 describe('Button component', () => {
   it('cellClickHandleCallBack it will work collectly', () => {
     const app = shallow(<App />).instance();
-    app.cellClickHandleCallBack('o')();
+    app.cellClickHandleCallBack('o','asssddd',1)();
     expect(app.state.player).toEqual(2); 
-    app.cellClickHandleCallBack('X')();
+    app.cellClickHandleCallBack('X','asasad',2)();
     expect(app.state.player).toEqual(1); 
   });
   
