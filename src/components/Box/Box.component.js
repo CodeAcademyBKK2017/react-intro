@@ -27,9 +27,8 @@ class Box extends Component {
     return newBoxData;
   }
 
-  getWinner = (boxState, isXNext) => {
+  getWinner = (boxState) => {
     // Write logic here
-    const player = isXNext ? 'X' : 'O';
     const winPatternIndex = [
       [0, 1, 2],
       [3, 4, 5],
