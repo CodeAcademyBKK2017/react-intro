@@ -1,6 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box Component render correctly 1`] = `
+exports[`Box Component render correctly with data 1`] = `
+<div>
+  <div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+  </div>
+  <div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+  </div>
+  <div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell"
+      onClick={[Function]}
+    >
+      
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Box Component render correctly with empty 1`] = `
 <div>
   <div>
     <div

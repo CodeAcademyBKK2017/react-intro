@@ -73,6 +73,8 @@ class Box extends Component {
 				return winner;
 			}
 		}
+
+		return null;
 	}
 
 	getWinnerVertical = (rowDataArray) => {
@@ -89,6 +91,8 @@ class Box extends Component {
 				return winner;
 			}
 		}
+
+		return null;
 	}
 
 	getWinnerDiagonal01 = (rowDataArray) => {
@@ -103,6 +107,8 @@ class Box extends Component {
 		if(winner) {
 			return winner;
 		}
+
+		return null;
 	}
 
 	getWinnerDiagonal02 = (rowDataArray) => {
@@ -117,6 +123,8 @@ class Box extends Component {
 		if(winner) {
 			return winner;
 		}
+
+		return null;
 	}
 
 	getWinnerAll = (turn, rowDataArray) => {
@@ -166,7 +174,7 @@ class Box extends Component {
 		}
 	}
 	
-	replaceCellData = (rowId, cellId) => {
+	updateStateOnSetNewCellData = (rowId, cellId) => {
 		const newData = (this.state.turn % 2 === 0) ? "O" : "X";
 		const newCellData = {...this.state.rowDataArray[rowId].cellDataArray[cellId], data: newData};
 		const newCellDataArray = replaceIndex(this.state.rowDataArray[rowId].cellDataArray, cellId, newCellData);
@@ -179,7 +187,11 @@ class Box extends Component {
 		const newTurn = this.state.turn + 1;
 		const newGameState = typeof(winner) === 'string' ? 1 : 0;
 		const newState = {...this.state, turn: newTurn, gameState: newGameState, rowDataArray: newRowDataArray};
-		
+		return newState;
+	}
+	
+	replaceCellData = (rowId, cellId) => {
+		const newState = this.updateStateOnSetNewCellData(rowId, cellId);
 		this.setState(newState);
 	}
 

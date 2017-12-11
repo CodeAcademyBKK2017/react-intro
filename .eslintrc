@@ -25,6 +25,7 @@
   "globals": {
 	"test": true,
 	"it": true,
+	"xit": true,
 	"describe": true,
     "expect": true,
 	"jest": true,
