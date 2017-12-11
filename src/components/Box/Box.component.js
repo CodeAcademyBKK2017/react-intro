@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Row from '../Row/Row.component';
+import { setTimeout } from 'timers';
 
 const tableSize = 3;
 const startTurn = 1;
@@ -206,7 +207,9 @@ class Box extends Component {
 	}
 
 	componentDidUpdate() {
-		this.alertWinnerIfGameEnd(this.state.turn-1, this.state.rowDataArray);
+		setTimeout(() => {
+			this.alertWinnerIfGameEnd(this.state.turn-1, this.state.rowDataArray);
+		}, 100);
 	}
 }
 
