@@ -153,7 +153,8 @@ class Box extends Component {
 		}
 	}
 
-	alertWinner = (winner) => {
+	alertWinnerIfGameEnd = () => {
+		const winner = this.getWinner(this.state.rowDataArray);
 		if(typeof(winner) === 'string') {
 			if(winner === '') {
 				alert('No Winner');
@@ -177,10 +178,8 @@ class Box extends Component {
 		const newTurn = this.state.turn + 1;
 		const newGameState = typeof(winner) === 'string' ? 1 : 0;
 		const newState = {...this.state, turn: newTurn, gameState: newGameState, rowDataArray: newRowDataArray};
-
+		
 		this.setState(newState);
-
-		this.alertWinner(winner);
 	}
 
 	cellClickHandler = (rowId, cellId) => () => {
@@ -188,8 +187,7 @@ class Box extends Component {
 			return;
 		}
 		if(gameStateArray[this.state.gameState] === GameStateEnd) {
-			const winner = this.getWinner(this.state.rowDataArray);
-			this.alertWinner(winner);
+			this.alertWinnerIfGameEnd();
 			return;
 		}
 		this.replaceCellData(rowId, cellId);
@@ -206,6 +204,10 @@ class Box extends Component {
 				{rowCompArray}
 			</div>
 		);
+	}
+
+	componentDidUpdate() {
+		this.alertWinnerIfGameEnd();
 	}
 }
 
