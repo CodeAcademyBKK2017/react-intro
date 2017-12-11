@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell O 1`] = `
+exports[`Cell Component render correctly with O 1`] = `
 <div
-  className="Cell"
+  className="cell disable"
   onClick={undefined}
 >
-  
+  O
 </div>
 `;
 
-exports[`Cell X 1`] = `
+exports[`Cell Component render correctly with X 1`] = `
 <div
-  className="Cell"
+  className="cell disable"
   onClick={undefined}
 >
-  
+  X
 </div>
 `;

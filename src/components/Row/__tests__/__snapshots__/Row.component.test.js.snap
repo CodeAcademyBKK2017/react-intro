@@ -1,21 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Row OXO 1`] = `
+exports[`Row Component render correctly with XOX 1`] = `
 <div>
   <div
-    className="Cell"
+    className="cell disable"
+    onClick={undefined}
+  >
+    X
+  </div>
+  <div
+    className="cell disable"
+    onClick={undefined}
+  >
+    O
+  </div>
+  <div
+    className="cell disable"
+    onClick={undefined}
+  >
+    X
+  </div>
+</div>
+`;
+
+exports[`Row Component render correctly with empty 1`] = `
+<div>
+  <div
+    className="cell"
     onClick={undefined}
   >
     
   </div>
   <div
-    className="Cell"
+    className="cell"
     onClick={undefined}
   >
     
   </div>
   <div
-    className="Cell"
+    className="cell"
     onClick={undefined}
   >
     
