@@ -57,9 +57,8 @@ class Box extends Component {
 			return null;
 		}
 	}
-
-	getWinner = (rowDataArray) => {
-		//check horizontal win
+	
+	getWinnerHorizontal = (rowDataArray) => {
 		for(let i = 0 ; i < tableSize ; i++) {
 			let result = '';
 
@@ -68,13 +67,14 @@ class Box extends Component {
 				result += data;
 			}
 
-			const winner_h = this.checkWinnerWithResult(result)
-			if(winner_h) {
-				return winner_h;
+			const winner = this.checkWinnerWithResult(result)
+			if(winner) {
+				return winner;
 			}
 		}
+	}
 
-		//check vertical win
+	getWinnerVertical = (rowDataArray) => {
 		for(let i = 0 ; i < tableSize ; i++) {
 			let result = '';
 
@@ -83,34 +83,64 @@ class Box extends Component {
 				result += data;
 			}
 
-			const winner_v = this.checkWinnerWithResult(result)
-			if(winner_v) {
-				return winner_v;
+			const winner = this.checkWinnerWithResult(result)
+			if(winner) {
+				return winner;
 			}
+		}
+	}
+
+	getWinnerDiagonal01 = (rowDataArray) => {
+		let result = '';
+
+		for(let i = 0 ; i < tableSize ; i++) {
+			const data = rowDataArray[i].cellDataArray[i].data;
+			result += data;
+		}
+
+		const winner = this.checkWinnerWithResult(result)
+		if(winner) {
+			return winner;
+		}
+	}
+
+	getWinnerDiagonal02 = (rowDataArray) => {
+		let result = '';
+
+		for(let i = 0 ; i < tableSize ; i++) {
+			const data = rowDataArray[tableSize - 1 - i].cellDataArray[i].data;
+			result += data;
+		}
+		
+		const winner = this.checkWinnerWithResult(result)
+		if(winner) {
+			return winner;
+		}
+	}
+
+	getWinner = (rowDataArray) => {
+		//check horizontal win
+		const winner_h = this.getWinnerHorizontal(rowDataArray)
+		if(winner_h) {
+			return winner_h;
+		}
+
+		//check vertical win
+		const winner_v = this.getWinnerVertical(rowDataArray)
+		if(winner_v) {
+			return winner_v;
 		}
 
 		//check diagonal 1 win
-		for(let i = 0 ; i < tableSize ; i++) {
-			let result = '';
-			const data = rowDataArray[i].cellDataArray[i].data;
-			result += data;
-
-			const winner_d1 = this.checkWinnerWithResult(result)
-			if(winner_d1) {
-				return winner_d1;
-			}
+		const winner_d1 = this.getWinnerDiagonal01(rowDataArray)
+		if(winner_d1) {
+			return winner_d1;
 		}
 
 		//check diagonal 2 win
-		for(let i = 0 ; i < tableSize ; i++) {
-			let result = '';
-			const data = rowDataArray[tableSize - 1 - i].cellDataArray[i].data;
-			result += data;
-
-			const winner_d2 = this.checkWinnerWithResult(result)
-			if(winner_d2) {
-				return winner_d2;
-			}
+		const winner_d2 = this.getWinnerDiagonal02(rowDataArray)
+		if(winner_d2) {
+			return winner_d2;
 		}
 
 		//not found winner
@@ -123,6 +153,18 @@ class Box extends Component {
 		}
 	}
 
+	alertWinner = (winner) => {
+		console.log(winner);
+		if(typeof(winner) === 'string') {
+			if(winner === '') {
+				alert('No Winner');
+			}
+			else {
+				alert('Winner is ' + winner);
+			}
+		}
+	}
+	
 	replaceCellData = (rowId, cellId) => {
 		const newData = (this.state.turn % 2 === 0) ? "O" : "X";
 		const newCellData = {...this.state.rowDataArray[rowId].cellDataArray[cellId], data: newData};
@@ -131,11 +173,15 @@ class Box extends Component {
 		const newRowData = {...this.state.rowDataArray[rowId], cellDataArray: newCellDataArray};
 		const newRowDataArray = replaceIndex(this.state.rowDataArray, rowId, newRowData);
 
+		const winner = this.getWinner(newRowDataArray);
+
 		const newTurn = this.state.turn + 1;
-		const newGameState = this.getWinner(newRowDataArray) ? 1 : 0;
+		const newGameState = typeof(winner) === 'string' ? 1 : 0;
 		const newState = {...this.state, turn: newTurn, gameState: newGameState, rowDataArray: newRowDataArray};
 
 		this.setState(newState);
+
+		this.alertWinner(winner);
 	}
 
 	cellClickHandler = (rowId, cellId) => () => {
