@@ -6,9 +6,9 @@ import noop from 'lodash/noop';
 class Cell extends Component {
 	render() {
 		const {rowId, cellId, data, cellClickHandler} = this.props;
-		
+		const cellClassName = (data === '') ? 'cell' : 'cell disable';
 		return (
-			<div className="Cell" onClick={cellClickHandler(rowId, cellId)}>
+			<div className={cellClassName} onClick={cellClickHandler(rowId, cellId)}>
 				{data}
 			</div>
 		);
