@@ -118,7 +118,7 @@ class Box extends Component {
 		}
 	}
 
-	getWinner = (rowDataArray) => {
+	getWinnerAll = (turn, rowDataArray) => {
 		//check horizontal win
 		const winner_h = this.getWinnerHorizontal(rowDataArray)
 		if(winner_h) {
@@ -144,7 +144,7 @@ class Box extends Component {
 		}
 
 		//not found winner
-		if(this.state.turn < maxTurn) {
+		if(turn < maxTurn) {
 			return null;
 		}
 		else {
@@ -153,8 +153,8 @@ class Box extends Component {
 		}
 	}
 
-	alertWinnerIfGameEnd = () => {
-		const winner = this.getWinner(this.state.rowDataArray);
+	alertWinnerIfGameEnd = (turn, rowDataArray) => {
+		const winner = this.getWinnerAll(turn, rowDataArray);
 		if(typeof(winner) === 'string') {
 			if(winner === '') {
 				alert('No Winner');
@@ -173,7 +173,7 @@ class Box extends Component {
 		const newRowData = {...this.state.rowDataArray[rowId], cellDataArray: newCellDataArray};
 		const newRowDataArray = replaceIndex(this.state.rowDataArray, rowId, newRowData);
 
-		const winner = this.getWinner(newRowDataArray);
+		const winner = this.getWinnerAll(this.state.turn, newRowDataArray);
 
 		const newTurn = this.state.turn + 1;
 		const newGameState = typeof(winner) === 'string' ? 1 : 0;
@@ -187,7 +187,6 @@ class Box extends Component {
 			return;
 		}
 		if(gameStateArray[this.state.gameState] === GameStateEnd) {
-			this.alertWinnerIfGameEnd();
 			return;
 		}
 		this.replaceCellData(rowId, cellId);
@@ -207,7 +206,7 @@ class Box extends Component {
 	}
 
 	componentDidUpdate() {
-		this.alertWinnerIfGameEnd();
+		this.alertWinnerIfGameEnd(this.state.turn-1, this.state.rowDataArray);
 	}
 }
 
