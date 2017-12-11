@@ -1,77 +1,24 @@
 import React, { Component } from 'react';
 import Row from '../Row/Row.component';
-// import uuid from 'uuid';
 
 const tableSize = 3;
 const startTurn = 1;
 const maxTurn = tableSize * tableSize;
 
+const GameStatePlaying = 'PLAYING';
+const GameStateEnd = 'GAME END';
+const gameStateArray = [GameStatePlaying, GameStateEnd];
+
 const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
 class Box extends Component {
 
-	// state = {
-	// 	turn: 1,
-	// 	rowDataArray: [
-	// 		{
-	// 			rowId: uuid(),
-	// 			cellDataArray: [
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				}
-	// 			]
-	// 		},
-	// 		{
-	// 			rowId: uuid(),
-	// 			cellDataArray: [
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				}
-	// 			]
-	// 		},
-	// 		{
-	// 			rowId: uuid(),
-	// 			cellDataArray: [
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				},
-	// 				{
-	// 					cellId: uuid(),
-	// 					data: ""
-	// 				}
-	// 			]
-	// 		}
-	// 	]
-	// }
-	
 	constructor() {
 		super();
 
 		this.state = {
 			turn: startTurn,
+			gameState: 0,
 			rowDataArray: []
 		};
 
@@ -80,6 +27,7 @@ class Box extends Component {
 				rowId: i,
 				cellDataArray: []
 			};
+			this.state.rowDataArray.push(rowData);
 
 			for(let j = 0 ; j < tableSize ; j++) {
 				const cellData = {
@@ -91,37 +39,110 @@ class Box extends Component {
 		}
 	}
 
-	findCellData = (state, cellId) => {
-		let cellData;
-		
-		for(let i = 0 ; i < state.rowDataArray.length ; i++) {
-			const rowData = state.rowDataArray[i];
-			const targetCell = rowData.cellDataArray.find((element) => {
-				return element.cellId === cellId && element.data === "";
-			});
+	isRowAndCellIndexOutOfBound = (rowId, cellId) => {
+		if(rowId >= 0 && rowId < tableSize && cellId >= 0 && cellId < tableSize) {
+			return false;
+		}
+		return true;
+	}
 
-			if(targetCell) {
-				cellData = targetCell;
-				break;
+	checkWinnerWithResult = (result) => {
+		if(result === 'X'.repeat(tableSize)) {
+			return 'X';
+		}
+		else if(result === 'O'.repeat(tableSize)) {
+			return 'O';
+		}
+		else {
+			return null;
+		}
+	}
+
+	getWinner = (rowDataArray) => {
+		//check horizontal win
+		for(let i = 0 ; i < tableSize ; i++) {
+			let result = '';
+
+			for(let j = 0 ; j < tableSize ; j++) {
+				const data = rowDataArray[i].cellDataArray[j].data;
+				result += data;
+			}
+
+			const winner_h = this.checkWinnerWithResult(result)
+			if(winner_h) {
+				return winner_h;
 			}
 		}
 
-		return cellData;
+		//check vertical win
+		for(let i = 0 ; i < tableSize ; i++) {
+			let result = '';
+
+			for(let j = 0 ; j < tableSize ; j++) {
+				const data = rowDataArray[j].cellDataArray[i].data;
+				result += data;
+			}
+
+			const winner_v = this.checkWinnerWithResult(result)
+			if(winner_v) {
+				return winner_v;
+			}
+		}
+
+		//check diagonal 1 win
+		for(let i = 0 ; i < tableSize ; i++) {
+			let result = '';
+			const data = rowDataArray[i].cellDataArray[i].data;
+			result += data;
+
+			const winner_d1 = this.checkWinnerWithResult(result)
+			if(winner_d1) {
+				return winner_d1;
+			}
+		}
+
+		//check diagonal 2 win
+		for(let i = 0 ; i < tableSize ; i++) {
+			let result = '';
+			const data = rowDataArray[tableSize - 1 - i].cellDataArray[i].data;
+			result += data;
+
+			const winner_d2 = this.checkWinnerWithResult(result)
+			if(winner_d2) {
+				return winner_d2;
+			}
+		}
+
+		//not found winner
+		if(this.state.turn < maxTurn) {
+			return null;
+		}
+		else {
+			//last turn
+			return '';
+		}
+	}
+
+	replaceCellData = (rowId, cellId) => {
+		const newData = (this.state.turn % 2 === 0) ? "O" : "X";
+		const newCellData = {...this.state.rowDataArray[rowId].cellDataArray[cellId], data: newData};
+		const newCellDataArray = replaceIndex(this.state.rowDataArray[rowId].cellDataArray, cellId, newCellData);
+
+		const newRowData = {...this.state.rowDataArray[rowId], cellDataArray: newCellDataArray};
+		const newRowDataArray = replaceIndex(this.state.rowDataArray, rowId, newRowData);
+
+		const newTurn = this.state.turn + 1;
+		const newGameState = this.getWinner(newRowDataArray) ? 1 : 0;
+		const newState = {...this.state, turn: newTurn, gameState: newGameState, rowDataArray: newRowDataArray};
+
+		this.setState(newState);
 	}
 
 	cellClickHandler = (rowId, cellId) => () => {
-		if(this.state.turn > maxTurn) {
-			console.log('GAME END : can not play anymore');
+		if(this.isRowAndCellIndexOutOfBound(rowId, cellId)) {
+			return;
 		}
-		else {
-			const newState = this.state;
-			const cellData = this.findCellData(newState, cellId);
-			if(cellData) {
-				cellData.data = (newState.turn % 2 === 0) ? "O" : "X";
-				newState.turn++;
-				this.setState(newState);
-			}
-		}
+		this.replaceCellData(rowId, cellId);
 	};
 
 	mapRowWithKey = (element) => {
