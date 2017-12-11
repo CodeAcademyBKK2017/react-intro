@@ -154,7 +154,6 @@ class Box extends Component {
 	}
 
 	alertWinner = (winner) => {
-		console.log(winner);
 		if(typeof(winner) === 'string') {
 			if(winner === '') {
 				alert('No Winner');
@@ -186,6 +185,11 @@ class Box extends Component {
 
 	cellClickHandler = (rowId, cellId) => () => {
 		if(this.isRowAndCellIndexOutOfBound(rowId, cellId)) {
+			return;
+		}
+		if(gameStateArray[this.state.gameState] === GameStateEnd) {
+			const winner = this.getWinner(this.state.rowDataArray);
+			this.alertWinner(winner);
 			return;
 		}
 		this.replaceCellData(rowId, cellId);
