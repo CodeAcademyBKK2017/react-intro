@@ -16,7 +16,7 @@ describe('Box Component', () => {
 		boxInstance = wrapper.instance();
 	});
 
-	xit('render correctly with data', () => {
+	it('render correctly with data', () => {
 		// const initialState = {
 		// 	turn: 9,
 		// 	gameState: 1,
@@ -421,6 +421,8 @@ describe('Box Component', () => {
 				}
 			]
 		};
+		Object.freeze(initialState);
+
 		const wrapper = shallow(boxComp);
 		wrapper.setState(initialState);
 		boxInstance = wrapper.instance();
@@ -446,6 +448,7 @@ describe('Box Component', () => {
 			]
 		};
 		expect(newState).toEqual(expectedState);
+		expect(initialState.rowDataArray[0].cellDataArray[0].data).toBe('');
 	});
 
 	it('updateStateOnSetNewCellData with rowId, cellId of X', () => {
@@ -467,6 +470,8 @@ describe('Box Component', () => {
 				}
 			]
 		};
+		Object.freeze(initialState);
+
 		const wrapper = shallow(boxComp);
 		wrapper.setState(initialState);
 		boxInstance = wrapper.instance();
@@ -492,6 +497,7 @@ describe('Box Component', () => {
 			]
 		};
 		expect(newState).toEqual(expectedState);
+		expect(initialState.rowDataArray[2].cellDataArray[0].data).toBe('');
 	});
 
 	it('replaceCellData with rowId, cellId', () => {
@@ -513,6 +519,8 @@ describe('Box Component', () => {
 				}
 			]
 		};
+		Object.freeze(initialState);
+
 		const wrapper = shallow(boxComp);
 		wrapper.setState(initialState);
 		boxInstance = wrapper.instance();
@@ -538,6 +546,7 @@ describe('Box Component', () => {
 			]
 		};
 		expect(wrapper.state()).toEqual(expectedState);
+		expect(initialState.rowDataArray[0].cellDataArray[0].data).toBe('');
 	});
 
 	it('cellClickHandler with rowId, cellId (isRowAndCellIndexOutOfBound)', () => {
@@ -651,6 +660,8 @@ describe('Box Component', () => {
 				}
 			]
 		};
+		Object.freeze(initialState);
+
 		const wrapper = shallow(boxComp);
 		wrapper.setState(initialState);
 		boxInstance = wrapper.instance();
@@ -676,6 +687,7 @@ describe('Box Component', () => {
 			]
 		};
 		expect(wrapper.state()).toEqual(expectedState);
+		expect(initialState.rowDataArray[0].cellDataArray[0].data).toBe('');
 	});
 
 	it('get row component', () => {
