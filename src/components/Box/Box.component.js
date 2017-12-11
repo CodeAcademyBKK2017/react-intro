@@ -4,41 +4,67 @@ import Row from '../Row/Row.component';
 import cloneDeep from 'lodash/cloneDeep';
 import replaceIndex from 'replace-array-index';
 import uuid from 'uuid';
-
-
 // const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
- 
 class Box extends Component {
   state = {
     bData: [
-      {
-        'items': ['', '', ''],
-        'id': uuid()
-      },
-      {
-        'items':  ['', '', ''],
-        'id': uuid()
-      },
-      {
-        'items':  ['', '', ''],
-        'id': uuid()
-      }
+      {'items': ['', '', ''], 'id': uuid()},
+      {'items':  ['', '', ''], 'id': uuid()},
+      {'items':  ['', '', ''], 'id': uuid()}
     ],
-    counter : 0
+    isXNext : true
   }
-  cellclickHandler = (rowID, cellIndex) => () => {
-    const foundRow =  this.state.bData.find((rowData) => rowData.id === rowID);
-    const selectedRowIndex = this.state.bData.indexOf(foundRow);
-    let items = [];
-    if (this.state.counter % 2 === 0) {
-      items = replaceIndex(foundRow.items, cellIndex, 'X');
-    } else {
-      items = replaceIndex(foundRow.items, cellIndex, 'O');
+  getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
+    const foundRow = oldState.find((rowData) => rowData.id === rowID);
+    if (!foundRow) {
+      return;
     }
+    const selectedRowIndex = oldState.indexOf(foundRow);
+    const newCellValue = isXNext ? 'X' : 'O';
+    const items = replaceIndex(foundRow.items, cellIndex, newCellValue);
     const updatedRow = {id: rowID, items};
-    const newBoxData = replaceIndex(this.state.bData, selectedRowIndex, updatedRow);
-    this.setState({'bData' :newBoxData});
-  } 
+    const newBoxData = replaceIndex(oldState, selectedRowIndex, updatedRow);
+    return newBoxData;
+  }
+
+  getWinner = (boxState, isXNext) => {
+    // Write logic here
+    const player = isXNext ? 'X' : 'O';
+    const winPatternIndex = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    const SingleArrData = boxState.reduce((acc, curr) => [...acc, ...curr.items], []);
+    // console.log(SingleArrData);
+    for (let i = 0; i < winPatternIndex.length; i++) {
+      const [a, b, c] = winPatternIndex[i];
+      if (SingleArrData[a] && SingleArrData[a] === SingleArrData[b] && SingleArrData[a] === SingleArrData[c]) {
+        // console.log(SingleArrData[a], SingleArrData[b], SingleArrData[c]);
+        return SingleArrData[a];
+      }
+    } 
+    return null;
+  }
+
+  cellclickHandler = (rowID, cellIndex) => () => {
+    const {bData, isXNext} = this.state;
+    const newbData = this.getUpdatedCells(bData, rowID, cellIndex, isXNext);
+    if (bData) {
+      this.setState({bData: newbData});
+      const winner = this.getWinner(newbData, isXNext);
+      if (winner) {
+        alert('Winner is: ' +  winner);
+      } else {
+        this.setState({isXNext : !isXNext});
+      }
+    }
+  }
 
   createRow = (rowData) => <Row cellData={rowData.items}
     key={rowData.id} rowID={rowData.id} cellclickHandler={this.cellclickHandler} />

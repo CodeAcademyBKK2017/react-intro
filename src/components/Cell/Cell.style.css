@@ -1,5 +1,5 @@
 
-.Cell {
+.cell {
     background-color: rgb(3, 117, 223);
     height: 100px;
     width: 200px;
@@ -11,4 +11,8 @@
     display: inline-block;
     margin-right: 5px; 
     margin-top: 5px;
+  }
+.disable-cell {
+    pointer-events: none;
+    color: #d81111;
   }

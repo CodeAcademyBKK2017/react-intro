@@ -5,16 +5,12 @@ import noop from 'lodash/noop';
 
 
 const Cell = ({value, cellclickHandler}) =>
-  <div className='Cell' onClick={cellclickHandler}>{value}</div>;
+  <div className={`cell ${value ? 'disable-cell' : ''} `} onClick={cellclickHandler}>{value}</div>;
 
 
 Cell.propTypes = {
   'cellclickHandler': PropTypes.func.isRequired,
-  'value': PropTypes.oneOf([
-    'X',
-    'O',
-    ''
-  ]).isRequired
+  'value': PropTypes.oneOf(['X', 'O', '']).isRequired
 };
 Cell.defaultProps = {
   'cellclickHandler': noop,
