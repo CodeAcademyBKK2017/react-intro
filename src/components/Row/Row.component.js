@@ -2,6 +2,7 @@ import React from 'react';
 import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import Cell from '../Cell/Cell.component';
+import './Row.style.css';
 
 class Row extends React.Component {
 
@@ -11,7 +12,7 @@ class Row extends React.Component {
     const {rowIndex, rowData, cellClickHandler} = this.props;
     const cellLists = rowData.map(this.getCell);
     return (
-      <div>
+      <div className="cell-container">
         {cellLists}
       </div>
     );

@@ -2,15 +2,23 @@
     text-align: center;
 }
 .title {
-    display: block;
+    font-size: 36px;
 }
 .info {
-    display: block;
+    font-size: 18px;
 }
-.row-lists {
+.row-container {
     margin: 30px;
     padding: 20px;
-    border: 5px solid red; 
+    border: 5px solid red;
+    background-color: yellow;
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    flex-direction: column;
+}
+.message {
+
 }
 .credit {
     position: fixed;

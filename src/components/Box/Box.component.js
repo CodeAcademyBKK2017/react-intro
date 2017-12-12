@@ -60,9 +60,9 @@ class Box extends React.Component {
 
   getTheWinner = () => {
     if (this.state.isXNext) {
-      return this.winnerLogic(this.state.scoreO) ? 'O - The winner' : 'playing';
+      return this.winnerLogic(this.state.scoreO) ? 'O - The winner' : 'playing...';
     } else {
-      return this.winnerLogic(this.state.scoreX) ? 'X - The winner' : 'playing';
+      return this.winnerLogic(this.state.scoreX) ? 'X - The winner' : 'playing...';
     }
   }
 
@@ -94,10 +94,10 @@ class Box extends React.Component {
     const rowLists = this.state.boxData.map(this.getRow);
     return (
       <div className='box-container'>
-        <div className='title'>Welcome - Tic Tac Toe</div>
-        <div className='info'>I want to play a game.</div>
-        <div className="row-lists">{rowLists}</div>
-        <p>{this.state.message}</p>
+        <h1 className='title'>Tic Tac Toe</h1>
+        <h3 className='info'>I want to play a game.</h3>
+        <div className='row-container'>{rowLists}</div>
+        <h2 className='message'>{this.state.message}</h2>
         <button onClick={this.reset}>Reset</button>
         <p className='credit'>Made by Teeraphong Chaichalermpreecha</p>
       </div>
