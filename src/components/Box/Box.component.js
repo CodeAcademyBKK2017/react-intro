@@ -73,15 +73,7 @@ class Box extends Component {
   getRestartButton = () => <button onClick={this.resetGame}>Restart Game</button>;
 
   render () {
-    const {gameData} = this.state;
-    const rows = gameData.map(this.getRow);
-
-    return (
-      <div>
-        <h2>Tie Tac Toe</h2>
-        {rows}
-      </div>
-    );
+    return <div className="box">{this.state.gameData.map(this.getRow)}</div>;
   }
 }
 
