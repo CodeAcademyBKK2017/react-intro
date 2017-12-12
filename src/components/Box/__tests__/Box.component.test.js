@@ -16,7 +16,7 @@ describe('Box Component', () => {
 		boxInstance = wrapper.instance();
 	});
 
-	it('render correctly with data', () => {
+	xit('render correctly with data', () => {
 		// const initialState = {
 		// 	turn: 9,
 		// 	gameState: 1,

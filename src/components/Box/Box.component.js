@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import Row from '../Row/Row.component';
 import { setTimeout } from 'timers';
 
-const tableSize = 3;
-const startTurn = 1;
-const maxTurn = tableSize * tableSize;
-
-const GameStatePlaying = 'PLAYING';
-const GameStateEnd = 'GAME END';
-const gameStateArray = [GameStatePlaying, GameStateEnd];
-
-const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
-
 class Box extends Component {
+
+	tableSize = 3;
+	startTurn = 1;
+	maxTurn = this.tableSize * this.tableSize;
+
+	GameStatePlaying = 'PLAYING';
+	GameStateEnd = 'GAME END';
+	gameStateArray = [this.GameStatePlaying, this.GameStateEnd];
+
+	replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
 	constructor() {
 		super();
 
 		this.state = {
-			turn: startTurn,
+			turn: this.startTurn,
 			gameState: 0,
 			rowDataArray: []
 		};
 
-		for(let i = 0 ; i < tableSize ; i++) {
+		for(let i = 0 ; i < this.tableSize ; i++) {
 			const rowData = {
 				rowId: i,
 				cellDataArray: []
 			};
 			this.state.rowDataArray.push(rowData);
 
-			for(let j = 0 ; j < tableSize ; j++) {
+			for(let j = 0 ; j < this.tableSize ; j++) {
 				const cellData = {
 					cellId: j,
 					data: ''
@@ -41,17 +41,17 @@ class Box extends Component {
 	}
 
 	isRowAndCellIndexOutOfBound = (rowId, cellId) => {
-		if(rowId >= 0 && rowId < tableSize && cellId >= 0 && cellId < tableSize) {
+		if(rowId >= 0 && rowId < this.tableSize && cellId >= 0 && cellId < this.tableSize) {
 			return false;
 		}
 		return true;
 	}
 
 	checkWinnerWithResult = (result) => {
-		if(result === 'X'.repeat(tableSize)) {
+		if(result === 'X'.repeat(this.tableSize)) {
 			return 'X';
 		}
-		else if(result === 'O'.repeat(tableSize)) {
+		else if(result === 'O'.repeat(this.tableSize)) {
 			return 'O';
 		}
 		else {
@@ -60,10 +60,10 @@ class Box extends Component {
 	}
 	
 	getWinnerHorizontal = (rowDataArray) => {
-		for(let i = 0 ; i < tableSize ; i++) {
+		for(let i = 0 ; i < this.tableSize ; i++) {
 			let result = '';
 
-			for(let j = 0 ; j < tableSize ; j++) {
+			for(let j = 0 ; j < this.tableSize ; j++) {
 				const data = rowDataArray[i].cellDataArray[j].data;
 				result += data;
 			}
@@ -78,10 +78,10 @@ class Box extends Component {
 	}
 
 	getWinnerVertical = (rowDataArray) => {
-		for(let i = 0 ; i < tableSize ; i++) {
+		for(let i = 0 ; i < this.tableSize ; i++) {
 			let result = '';
 
-			for(let j = 0 ; j < tableSize ; j++) {
+			for(let j = 0 ; j < this.tableSize ; j++) {
 				const data = rowDataArray[j].cellDataArray[i].data;
 				result += data;
 			}
@@ -98,7 +98,7 @@ class Box extends Component {
 	getWinnerDiagonal01 = (rowDataArray) => {
 		let result = '';
 
-		for(let i = 0 ; i < tableSize ; i++) {
+		for(let i = 0 ; i < this.tableSize ; i++) {
 			const data = rowDataArray[i].cellDataArray[i].data;
 			result += data;
 		}
@@ -114,8 +114,8 @@ class Box extends Component {
 	getWinnerDiagonal02 = (rowDataArray) => {
 		let result = '';
 
-		for(let i = 0 ; i < tableSize ; i++) {
-			const data = rowDataArray[tableSize - 1 - i].cellDataArray[i].data;
+		for(let i = 0 ; i < this.tableSize ; i++) {
+			const data = rowDataArray[this.tableSize - 1 - i].cellDataArray[i].data;
 			result += data;
 		}
 		
@@ -153,7 +153,7 @@ class Box extends Component {
 		}
 
 		//not found winner
-		if(turn < maxTurn) {
+		if(turn < this.maxTurn) {
 			return null;
 		}
 		else {
@@ -177,10 +177,10 @@ class Box extends Component {
 	updateStateOnSetNewCellData = (rowId, cellId) => {
 		const newData = (this.state.turn % 2 === 0) ? "O" : "X";
 		const newCellData = {...this.state.rowDataArray[rowId].cellDataArray[cellId], data: newData};
-		const newCellDataArray = replaceIndex(this.state.rowDataArray[rowId].cellDataArray, cellId, newCellData);
+		const newCellDataArray = this.replaceIndex(this.state.rowDataArray[rowId].cellDataArray, cellId, newCellData);
 
 		const newRowData = {...this.state.rowDataArray[rowId], cellDataArray: newCellDataArray};
-		const newRowDataArray = replaceIndex(this.state.rowDataArray, rowId, newRowData);
+		const newRowDataArray = this.replaceIndex(this.state.rowDataArray, rowId, newRowData);
 
 		const winner = this.getWinnerAll(this.state.turn, newRowDataArray);
 
@@ -199,7 +199,7 @@ class Box extends Component {
 		if(this.isRowAndCellIndexOutOfBound(rowId, cellId)) {
 			return;
 		}
-		if(gameStateArray[this.state.gameState] === GameStateEnd) {
+		if(this.gameStateArray[this.state.gameState] === this.GameStateEnd) {
 			return;
 		}
 		this.replaceCellData(rowId, cellId);
