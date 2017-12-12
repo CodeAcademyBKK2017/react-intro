@@ -342,7 +342,7 @@ describe('Box Component', () => {
 		expect(result).toBe('');
 	});
 
-	it('alertWinnerIfGameEnd with turn, rowDataArray of X is winner', () => {
+	xit('alertWinnerIfGameEnd with turn, rowDataArray of X is winner', () => {
 		const turn = 10;
 		const rowDataArray = [
 			{
@@ -362,7 +362,7 @@ describe('Box Component', () => {
 		expect(result).toBeUndefined();
 	});
 
-	it('alertWinnerIfGameEnd with turn, rowDataArray of no winner (playing)', () => {
+	xit('alertWinnerIfGameEnd with turn, rowDataArray of no winner (playing)', () => {
 		const turn = 8;
 		const rowDataArray = [
 			{
@@ -382,7 +382,7 @@ describe('Box Component', () => {
 		expect(result).toBeUndefined();
 	});
 
-	it('alertWinnerIfGameEnd with turn, rowDataArray of no winner (game end)', () => {
+	xit('alertWinnerIfGameEnd with turn, rowDataArray of no winner (game end)', () => {
 		const turn = 10;
 		const rowDataArray = [
 			{
