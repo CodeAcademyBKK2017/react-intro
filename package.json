@@ -1,22 +1,26 @@
 {
-  "name": "bankapp",
+  "name": "tictactoe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
-    "uuid": "^3.1.0"
+    "replace-array-index": "^0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --coverage",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint --fix ./src/**/*.js",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
-    "eject": "react-scripts eject"
+    "prepush": "npm run test",
+    "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",
@@ -26,7 +30,6 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-react-16-adapter-setup": "^0.1.0",
-    "eslint-plugin-react": "^7.5.1",
     "husky": "^0.13.4",
     "jest": "^21.2.1",
     "jest-enzyme": "^4.0.1",
@@ -35,7 +38,7 @@
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest",
-      "\\.(css|svg)$": "<rootDir>/__mocks__/custom-file-loader.js"
+      "\\.(css)$": "<rootDir>/__mocks__/custom-file-loader.js"
     },
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "setupFiles": [

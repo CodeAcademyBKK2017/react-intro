@@ -1,8 +1,10 @@
-import renderer from "react-test-renderer";
-import React from "react";
-import App from "./App";
+import App from './App';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-test("App: snapshot test", () => {
-    const snapshot = renderer.create(<App />);
-    expect(snapshot).toMatchSnapshot();
+describe('App component', () => {
+  it('App: renders correctly', () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
