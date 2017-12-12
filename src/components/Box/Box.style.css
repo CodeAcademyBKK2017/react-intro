@@ -1,4 +1,18 @@
-.window-pos__bottom-right {
+.box-container {
+    text-align: center;
+}
+.title {
+    display: block;
+}
+.info {
+    display: block;
+}
+.row-container {
+    margin: 30px;
+    padding: 20px;
+    border: 5px solid red; 
+}
+.credit {
     position: fixed;
     bottom: 0;
     right: 0;

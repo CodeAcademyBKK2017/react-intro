@@ -93,12 +93,13 @@ class Box extends React.Component {
     console.log('render');
     const rowLists = this.state.boxData.map(this.getRow);
     return (
-      <div>
-        <h1>Tic Tac Toe</h1>
-        <div>{rowLists}</div>
+      <div className='box-container'>
+        <div className='title'>Welcome - Tic Tac Toe</div>
+        <div className='info'>I want to play a game.</div>
+        <div className="row-container">{rowLists}</div>
         <p>{this.state.message}</p>
         <button onClick={this.reset}>Reset</button>
-        <p className='window-pos__bottom-right'>MADE BY TEERAPHONG CHAICHALERMPREECHA</p>
+        <p className='credit'>Made by Teeraphong Chaichalermpreecha</p>
       </div>
     );
   }
