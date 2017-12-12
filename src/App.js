@@ -6,7 +6,9 @@ class App extends Component {
     return (
       <div className={'app'}>
         <Box />
+        <p className={'madeby'}>MADE BY BEN </p>
       </div>
+      
     );
   }
 }
