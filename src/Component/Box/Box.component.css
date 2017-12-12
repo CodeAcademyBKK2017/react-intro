@@ -1,6 +1,6 @@
-.fixBottom {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin-right: 25px;
+.Box{
+    width: 300px;
+    border: red solid;
+    padding: 25px;
+    margin: auto;
 }

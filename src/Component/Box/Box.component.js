@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 import uuid from 'uuid';
-import fixBottom from './Box.component.css';
+import './Box.component.css';
 
 class Box extends Component {
   state = {
@@ -81,9 +81,8 @@ class Box extends Component {
     const rows = this.state.boxData.map(this.getRow);
     return (
       <div>
-        {rows}
+        <div className='Box'>{rows}</div>
         <button onClick = {this.resetBoxData}><p>Restart</p></button>
-        <p className='fixBottom'>MADE BY PANURUT OUNWONG</p>
       </div>
     );
   }
