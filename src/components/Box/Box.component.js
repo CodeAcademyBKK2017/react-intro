@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Row from '../Row/Row.component';
 import { setTimeout } from 'timers';
+import swal from 'sweetalert';
 
 class Box extends Component {
 
@@ -14,21 +15,23 @@ class Box extends Component {
 
 	replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
+	initialState = {};
+
 	constructor() {
 		super();
 
-		this.state = {
-			turn: this.startTurn,
-			gameState: 0,
-			rowDataArray: []
-		};
+		this.state = this.initialState;
 
+		this.initialState.turn = this.startTurn;
+		this.initialState.gameState = 0;
+		this.initialState.rowDataArray = [];
+		
 		for(let i = 0 ; i < this.tableSize ; i++) {
 			const rowData = {
 				rowId: i,
 				cellDataArray: []
 			};
-			this.state.rowDataArray.push(rowData);
+			this.initialState.rowDataArray.push(rowData);
 
 			for(let j = 0 ; j < this.tableSize ; j++) {
 				const cellData = {
@@ -162,14 +165,22 @@ class Box extends Component {
 		}
 	}
 
+	resetState = () => {
+		this.setState(this.initialState);
+	}
+
 	alertWinnerIfGameEnd = (turn, rowDataArray) => {
 		const winner = this.getWinnerAll(turn, rowDataArray);
 		if(typeof(winner) === 'string') {
 			if(winner === '') {
-				alert('No Winner');
+				swal("Game End", "No Winner", "warning").then(() => {
+					this.resetState();
+				});
 			}
 			else {
-				alert('Winner is ' + winner);
+				swal("Game End", "Winner is " + winner, "success").then(() => {
+					this.resetState();
+				});
 			}
 		}
 	}

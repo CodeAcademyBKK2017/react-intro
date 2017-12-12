@@ -6,14 +6,15 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
+    "sweetalert": "^2.0.8",
     "uuid": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-	"test": "jest --coverage",
-	"lint": "eslint src/",
-	"lint:fix": "eslint --fix src/",
+    "test": "jest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
     "eject": "react-scripts eject",
