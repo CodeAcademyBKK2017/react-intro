@@ -14,27 +14,30 @@ class Box extends Component {
     ]
   };
 
-  checkWinnerStyle = (cellPosition) => {
-    const getData = this.state.boxData;
-    // 00 01 02 , 10 11 12 , 20 21 22 แนวตั้ง
-    if (getData[0].value[0] === cellPosition && getData[0].value[1] === cellPosition && getData[0].value[2] === cellPosition) return true;
-    else if (getData[1].value[0] === cellPosition && getData[1].value[1] === cellPosition && getData[1].value[2] === cellPosition) return true;
-    else if (getData[2].value[0] === cellPosition && getData[2].value[1] === cellPosition && getData[2].value[2] === cellPosition) return true;
-    // 00 10 20 , 01 11 21 , 02 12 22 แนวนอน
-    else if (getData[0].value[0] === cellPosition && getData[1].value[0] === cellPosition && getData[2].value[0] === cellPosition) return true;
-    else if (getData[0].value[1] === cellPosition && getData[1].value[1] === cellPosition && getData[2].value[1] === cellPosition) return true;
-    else if (getData[0].value[2] === cellPosition && getData[1].value[2] === cellPosition && getData[2].value[2] === cellPosition) return true;
-    // 00 11 22 , 02 11 20 แนวเฉียง
-    else if (getData[0].value[0] === cellPosition && getData[1].value[1] === cellPosition && getData[2].value[2] === cellPosition) return true;
-    else if (getData[0].value[2] === cellPosition && getData[1].value[1] === cellPosition && getData[2].value[0] === cellPosition) return true;
+  checkWinnerStyle = (cellPosition, getData) => {
+    // แนวตั้ง 00 01 02 , 10 11 12 , 20 21 22
+    if (getData[0].value.every((arg) => arg === cellPosition)) return true;
+    else if (getData[1].value.every((arg) => arg === cellPosition)) return true;
+    else if (getData[2].value.every((arg) => arg === cellPosition)) return true;
+
+    // แนวนอน 00 10 20 , 01 11 21 , 02 12 22
+    else if ([getData[0].value[0], getData[1].value[0], getData[2].value[0]].value.every((arg) => arg === cellPosition)) return true;
+    else if ([getData[0].value[1], getData[1].value[1], getData[2].value[1]].value.every((arg) => arg === cellPosition)) return true;
+    else if ([getData[0].value[2], getData[1].value[2], getData[2].value[2]].value.every((arg) => arg === cellPosition)) return true;
+    
+    // แนวเฉียง 00 11 22 , 02 11 20
+    else if ([getData[0].value[0], getData[1].value[1], getData[2].value[2]].value.every((arg) => arg === cellPosition)) return true;
+    else if ([getData[0].value[2], getData[1].value[1], getData[2].value[0]].value.every((arg) => arg === cellPosition)) return true;
+    
     // Draw !!
     else if (this.state.cellClick === 9) return 'draw';
+    
     // Not Match !!
     else return false;
   }
 
   checkWinner = (cellPosition) => {
-    const getWinner =  this.checkWinnerStyle(cellPosition);
+    const getWinner =  this.checkWinnerStyle(cellPosition, this.state.boxData);
     if (getWinner) {
       this.setState({haveAWinner: true});
       setTimeout(() => {
