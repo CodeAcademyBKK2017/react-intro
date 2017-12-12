@@ -4,7 +4,7 @@ import Row from '../Row/Row.component';
 import replaceIndex from 'replace-array-index';
 import swal from 'sweetalert';
 import uuid from 'uuid';
-
+import './Box.style.css';
 class Box extends Component {
   initialState = {
     boxData: [
@@ -80,7 +80,10 @@ class Box extends Component {
     const rowItems = this.state.boxData;
     const rows = rowItems.map(this.createRow);
     return (
-      <div className='box'>{rows}</div>
+      <div className='box'>{rows}
+        <p className='name-bottom-right'>pheerah</p>
+      </div>
+      
     );
   }
 }
