@@ -7,7 +7,7 @@ import Row from '../Row/Row.component';
 const replaceArrayIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 
 class Box extends React.Component {
-  state = {
+  initialState = {
     boxData: [
       ['', '', ''],
       ['', '', ''],
@@ -23,7 +23,7 @@ class Box extends React.Component {
     [8, 16, 32],
     [64, 128, 256]
   ];
-  wins = [7, 56, 448, 73, 146, 292, 273, 84];
+  winScore = [7, 56, 448, 73, 146, 292, 273, 84];
   // 1   = 000000001
   // 2   = 000000010
   // 4   = 000000100
@@ -33,6 +33,11 @@ class Box extends React.Component {
   // 64  = 001000000
   // 128 = 010000000
   // 256 = 100000000
+
+  state = this.initialState;
+  reset = () => {
+    this.setState(this.initialState);
+  }
 
   cellClickHandler = (data) => () => this.updateBoard(data.rowIndex, data.cellIndex, data.cellData)
 
@@ -61,8 +66,8 @@ class Box extends React.Component {
   }
 
   winnerLogic = (score) => {
-    for (let i = 0; i < this.wins.length; i += 1) {
-      if ((this.wins[i] & score) === this.wins[i]) {
+    for (let i = 0; i < this.winScore.length; i += 1) {
+      if ((this.winScore[i] & score) === this.winScore[i]) {
         return true;
       }
     }
@@ -91,6 +96,7 @@ class Box extends React.Component {
         <h1>Tic Tac Toe</h1>
         <div>{rowLists}</div>
         <p>{this.state.message}</p>
+        <button onClick={this.reset}>Reset</button>
       </div>
     );
   }
