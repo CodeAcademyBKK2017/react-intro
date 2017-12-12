@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component App: renders correctly 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="box-container"
+>
+  <div
+    className="box"
+  >
+    <div
+      className="row"
+    >
       <div
         className="cell "
         onClick={[Function]}
@@ -23,7 +29,9 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
-    <div>
+    <div
+      className="row"
+    >
       <div
         className="cell "
         onClick={[Function]}
@@ -43,7 +51,9 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
-    <div>
+    <div
+      className="row"
+    >
       <div
         className="cell "
         onClick={[Function]}

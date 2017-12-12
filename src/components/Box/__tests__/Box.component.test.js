@@ -9,7 +9,7 @@ describe('Box group Test', () => {
     const snapshot = renderer.create(<Box />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });
-  xit('Box.getWinner: should return winner', () => {
+  it('Box.getWinner: should return winner', () => {
     const boxState = [
       {'items': ['X', 'X', 'X'], 'id': '111'},
       {'items': ['', '', ''], 'id': '222'},
@@ -18,16 +18,16 @@ describe('Box group Test', () => {
     const box = shallow(<Box />).instance();
     expect(box.getWinner(boxState)).toEqual('X');
   });
-  xit('Box.getWinner: should return winner', () => {
+  it('Box.getWinner: should return winner', () => {
     const boxState = [
       {'items': ['X', '', 'X'], 'id': '111'},
       {'items': ['', '', ''], 'id': '222'},
       {'items': ['', '', ''], 'id': '333'}
     ];
     const box = shallow(<Box />).instance();
-    expect(box.getWinner(boxState)).toBeUndefined();
+    expect(box.getWinner(boxState)).toBe('');
   });
-  xit('Box.getWinner: should return winner', () => {
+  it('Box.getWinner: should return winner', () => {
     const boxState = [
       {'items': ['X', '', ''], 'id': '111'},
       {'items': ['', 'X', ''], 'id': '222'},
@@ -36,7 +36,7 @@ describe('Box group Test', () => {
     const box = shallow(<Box />).instance();
     expect(box.getWinner(boxState)).toEqual('X');
   });
-  xit('Box.getWinner: should return winner', () => {
+  it('Box.getWinner: should return winner', () => {
     const boxState = [
       {'items': ['O', 'X', 'O'], 'id': '111'},
       {'items': ['X', 'O', 'X'], 'id': '222'},

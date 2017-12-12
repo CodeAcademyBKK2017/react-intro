@@ -2,27 +2,21 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 import replaceIndex from 'replace-array-index';
+import swal from 'sweetalert';
 import uuid from 'uuid';
 
-
 class Box extends Component {
-  state = {
-    bData: [
-      {
-        'items': ['', '', ''],
-        'id': uuid()
-      },
-      {
-        'items':  ['', '', ''],
-        'id': uuid()
-      },
-      {
-        'items':  ['', '', ''],
-        'id': uuid()
-      }
+  initialState = {
+    boxData: [
+      {'items': ['', '', ''], 'id': uuid()},
+      {'items':  ['', '', ''], 'id': uuid()},
+      {'items':  ['', '', ''], 'id': uuid()}
     ],
     isXNext: true
   }
+  state = this.initialState
+
+  reset = () => this.setState(this.initialState)
 
   getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
     const foundRow = oldState.find((rowData) => rowData.id === rowID);
@@ -37,16 +31,44 @@ class Box extends Component {
     return newBoxData;
   }
 
-  getWinner = (boxState) => 'X' // Write logic here
+  MATCHING_POSITIONS = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+  ];
+  getWinner = (boxState) => {
+    // Write logic here
+    const flatBox = [];
+    let winner = '';
+    boxState.forEach((row) => {
+      flatBox.push(...row.items);
+    });
+    this.MATCHING_POSITIONS.every((line) => {
+      const [a, b, c] = line;
+      if (flatBox[a] && flatBox[a] === flatBox[b] && flatBox[a] === flatBox[c]) {
+        winner = flatBox[a];
+        return false;
+      }
+      return true;
+    });
+    return winner;
+  }
+
+
 
   cellclickHandler = (rowID, cellIndex) => () => {
-    const {bData, isXNext} = this.state;
-    const newbData = this.getUpdatedCells(bData, rowID, cellIndex, isXNext);
-    if (bData) {
-      this.setState({bData: newbData, isXNext: !isXNext});
-      const winner = this.getWinner(newbData);
+    const {boxData, isXNext} = this.state;
+    const newboxData = this.getUpdatedCells(boxData, rowID, cellIndex, isXNext);
+    if (boxData) {
+      this.setState({boxData: newboxData, isXNext: !isXNext});
+      const winner = this.getWinner(newboxData);
       if (winner) {
-        alert('Winner is: ' +  winner);
+        swal('Congratulations!', `Player ${winner} is the winner`, 'success').then(this.reset);
       }
     }
   }
@@ -55,10 +77,10 @@ class Box extends Component {
     key={rowData.id} rowID={rowData.id} cellclickHandler={this.cellclickHandler} />
 
   render () {
-    const rowItems = this.state.bData;
+    const rowItems = this.state.boxData;
     const rows = rowItems.map(this.createRow);
     return (
-      <div>{rows}</div>
+      <div className='box'>{rows}</div>
     );
   }
 }
