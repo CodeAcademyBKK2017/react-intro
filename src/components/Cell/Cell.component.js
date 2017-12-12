@@ -14,13 +14,12 @@ import './Cell.style.css';
 //   }
 // }
 
-const Cell = ({rowID, cellID, cellIndex, cellData, color, cellClickHandler}) => (<div className={`Cell-button Cell-button__${color}`} onClick={cellClickHandler({rowID, cellID, cellIndex, cellData})}>
+const Cell = ({rowIndex, cellIndex, cellData, color, cellClickHandler}) => (<div className={`Cell-button Cell-button__${color} ${cellData ? 'disabled-cell' : ''}`} onClick={cellClickHandler({rowIndex, cellIndex, cellData})}>
   {cellData}
 </div>);
 
 Cell.propTypes = {
-  rowID: PropTypes.string.isRequired,
-  cellID: PropTypes.string.isRequired,
+  rowIndex: PropTypes.number.isRequired,
   cellIndex: PropTypes.number.isRequired,
   cellData: PropTypes.oneOf(['O', 'X', '']).isRequired,
   color: PropTypes.oneOf(['blue', 'red']).isRequired,
@@ -28,8 +27,7 @@ Cell.propTypes = {
 };
 
 Cell.defaultProps = {
-  rowID: '',
-  cellID: '',
+  rowIndex: 0,
   cellIndex: 0,
   cellData: '',
   color: 'blue',

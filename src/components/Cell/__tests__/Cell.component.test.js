@@ -4,8 +4,8 @@ import {shallow} from 'enzyme';
 import Cell from '../Cell.component';
 import uuid from 'uuid';
 
-test('Cell: Snapshot test', () => {
+it('Cell: Snapshot test', () => {
   const cellData = 'O';
-  const snapshot = renderer.create(<Cell cellData={cellData} />).toJSON();
+  const snapshot = renderer.create(<Cell key={0} cellIndex={0} cellData={cellData} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });

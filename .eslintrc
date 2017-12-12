@@ -58,6 +58,7 @@
     "expect": true,
     "describe": true,
     "it": true,
+    "xit": true,
     "window": true
   },
   "plugins": [

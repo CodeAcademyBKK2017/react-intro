@@ -3,22 +3,22 @@
 exports[`Row: Snapshot test 1`] = `
 <div>
   <div
-    className="Cell-button Cell-button__blue"
+    className="Cell-button Cell-button__blue disabled-cell"
     onClick={undefined}
   >
-    
+    X
   </div>
   <div
-    className="Cell-button Cell-button__blue"
+    className="Cell-button Cell-button__blue disabled-cell"
     onClick={undefined}
   >
-    
+    O
   </div>
   <div
-    className="Cell-button Cell-button__blue"
+    className="Cell-button Cell-button__blue disabled-cell"
     onClick={undefined}
   >
-    
+    X
   </div>
 </div>
 `;

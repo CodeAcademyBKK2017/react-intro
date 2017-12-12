@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row/Row.component';
-import uuid from 'uuid';
+// import uuid from 'uuid';
 // import cloneDeep from 'lodash/cloneDeep';
 
 const replaceArrayIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
@@ -9,100 +9,88 @@ const replaceArrayIndex = (array, index, replaceWith) => [...array.slice(0, inde
 class Box extends React.Component {
   state = {
     boxData: [
-      {
-        rowID: uuid(),
-        rowData: [
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          }
-        ]
-      },
-      {
-        rowID: uuid(),
-        rowData: [
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          }
-        ]
-      },
-      {
-        rowID: uuid(),
-        rowData: [
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          },
-          {
-            cellID: uuid(),
-            cellData: ''
-          }
-        ]
-      }
-    ]
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ],
+    isXNext: true,
+    scoreX: 0,
+    scoreO: 0,
+    message: ''
   }
+  indicator = [
+    [1, 2, 4],
+    [8, 16, 32],
+    [64, 128, 256]
+  ];
+  wins = [7, 56, 448, 73, 146, 292, 273, 84];
+  // 1   = 000000001
+  // 2   = 000000010
+  // 4   = 000000100
+  // 8   = 000001000
+  // 16  = 000010000
+  // 32  = 000100000
+  // 64  = 001000000
+  // 128 = 010000000
+  // 256 = 100000000
 
-  cellClickHandler = (data) => () => {
-    console.log(data);
-    return this.changeCellData(data.rowID, data.cellIndex);
-  };
+  cellClickHandler = (data) => () => this.updateBoard(data.rowIndex, data.cellIndex, data.cellData)
 
-  changeCellData = (rowID, cellIndex) => {
-    // const newState = [...this.state.boxData];
-    // const foundRow = this.state.boxData.find((row) => row.rowID === rowID);
-    // const rowIndex = this.state.boxData.indexOf(foundRow);
-    // newState[rowIndex].rowData[cellIndex].cellData = 'X';
-    // this.setState({boxData: newState});
-    // return 'X';
-
-    const foundRow = this.state.boxData.find((row) => row.rowID === rowID);
-    const rowIndex = this.state.boxData.indexOf(foundRow);
-    foundRow.rowData[cellIndex].cellData = 'X';
-    const updatedRowData = replaceArrayIndex(foundRow.rowData, cellIndex, 'X');
-    const updatedRow = {rowID: rowID, rowDara: updatedRowData};
+  updateBoard = (rowIndex, cellIndex, cellData) => {
+    const player = this.state.isXNext ? 'X' : 'O';
+    const updatedRow = replaceArrayIndex(this.state.boxData[rowIndex], cellIndex, player);
     const newStateBoxData = replaceArrayIndex(this.state.boxData, rowIndex, updatedRow);
-    this.setState({boxData: newStateBoxData});
-    return 'X';
+    const score = {};
+    if (player === 'X') {
+      score.scoreX = this.state.scoreX + this.indicator[rowIndex][cellIndex];
+    } else {
+      score.scoreO = this.state.scoreO + this.indicator[rowIndex][cellIndex];
+    }
+    this.setState({boxData: newStateBoxData, isXNext: !this.state.isXNext, ...score}, () => {
+      const theWinner = this.getTheWinner();
+      this.setState({message: theWinner});
+    });
   }
 
-  getRow = (rowData) => <Row key={rowData.rowID} rowID={rowData.rowID} rowData={rowData.rowData} cellClickHandler={this.cellClickHandler} />
-
-  componentWillMount () {
-    console.log('componentWillMount');
+  getTheWinner = () => {
+    if (this.state.isXNext) {
+      return this.winnerLogic(this.state.scoreO) ? 'O - The winner' : 'playing';
+    } else {
+      return this.winnerLogic(this.state.scoreX) ? 'X - The winner' : 'playing';
+    }
   }
 
-  componentDidMount () {
-    console.log('componentDidMount');
+  winnerLogic = (score) => {
+    for (let i = 0; i < this.wins.length; i += 1) {
+      if ((this.wins[i] & score) === this.wins[i]) {
+        return true;
+      }
+    }
+    return false;
   }
+
+  getRow = (rowData, rowIndex) => <Row key={rowIndex} rowIndex={rowIndex} rowData={rowData} cellClickHandler={this.cellClickHandler} />
+
+  // componentWillMount () {
+  //   console.log('componentWillMount');
+  // }
+
+  // componentDidMount () {
+  //   console.log('componentDidMount');
+  // }
+
+  // componentDidUpdate () {
+  //   console.log('componentDidUpdate');
+  // }
 
   render () {
     console.log('render');
-    // const rowLists = boxData.map((rowData, index) => <Row key={rowData[0]} rowData={rowData[1]} cellClickHandler={this.cellClickHandler} />);
     const rowLists = this.state.boxData.map(this.getRow);
     return (
       <div>
-        {rowLists}
+        <h1>Tic Tac Toe</h1>
+        <div>{rowLists}</div>
+        <p>{this.state.message}</p>
       </div>
     );
   }

@@ -1,10 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Row from '../Row.component';
-import uuid from 'uuid';
 
-test('Row: Snapshot test', () => {
-  const rowData = [uuid().toString(), [[uuid().toString(), 'O'], [uuid().toString(), 'O'], [uuid().toString(), 'O']]];
-  const snapshot = renderer.create(<Row key={rowData[0]} rowData={rowData[1]} />).toJSON();
+it('Row: Snapshot test', () => {
+  const rowData = ['X', 'O', 'X'];
+  const snapshot = renderer.create(<Row key={0} rowIndex={0} rowData={rowData} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });
