@@ -168,7 +168,11 @@ describe('Box Component', () => {
   it('Box.cellClickHandler: Game state should be something like this', () => {
     const expectedState = {
       currentPlayer: 'o',
-      gameData: [['o','',''],['','x',''],['','','']],
+      gameData: [
+        ['o','',''],
+        ['','x',''],
+        ['','','']
+      ],
       winner: null,
       gameOver: false
     };
@@ -180,7 +184,29 @@ describe('Box Component', () => {
     expect(box.state).toEqual(expectedState);
   });
 
-  it('Box.cellClickHandler: Game state not should be change if cell is not empty', () => {
+  it('Box.cellClickHandler: Game state the O player should be the winner', () => {
+    const expectedState = {
+      currentPlayer: 'x',
+      gameData: [
+        ['o','',''],
+        ['o','x',''],
+        ['o','x','']
+      ],
+      winner: 'o',
+      gameOver: false
+    };
+    
+    const box = shallow(<Box />).instance();
+    box.cellClickHandler({row: 0,col: 0})();
+    box.cellClickHandler({row: 1,col: 1})();
+    box.cellClickHandler({row: 1,col: 0})();
+    box.cellClickHandler({row: 2,col: 1})();
+    box.cellClickHandler({row: 2,col: 0})();
+
+    expect(box.state).toEqual(expectedState);
+  });
+
+  it('Box.cellClickHandler: Game state shouldn\'t be change if cell is not empty', () => {
     const expectedState = {
       currentPlayer: 'x',
       gameData: [['o','',''],['','',''],['','','']],
