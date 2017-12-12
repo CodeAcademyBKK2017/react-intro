@@ -8,7 +8,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
-    "replace-array-index": "^0.0.1"
+    "replace-array-index": "^0.0.1",
+    "sweetalert": "^2.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

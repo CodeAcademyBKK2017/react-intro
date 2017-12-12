@@ -3,10 +3,11 @@ import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 import cloneDeep from 'lodash/cloneDeep';
 import replaceIndex from 'replace-array-index';
+import swal from 'sweetalert';
 import uuid from 'uuid';
 // const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 class Box extends Component {
-  state = {
+  initialstate = {
     bData: [
       {'items': ['', '', ''], 'id': uuid()},
       {'items':  ['', '', ''], 'id': uuid()},
@@ -14,6 +15,7 @@ class Box extends Component {
     ],
     isXNext : true
   }
+  state = this.initialstate;
   getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
     const foundRow = oldState.find((rowData) => rowData.id === rowID);
     if (!foundRow) {
@@ -40,17 +42,22 @@ class Box extends Component {
       [2, 4, 6],
     ];
     const SingleArrData = boxState.reduce((acc, curr) => [...acc, ...curr.items], []);
-    // console.log(SingleArrData);
+    // console.log(SingleArrData) ['','','','','','','','','']
     for (let i = 0; i < winPatternIndex.length; i++) {
       const [a, b, c] = winPatternIndex[i];
-      if (SingleArrData[a] && SingleArrData[a] === SingleArrData[b] && SingleArrData[a] === SingleArrData[c]) {
+      if (SingleArrData[a] &&
+        (SingleArrData[a] === SingleArrData[b]) &&
+        (SingleArrData[a] === SingleArrData[c])
+      ) {
         // console.log(SingleArrData[a], SingleArrData[b], SingleArrData[c]);
         return SingleArrData[a];
       }
     } 
     return null;
   }
-
+reset=() => { 
+  this.setState(this.initialstate); 
+}
   cellclickHandler = (rowID, cellIndex) => () => {
     const {bData, isXNext} = this.state;
     const newbData = this.getUpdatedCells(bData, rowID, cellIndex, isXNext);
@@ -58,7 +65,7 @@ class Box extends Component {
       this.setState({bData: newbData});
       const winner = this.getWinner(newbData, isXNext);
       if (winner) {
-        alert('Winner is: ' +  winner);
+        swal('Congratulation!', 'The winner is ' + winner, 'success').then(this.reset);
       } else {
         this.setState({isXNext : !isXNext});
       }
@@ -72,7 +79,7 @@ class Box extends Component {
     const rowItems = this.state.bData;
     const rows = rowItems.map(this.createRow);
     return (
-      <div>{rows}</div>
+      <div className={'box'}>{rows}</div>
     );
   }
 }

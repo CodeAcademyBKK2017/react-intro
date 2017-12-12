@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Box group Test Box: snapshot test 1`] = `
-<div>
-  <div>
+<div
+  className="box"
+>
+  <div
+    className="row"
+  >
     <div
       className="cell  "
       onClick={[Function]}
@@ -22,7 +26,9 @@ exports[`Box group Test Box: snapshot test 1`] = `
       
     </div>
   </div>
-  <div>
+  <div
+    className="row"
+  >
     <div
       className="cell  "
       onClick={[Function]}
@@ -42,7 +48,9 @@ exports[`Box group Test Box: snapshot test 1`] = `
       
     </div>
   </div>
-  <div>
+  <div
+    className="row"
+  >
     <div
       className="cell  "
       onClick={[Function]}
