@@ -3,11 +3,15 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.madeby{
+.made-by{
   position: fixed ;
   bottom: 0;
   right: 0;
+}
+.app-header{
+  display: inline;
 }
 
 .App {

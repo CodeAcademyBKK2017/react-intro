@@ -1,7 +1,4 @@
 .box {
-    height: 100vh;
-    flex-direction: column;
-    align-self: center;
-    margin-right: auto;
-    margin-left: auto;
+border: 2px solid red;
+padding: 120px;
 }

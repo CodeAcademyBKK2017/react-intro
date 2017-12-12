@@ -5,6 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import replaceIndex from 'replace-array-index';
 import swal from 'sweetalert';
 import uuid from 'uuid';
+import './Box.style.css';
 // const replaceIndex = (array, index, replaceWith) => [...array.slice(0, index), replaceWith, ...array.slice(index + 1, array.length)];
 class Box extends Component {
   initialstate = {

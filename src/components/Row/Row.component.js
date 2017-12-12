@@ -4,7 +4,7 @@ import React from 'react';
 import noop from 'lodash/noop';
 
 const Row = ({cellData, cellclickHandler, rowID}) =>
-  <div className={'row'}>
+  <div>
     <Cell value={cellData[0]} cellclickHandler={cellclickHandler(rowID, 0)}/>
     <Cell value={cellData[1]} cellclickHandler={cellclickHandler(rowID, 1)}/>
     <Cell value={cellData[2]} cellclickHandler={cellclickHandler(rowID, 2)}/>
