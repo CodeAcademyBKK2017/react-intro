@@ -1,8 +1,8 @@
 
 .cell {
     background-color: rgb(3, 117, 223);
-    height: 100px;
-    width: 200px;
+    height: 10vw;
+    width: 10vw;
     padding: 20px;
     text-align: center;
     color: white;
@@ -15,4 +15,11 @@
 
   .disabled-cell {
     pointer-events: none;
+  }
+
+  .cell-box {
+      vertical-align: middle;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
   }

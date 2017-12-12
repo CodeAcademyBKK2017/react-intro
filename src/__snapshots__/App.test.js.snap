@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component App: renders correctly 1`] = `
-<div>
+<div
+  className="app-main"
+>
   <div
     className="app"
   >
@@ -17,39 +19,19 @@ exports[`App component App: renders correctly 1`] = `
     </div>
     <div>
       <div
-        className="cell "
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
       </div>
       <div
-        className="cell "
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
       </div>
       <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
-    </div>
-    <div>
-      <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
-      <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
-      <div
-        className="cell "
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
@@ -57,19 +39,39 @@ exports[`App component App: renders correctly 1`] = `
     </div>
     <div>
       <div
-        className="cell "
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
       </div>
       <div
-        className="cell "
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
       </div>
       <div
-        className="cell "
+        className="cell  cell-box"
+        onClick={[Function]}
+      >
+        
+      </div>
+    </div>
+    <div>
+      <div
+        className="cell  cell-box"
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="cell  cell-box"
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="cell  cell-box"
         onClick={[Function]}
       >
         
