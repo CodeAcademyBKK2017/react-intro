@@ -4,39 +4,19 @@ exports[`Box group Test Box: snapshot test 1`] = `
 <div>
   <div>
     <div
-      className="cell"
+      className="cell "
       onClick={[Function]}
     >
       
     </div>
     <div
-      className="cell"
+      className="cell "
       onClick={[Function]}
     >
       
     </div>
     <div
-      className="cell"
-      onClick={[Function]}
-    >
-      
-    </div>
-  </div>
-  <div>
-    <div
-      className="cell"
-      onClick={[Function]}
-    >
-      
-    </div>
-    <div
-      className="cell"
-      onClick={[Function]}
-    >
-      
-    </div>
-    <div
-      className="cell"
+      className="cell "
       onClick={[Function]}
     >
       
@@ -44,19 +24,39 @@ exports[`Box group Test Box: snapshot test 1`] = `
   </div>
   <div>
     <div
-      className="cell"
+      className="cell "
       onClick={[Function]}
     >
       
     </div>
     <div
-      className="cell"
+      className="cell "
       onClick={[Function]}
     >
       
     </div>
     <div
-      className="cell"
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+  </div>
+  <div>
+    <div
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell "
       onClick={[Function]}
     >
       
