@@ -80,7 +80,7 @@ class Box extends Component {
     const rowItems = this.state.boxData;
     const rows = rowItems.map(this.createRow);
     return (
-      <div className='box'>{rows}
+      <div className='boxes'>{rows}
         <p className='name-bottom-right'>pheerah</p>
       </div>
       

@@ -2,4 +2,10 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    padding-right: 10px;
+}
+
+.boxes {
+    margin: auto;
+    border: solid red;
 }
