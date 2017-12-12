@@ -23,10 +23,10 @@
 }
 
 .fixBottom {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin-right: 25px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 25px;
 }
 
 @keyframes App-logo-spin {

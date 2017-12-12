@@ -1,6 +1,5 @@
 .Box{
     width: 300px;
     border: red solid;
-    padding: 25px;
-    margin: auto;
+    padding: 15px;
 }
