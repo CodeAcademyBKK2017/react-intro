@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Row from '../Row/Row.component';
 import replaceIndex from 'replace-array-index';
 import uuid from 'uuid';
+import './Box.style.css';
 
 class Box extends Component {
   state = {
@@ -118,7 +119,13 @@ class Box extends Component {
     const rowItems = this.state.bData;
     const rows = rowItems.map(this.createRow);
     return (
-      <div>{rows}</div>
+      <div className="app">
+          <div className="title">Welcome to tic-tac-toa</div>
+          <div className="text">Please start playing</div>
+      {rows}
+      <p className="windows-style" >Power By Chaowalit</p>
+      </div>
+      
     );
   }
 }

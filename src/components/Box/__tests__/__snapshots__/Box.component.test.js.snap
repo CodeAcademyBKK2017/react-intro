@@ -1,26 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Box group Test Box: snapshot test 1`] = `
-<div>
-  <div>
-    <div
-      className="cell "
-      onClick={[Function]}
-    >
-      
-    </div>
-    <div
-      className="cell "
-      onClick={[Function]}
-    >
-      
-    </div>
-    <div
-      className="cell "
-      onClick={[Function]}
-    >
-      
-    </div>
+<div
+  className="app"
+>
+  <div
+    className="title"
+  >
+    Welcome to tic-tac-toa
+  </div>
+  <div
+    className="text"
+  >
+    Please start playing
   </div>
   <div>
     <div
@@ -62,5 +54,30 @@ exports[`Box group Test Box: snapshot test 1`] = `
       
     </div>
   </div>
+  <div>
+    <div
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+    <div
+      className="cell "
+      onClick={[Function]}
+    >
+      
+    </div>
+  </div>
+  <p
+    className="windows-style"
+  >
+    Power By Chaowalit
+  </p>
 </div>
 `;

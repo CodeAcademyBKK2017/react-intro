@@ -2,26 +2,18 @@
 
 exports[`App component App: renders correctly 1`] = `
 <div>
-  <div>
-    <div>
-      <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
-      <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
-      <div
-        className="cell "
-        onClick={[Function]}
-      >
-        
-      </div>
+  <div
+    className="app"
+  >
+    <div
+      className="title"
+    >
+      Welcome to tic-tac-toa
+    </div>
+    <div
+      className="text"
+    >
+      Please start playing
     </div>
     <div>
       <div
@@ -63,6 +55,31 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
+    <div>
+      <div
+        className="cell "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="cell "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="cell "
+        onClick={[Function]}
+      >
+        
+      </div>
+    </div>
+    <p
+      className="windows-style"
+    >
+      Power By Chaowalit
+    </p>
   </div>
 </div>
 `;

@@ -1,0 +1,19 @@
+.windows-style {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.title {
+    display: inline-block;
+}
+.text {
+    display: inline-block;
+    margin-left: 5px; 
+}
+
+.app {
+    text-align: center;
+    border: 2px solid red;
+    margin: 20px;
+}
