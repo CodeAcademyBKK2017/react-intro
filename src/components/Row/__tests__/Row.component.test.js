@@ -4,13 +4,9 @@ import Row from '../Row.component';
 import uuid from 'uuid';
 
 test('Row: row snapshot', () => {
-  const data =  [
-    {id: uuid(), title: 'o'},
-    {id: uuid(), title: 'x'},
-    {id: uuid(), title: 'o'},
-  ];
+  const data =  ['','',''];
 
-  const cellClickHandler = () => {};
-  const snapshot = renderer.create(<Row data={data} cellClickHandler={cellClickHandler} />).toJSON();
+  const cellClickHandler = (pos) => () => {};
+  const snapshot = renderer.create(<Row data={data} cellClickHandler={cellClickHandler({row: 0,col: 0})} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });

@@ -1,65 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box: Box snapshot 1`] = `
+exports[`Box Component Box: Box snapshot 1`] = `
 <div>
+  <h2>
+    Tie Tac Toe
+  </h2>
+  <p>
+    <b>
+      O
+    </b>
+     Turn
+  </p>
   <div>
-    <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
+    <div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
     </div>
-    <div
-      className="btn btn-x"
-      onClick={[Function]}
-    >
-      X
+    <div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
     </div>
-    <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
-    </div>
-  </div>
-  <div>
-    <div
-      className="btn btn-x"
-      onClick={[Function]}
-    >
-      X
-    </div>
-    <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
-    </div>
-    <div
-      className="btn btn-x"
-      onClick={[Function]}
-    >
-      X
-    </div>
-  </div>
-  <div>
-    <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
-    </div>
-    <div
-      className="btn btn-x"
-      onClick={[Function]}
-    >
-      X
-    </div>
-    <div
-      className="btn btn-o"
-      onClick={[Function]}
-    >
-      O
+    <div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
+      <div
+        className="btn "
+        onClick={[Function]}
+      >
+        
+      </div>
     </div>
   </div>
 </div>

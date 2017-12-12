@@ -3,7 +3,7 @@
 exports[`Cell: title o 1`] = `
 <div
   className="btn btn-o"
-  onClick={undefined}
+  onClick={[Function]}
 >
   O
 </div>
@@ -12,7 +12,7 @@ exports[`Cell: title o 1`] = `
 exports[`Cell: title x 1`] = `
 <div
   className="btn btn-x"
-  onClick={undefined}
+  onClick={[Function]}
 >
   X
 </div>

@@ -4,12 +4,12 @@ import Cell from '../Cell.component';
 
 test('Cell: title o', () => {
   const cellClickHandler = () => {};
-  const snapshot = renderer.create(<Cell title='o' cellClickHandler={cellClickHandler} />).toJSON();
+  const snapshot = renderer.create(<Cell data='o' cellClickHandler={cellClickHandler} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });
 
 test('Cell: title x', () => {
   const cellClickHandler = () => {};
-  const snapshot = renderer.create(<Cell title='x' cellClickHandler={cellClickHandler} />).toJSON();
+  const snapshot = renderer.create(<Cell data='x' cellClickHandler={cellClickHandler} />).toJSON();
   expect(snapshot).toMatchSnapshot();
 });

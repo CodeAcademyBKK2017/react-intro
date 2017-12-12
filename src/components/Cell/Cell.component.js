@@ -4,18 +4,18 @@ import noop from 'lodash/noop';
 
 const Cell = ({cellClickHandler, data}) => {
   let btnType = '';
-  if (data.title.toUpperCase() === 'O') btnType = 'btn-o';
-  if (data.title.toUpperCase() === 'X') btnType = 'btn-x';
+  if (data.toUpperCase() === 'O') btnType = 'btn-o';
+  if (data.toUpperCase() === 'X') btnType = 'btn-x';
 
-  return <div onClick={cellClickHandler(data)} className={`btn ${btnType}`}>{data.title.toUpperCase()}</div>;
+  return <div onClick={cellClickHandler} className={`btn ${btnType}`}>{data.toUpperCase()}</div>;
 };
 
 Cell.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.string,
   cellClickHandler: PropTypes.func.isRequired
 };
 Cell.defaultProps = {
-  data: {title: '',id: ''},
+  data: '',
   cellClickHandler: noop
 };
 

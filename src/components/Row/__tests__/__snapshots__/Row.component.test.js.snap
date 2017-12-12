@@ -3,22 +3,22 @@
 exports[`Row: row snapshot 1`] = `
 <div>
   <div
-    className="btn btn-o"
-    onClick={undefined}
+    className="btn "
+    onClick={[Function]}
   >
-    O
+    
   </div>
   <div
-    className="btn btn-x"
-    onClick={undefined}
+    className="btn "
+    onClick={[Function]}
   >
-    X
+    
   </div>
   <div
-    className="btn btn-o"
-    onClick={undefined}
+    className="btn "
+    onClick={[Function]}
   >
-    O
+    
   </div>
 </div>
 `;
