@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row/Row.component';
+import './Box.style.css';
 // import uuid from 'uuid';
 // import cloneDeep from 'lodash/cloneDeep';
 
@@ -97,6 +98,7 @@ class Box extends React.Component {
         <div>{rowLists}</div>
         <p>{this.state.message}</p>
         <button onClick={this.reset}>Reset</button>
+        <p className='window-pos__bottom-right'>MADE BY TEERAPHONG CHAICHALERMPREECHA</p>
       </div>
     );
   }
