@@ -6,6 +6,6 @@
 }
 
 .boxes {
-    margin: auto;
     border: solid red;
+    padding: 20px;
 }

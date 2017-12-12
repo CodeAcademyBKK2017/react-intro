@@ -2,10 +2,10 @@
 
 exports[`App component App: renders correctly 1`] = `
 <div
-  className="box-container"
+  className="box-container abc"
 >
   <div
-    className="box"
+    className="boxes"
   >
     <div
       className="row"
@@ -73,6 +73,11 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
+    <p
+      className="name-bottom-right"
+    >
+      pheerah
+    </p>
   </div>
 </div>
 `;
