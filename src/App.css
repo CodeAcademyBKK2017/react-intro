@@ -22,6 +22,12 @@
   font-size: large;
 }
 
+.KD {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

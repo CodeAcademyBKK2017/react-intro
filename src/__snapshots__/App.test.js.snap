@@ -10,7 +10,7 @@ exports[`Button component App Snapshot Test 1`] = `
     <div>
       <div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -18,10 +18,10 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
+          
         </div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -29,10 +29,10 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
+          
         </div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -40,47 +40,12 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
-        </div>
-      </div>
-      <div>
-        <div
-          className="Cell"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "red",
-            }
-          }
-        >
-           
-        </div>
-        <div
-          className="Cell"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "red",
-            }
-          }
-        >
-           
-        </div>
-        <div
-          className="Cell"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": "red",
-            }
-          }
-        >
-           
+          
         </div>
       </div>
       <div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -88,10 +53,10 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
+          
         </div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -99,10 +64,10 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
+          
         </div>
         <div
-          className="Cell"
+          className="Cell "
           onClick={[Function]}
           style={
             Object {
@@ -110,7 +75,42 @@ exports[`Button component App Snapshot Test 1`] = `
             }
           }
         >
-           
+          
+        </div>
+      </div>
+      <div>
+        <div
+          className="Cell "
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "red",
+            }
+          }
+        >
+          
+        </div>
+        <div
+          className="Cell "
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "red",
+            }
+          }
+        >
+          
+        </div>
+        <div
+          className="Cell "
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "red",
+            }
+          }
+        >
+          
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import noop from 'lodash/noop';
 const Cell = (props) => {
   const color = props.value === 'O' ? 'blue' : 'red';    
   return (
-    <div className="Cell" style={{backgroundColor: color}} onClick={props.clickHandle(props.value,props.rowKey,props.cellID)}>{props.value}</div>
+    <div  className={`Cell ${props.value ? 'disabled-cell' : '' }`} style={{backgroundColor: color}} onClick={props.clickHandle(props.value,props.rowKey,props.cellID)}>{props.value}</div>
   );
 };
 

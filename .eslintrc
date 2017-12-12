@@ -9,7 +9,8 @@
       "plugin:react-app/recommended"
     ],
     "plugins": [
-      "react"
+      "react",
+      "sort-imports-es6-autofix"
     ],
     "rules": {
       "no-undef": 2,
