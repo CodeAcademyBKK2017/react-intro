@@ -96,7 +96,7 @@ class Box extends React.Component {
       <div className='box-container'>
         <div className='title'>Welcome - Tic Tac Toe</div>
         <div className='info'>I want to play a game.</div>
-        <div className="row-container">{rowLists}</div>
+        <div className="row-lists">{rowLists}</div>
         <p>{this.state.message}</p>
         <button onClick={this.reset}>Reset</button>
         <p className='credit'>Made by Teeraphong Chaichalermpreecha</p>
