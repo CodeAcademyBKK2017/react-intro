@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row/Row.component';
+import swal from 'sweetalert';
 import './Box.style.css';
 // import uuid from 'uuid';
 // import cloneDeep from 'lodash/cloneDeep';
@@ -17,7 +18,7 @@ class Box extends React.Component {
     isXNext: true,
     scoreX: 0,
     scoreO: 0,
-    message: ''
+    countClick: 0
   }
   indicator = [
     [1, 2, 4],
@@ -52,17 +53,27 @@ class Box extends React.Component {
     } else {
       score.scoreO = this.state.scoreO + this.indicator[rowIndex][cellIndex];
     }
-    this.setState({boxData: newStateBoxData, isXNext: !this.state.isXNext, ...score}, () => {
+    this.setState({boxData: newStateBoxData, isXNext: !this.state.isXNext, countClick: this.state.countClick + 1, ...score}, () => {
       const theWinner = this.getTheWinner();
-      this.setState({message: theWinner});
+      if (!theWinner) {
+        if (this.state.countClick === 9) {
+          swal('Game Over', '', 'error').then((value) => {
+            this.setState(this.initialState);
+          });
+        }
+      } else {
+        swal(`The Winner is ${theWinner}`, '', 'success').then((value) => {
+          this.setState(this.initialState);
+        });
+      }
     });
   }
 
   getTheWinner = () => {
     if (this.state.isXNext) {
-      return this.winnerLogic(this.state.scoreO) ? 'O - The winner' : 'playing...';
+      return this.winnerLogic(this.state.scoreO) ? 'O' : '';
     } else {
-      return this.winnerLogic(this.state.scoreX) ? 'X - The winner' : 'playing...';
+      return this.winnerLogic(this.state.scoreX) ? 'X' : '';
     }
   }
 
@@ -97,7 +108,6 @@ class Box extends React.Component {
         <h1 className='title'>Tic Tac Toe</h1>
         <h3 className='info'>I want to play a game.</h3>
         <div className='row-container'>{rowLists}</div>
-        <h2 className='message'>{this.state.message}</h2>
         <button className='btn btn-reset' onClick={this.reset}>Reset</button>
         <p className='credit'>Made by Teeraphong Chaichalermpreecha</p>
       </div>
