@@ -9,8 +9,8 @@ class Box extends Component {
   initialState = {
     boxData: [
       {'items': ['', '', ''], 'id': uuid()},
-      {'items':  ['', '', ''], 'id': uuid()},
-      {'items':  ['', '', ''], 'id': uuid()}
+      {'items': ['', '', ''], 'id': uuid()},
+      {'items': ['', '', ''], 'id': uuid()}
     ],
     isXNext: true
   }

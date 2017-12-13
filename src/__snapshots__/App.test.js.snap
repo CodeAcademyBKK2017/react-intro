@@ -2,7 +2,7 @@
 
 exports[`App component App: renders correctly 1`] = `
 <div
-  className="box-container abc"
+  className="box-container"
 >
   <div
     className="boxes"
