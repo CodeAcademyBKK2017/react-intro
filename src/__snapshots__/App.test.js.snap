@@ -7,9 +7,7 @@ exports[`App component App: renders correctly 1`] = `
   <div
     className="box"
   >
-    <div
-      className="row"
-    >
+    <div>
       <div
         className="cell  "
         onClick={[Function]}
@@ -29,9 +27,7 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
-    <div
-      className="row"
-    >
+    <div>
       <div
         className="cell  "
         onClick={[Function]}
@@ -51,9 +47,7 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
-    <div
-      className="row"
-    >
+    <div>
       <div
         className="cell  "
         onClick={[Function]}
@@ -73,6 +67,11 @@ exports[`App component App: renders correctly 1`] = `
         
       </div>
     </div>
+  </div>
+  <div
+    className="made-by"
+  >
+    MADE BY BEN 
   </div>
 </div>
 `;

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Row: snapshot test 1`] = `
-<div
-  className="row"
->
+<div>
   <div
     className="cell disable-cell "
     onClick={[Function]}

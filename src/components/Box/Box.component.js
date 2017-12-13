@@ -14,7 +14,8 @@ class Box extends Component {
       {'items':  ['', '', ''], 'id': uuid()},
       {'items':  ['', '', ''], 'id': uuid()}
     ],
-    isXNext : true
+    isXNext : true,
+    count : 0,
   }
   state = this.initialstate;
   getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
@@ -60,13 +61,16 @@ reset=() => {
   this.setState(this.initialstate); 
 }
   cellclickHandler = (rowID, cellIndex) => () => {
-    const {bData, isXNext} = this.state;
+    const {bData, isXNext, count} = this.state;
     const newbData = this.getUpdatedCells(bData, rowID, cellIndex, isXNext);
     if (bData) {
-      this.setState({bData: newbData});
+      this.setState({bData: newbData, count : count + 1});
       const winner = this.getWinner(newbData, isXNext);
+
       if (winner) {
         swal('Congratulation!', 'The winner is ' + winner, 'success').then(this.reset);
+      } else if (count === 8) {
+        swal('Draw!', 'The the game is end', 'success').then(this.reset);
       } else {
         this.setState({isXNext : !isXNext});
       }

@@ -1,9 +1,9 @@
 
 .cell {
-    background-color: rgb(3, 117, 223);
+    background-color: #010202;
     height: 4vh;
     width: 4vw;
-    font-size: 4vw;
+    font-size: 4vh;
     text-align: center;
     justify-content:center; 
     color: white;
